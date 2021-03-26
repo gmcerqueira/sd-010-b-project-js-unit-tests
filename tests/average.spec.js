@@ -19,7 +19,11 @@ const average = require('../src/average');
 */
 
 describe('#average', () => {
+<<<<<<< HEAD
   it(`tests function average's behaviour as specified`, () => {
+=======
+  it('tests function average\'s behaviour as specified', () => {
+>>>>>>> 7be25d54dfbadab03e891b66cc8d52769bb06dc7
     assert.strictEqual(average([3, 4, 5]), 4);
     assert.strictEqual(average([1, 2, 3, '4', 5]), undefined);
     assert.strictEqual(average([0, 0, 0, 0, 0, 0, 0]), 0);
