@@ -16,10 +16,10 @@ const average = (array) => {
   if (!array || array.length === 0) {
     return undefined;
   }
-    const resultado = array.reduce((numInicial, total) => numInicial + total, 0);
-    return typeof resultado === 'number'
-      ? Math.round(resultado / array.length)
-      : undefined;
+  const resultado = array.reduce((numInicial, total) => numInicial + total, 0);
+  return typeof resultado === 'number'
+    ? Math.round(resultado / array.length)
+    : undefined;
 };
 
 module.exports = average;
