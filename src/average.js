@@ -15,13 +15,13 @@
 const average = (parametro) => {
   // add your implementation here
   let total = 0;
-  if(parametro.length === 0 ){
+  if (parametro.length === 0) {
     return undefined;
   };
-  for (let index = 0; index < parametro.length; index +=1){
-    if(typeof parametro[index] !== 'number' ) {
+  for (let index = 0; index < parametro.length; index += 1) {
+    if (typeof parametro[index] !== 'number') {
       return undefined;
-    }else {
+    } else {
       total += (parametro[index] / parametro.length);
     };
   };
