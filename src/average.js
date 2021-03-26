@@ -13,7 +13,18 @@
 */
 
 const average = (array) => {
+  
+  if (typeof(array[key]) !== 'number' || array === []){
+    return 'undefined'
+  }
 
+  const sum = 0;
+  const output= sum / array.length
+
+  for (let key = 0; key < array.length; key += 1){
+    sum += array.[key]
+  }
+  return output / array.length
 };
 
 module.exports = average;
