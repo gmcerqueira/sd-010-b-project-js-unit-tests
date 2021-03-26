@@ -32,4 +32,4 @@ const circle = (radius) => {
 
 module.exports = circle;
 
-// console.log(circle(3));
+console.log(circle(3));
