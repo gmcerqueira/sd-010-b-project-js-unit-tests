@@ -83,6 +83,7 @@ const assert = require('assert');
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const cardapio = {};
+const orderFromMenu = request => cardapio.consumption.push(request);
 let summation = 0;
 
 const createMenu = (object) => {
@@ -91,21 +92,19 @@ const createMenu = (object) => {
   cardapio.order = (string) => {
     orderFromMenu(string);
   };
-  cardapio.pay = sumOrder;
+  cardapio.pay = order;
   return cardapio;
 };
 
-const sumOrder = () => {
+const order = () => {
   const food = cardapio.fetchMenu.food;
   const drink = cardapio.fetchMenu.drinks;
-  summation = (searchFoodAndDrink(food, drink, summation));
+  summation = (findFoodAndDrink(food, drink, summation));
   summation += (summation * (10 / 100));
   return summation.toPrecision(4);
 };
 
-const orderFromMenu = request => cardapio.consumption.push(request);
-
-function searchFood(food, pedido) {
+function findFood(food, pedido) {
   for (let index = 0; index < Object.keys(food).length; index += 1) {
     const chaveFood = Object.keys(food)[index];
     if (pedido === chaveFood) {
@@ -115,7 +114,7 @@ function searchFood(food, pedido) {
   return summation;
 }
 
-function searchDrink(drink, pedido) {
+function findDrink(drink, pedido) {
   for (let index = 0; index < Object.keys(drink).length; index += 1) {
     const chaveDrink = Object.keys(drink)[index];
     if (pedido === chaveDrink) {
@@ -125,13 +124,13 @@ function searchDrink(drink, pedido) {
   return summation;
 }
 
-function searchFoodAndDrink(food, drink) {
+function findFoodAndDrink(food, drink) {
   for (let index = 0; index < cardapio.consumption.length; index += 1) {
     const pedido = cardapio.consumption[index];
-    searchFood(food, pedido);
-    searchDrink(drink, pedido);
+    findFood(food, pedido);
+    findDrink(drink, pedido);
   }
   return summation;
 }
-
+ 
 module.exports = createMenu;
