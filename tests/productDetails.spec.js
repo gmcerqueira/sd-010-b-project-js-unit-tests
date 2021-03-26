@@ -40,7 +40,8 @@ describe('#productDetails', () => {
     assert.deepStrictEqual(productDetails('teste1', 'teste2').length, 2)
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     for (let item of productDetails('teste1', 'teste2')) {
-      assert.deepStrictEqual(typeof (item), 'object');
+      // assert.deepStrictEqual(typeof (item), 'object');
+      assert.ok(typeof (item) === 'object' && !Array.isArray(item));
     }
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(productDetails('teste1', 'teste2')[0], productDetails('teste', 'teste')[1])
