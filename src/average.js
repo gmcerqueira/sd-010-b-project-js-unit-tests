@@ -16,14 +16,12 @@ const average = (array) => {
   let dividendo = 0;
   if (array.length > 0) {
     for (let i = 0; i < array.length; i += 1) {
-      if (typeof(array[i]) !== 'number') {
-        dividendo += array[i];
-        return Math.round(dividendo / array.length);
-      }
+      if (typeof(array[i]) === 'number') {
+        dividendo += array[i];              
+      } else return undefined;               
     }
-    return undefined
-  }
-  return undefined
+    return Math.round(dividendo / array.length);   
+  }else return undefined;
 };
 
 module.exports = average;
