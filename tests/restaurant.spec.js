@@ -84,6 +84,6 @@ describe('#createMenu', () => {
     meuRestaurante.order('agua');
     meuRestaurante.order('coxinha');
 
-    assert.deepStrictEqual(meuRestaurante.pay(), 12.87); //INCLUIR NOVO VALOR
+    assert.deepStrictEqual(meuRestaurante.pay(), 12.87);
   });
 });

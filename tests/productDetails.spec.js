@@ -31,7 +31,7 @@ const productDetails = require('../src/productDetails');
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // assert.fail();
-    assert.strictEqual(Array.isArray(productDetails('iphone', 'celular')),true);
+    assert.strictEqual(Array.isArray(productDetails('iphone', 'celular')), true);
 
     assert.strictEqual(productDetails('iphone', 'celular').length, 2);
 
@@ -39,7 +39,7 @@ describe('#productDetails', () => {
 
     assert.notStrictEqual(
       productDetails('iphone', 'celular')[0],
-      productDetails('iphone', 'celular')[1]
+      productDetails('iphone', 'celular')[1],
     );
 
     const product1 = productDetails('iphone', 'celular')[0].details.productId.slice(-3);
