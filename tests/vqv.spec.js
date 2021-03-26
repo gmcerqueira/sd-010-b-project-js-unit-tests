@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-/* eslint-disable max-len */
-/* eslint-disable max-lines-per-function */
-
-=======
->>>>>>> b5c8f60a2e22e0c813a34dc55bcac95bce6056f9
 const assert = require('assert');
 const vqv = require('../src/vqv.js');
 
