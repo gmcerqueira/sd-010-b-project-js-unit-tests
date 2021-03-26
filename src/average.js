@@ -17,7 +17,10 @@ const average = (parameter) => {
   let sum = 0;
   if (!array || array.length === 0) {return undefined}
   for (let element of array) {
-    sum += element;
+    if (typeof(element) !== 'number') {
+      return undefined;
+    }
+    else {sum += element}
   }
   return Math.round(sum/array.length);
 };
