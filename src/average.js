@@ -30,7 +30,7 @@ const average = (arr) => {
   }
   const lengthArr = arr.length;
   let sommation = 0;
-  for (let numb; numb > arr.length; numb += 1 ) {
+  for (let numb = 0; numb < arr.length; numb += 1) {
     sommation += arr[numb];
   }
   return Math.round(sommation / lengthArr);
