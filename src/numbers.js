@@ -18,6 +18,4 @@ const numbers = (myArray) => {
   return true;
 };
 
-const assert = require('assert');
-assert.deepStrictEqual(numbers([' ']), false);
 module.exports = numbers;
