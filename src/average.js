@@ -14,20 +14,20 @@
 
 const average = (array) => {
   if (array.length === 0) {
-    return undefined
-  };
+    return undefined;
+  }
 
   let aver = 0;
 
   for (let num of array) {
     if (typeof (num) !== 'number') {
-      return undefined
-    };
+      return undefined;
+    }
 
     aver += num;
   }
 
-  aver = aver / array.length;
+  aver /= array.length;
 
   return Math.round(aver);
 };
