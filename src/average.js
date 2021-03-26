@@ -22,7 +22,7 @@ const average = (array) => {
     if (typeof (element) !== 'number') {
       return undefined;
     }
-    summation = summation + element;
+    summation += element;
   }
   return Math.round(summation / array.length);
 };
