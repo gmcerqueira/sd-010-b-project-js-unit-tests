@@ -13,23 +13,23 @@
 */
 
 const average = (array) => {
-  //Caso Array esteja vazio
+  // Caso Array esteja vazio
   if (array.length < 1) {
     return undefined;
   }
-  //Caso Array possua algum valor que não seja um número
-  for (let i in array){
-    if (typeof(array[i]) !== 'number'){
-      return undefined
-    }  
+  // Caso Array possua algum valor que não seja um número
+  for (let i in array) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
   }
-  //Cálculo da Média dos valores do Array
-  let average = 0;
-  for (let i in array){
-    average += array[i];
+  // Cálculo da Média dos valores do Array
+  let Average = 0;
+  for (let i in array) {
+    Average += array[i];
   }
-  average = Math.round(average / array.length);
-  return average;
+  Average = Math.round(Average / array.length);
+  return Average;
 };
 
 module.exports = average;
