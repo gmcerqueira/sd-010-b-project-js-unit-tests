@@ -39,11 +39,11 @@ describe('#productDetails', () => {
     //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray 
     assert.strictEqual(Array.isArray(productDetails('Alcool gel', 'Máscara')), true);
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(Object.keys (productDetails('Alcool gel', 'Máscara')).length, 2 );
+    assert.strictEqual(Object.keys(productDetails('Alcool gel', 'Máscara')).length, 2 );
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.strictEqual(typeof Object.keys (productDetails('Alcool gel', 'Máscara')), 'object' );
+    assert.strictEqual(typeof Object.keys(productDetails('Alcool gel', 'Máscara')), 'object' );
     // Teste que os dois objetos são diferentes entre si.
-    assert.notDeepStrictEqual(Object.keys (productDetails('Alcool gel', 'Máscara'))[0], Object.keys (productDetails('Alcool gel', 'Máscara')) [1] );
+    assert.notDeepStrictEqual(Object.keys(productDetails('Alcool gel', 'Máscara'))[0], Object.keys (productDetails('Alcool gel', 'Máscara')) [1] );
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.endsWith('123'), true);
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.endsWith('123'), true);
