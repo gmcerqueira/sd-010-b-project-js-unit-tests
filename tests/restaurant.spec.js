@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable max-lines-per-function */
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
@@ -58,6 +59,7 @@ describe('#createMenu', () => {
     };
 
     const meuRestaurante = createMenu(obj);
+
     assert.deepStrictEqual(meuRestaurante.fetchMenu(), obj);
     assert.deepStrictEqual(meuRestaurante.fetchMenu(), obj);
     assert.strictEqual(meuRestaurante.fetchMenu(), obj);
@@ -68,9 +70,11 @@ describe('#createMenu', () => {
     for (let i = 1; i < arr.length; i += 1) {
       meuRestaurante.order(arr[i]);
     }
+
     assert.deepStrictEqual(meuRestaurante.consumption, arr);
     meuRestaurante.consumption = [];
     const items = ['coxinha', 'agua', 'coxinha'];
+
     for (const food of items) {
       meuRestaurante.order(food);
     }
@@ -80,6 +84,6 @@ describe('#createMenu', () => {
     meuRestaurante.order('agua');
     meuRestaurante.order('coxinha');
 
-    assert.deepStrictEqual(meuRestaurante.pay(), 12.87);
+    assert.deepStrictEqual(meuRestaurante.pay(), 12.87); //INCLUIR NOVO VALOR
   });
 });
