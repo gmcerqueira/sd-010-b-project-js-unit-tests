@@ -17,12 +17,11 @@ const average = (myArray) => {
   let result = 0;
   for (let index = 0; index < myArray.length; index += 1) {
     result = result + myArray[index];
-    if (myArray[index] !== Number) {
-      return undefined;
+    if (typeof(myArray[index]) !== Number ) { 
+      return undefined 
     }
   }
   return (result / myArray.length);
-};
-
+}
 
 module.exports = average;
