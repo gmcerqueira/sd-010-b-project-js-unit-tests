@@ -21,5 +21,4 @@ const createStudent = (name) => {
   return { name: `${name}`, feedback: feedBack };
 };
 
-
 module.exports = createStudent;
