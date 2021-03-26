@@ -12,21 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (param1) => {
-const total = 0;
-  if (typeof param1 !== 'object' || param1.lenght == 0) {
+const average = (array) => {
+  if ( array.length === 0) {
     return undefined;
   }
-  else {
-    for (let i = 0; i < param1.lenght; i++) {
-      total += param1[i] / param1.length;
+  let s = 0;
+  for( let i = 0; i < array.length; i += 1){
+    if( typeof(array[i]) != 'number'){
+      return undefined;
     }
-    return total;
+    s += array[i];
   }
+  return Math.round(s/array.length);
 };
-
 
 module.exports = average;
 
-
-//math.ceil() arredonda para cima e pode vir aq ser util
