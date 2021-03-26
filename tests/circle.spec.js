@@ -34,15 +34,15 @@ describe('#circle', () => {
     assert.deepStrictEqual(circle(), undefined);
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     const circunf = circle(2).circumference;
-    assert.strictEqual(parseFloat(circunf.toPrecision(2)), 13);
+    assert.strictEqual(circunf, 13);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     const areaCircle = circle(3).area;
-    assert.strictEqual(parseFloat(areaCircle.toPrecision(2)), 28);
+    assert.strictEqual(areaCircle, 28);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.deepStrictEqual(circle(3), {
       radius: 3,
-      area: 28.26,
-      circumference: 18.84,
+      area: 28,
+      circumference: 19,
     });
   });
 });
