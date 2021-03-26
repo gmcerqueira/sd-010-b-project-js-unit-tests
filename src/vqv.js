@@ -16,6 +16,10 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (nome.length === 0 || idade === 0) {
+    return undefined;
+  }
+};
 
 module.exports = vqv;
