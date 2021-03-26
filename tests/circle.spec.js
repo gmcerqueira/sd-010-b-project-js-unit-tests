@@ -32,15 +32,15 @@ describe('#circle', () => {
 
     const keys = Object.keys(radius);
     assert.strictEqual(keys.length, 3);
-    
+
     assert.strictEqual(circle(), undefined);
-    
+
     const radius2 = circle(2);
     const valueCircumference = radius2.circumference;
     assert.strictEqual(valueCircumference, 12.56);
 
     const radius3 = circle(3);
     const valuearea = (radius3.area);
-    assert.strictEqual(valuearea,28.259999999999998);
+    assert.strictEqual(valuearea, 28.259999999999998);
   });
 });
