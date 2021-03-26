@@ -20,7 +20,7 @@ const average = (valores) => {
     media += valores[index];
   }
   media /= (valores.length);
-  return media;
+  return (media);
 };
 
 module.exports = average;
