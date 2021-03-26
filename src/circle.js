@@ -28,4 +28,7 @@ const circle = (radius) => {
   };
 };
 
+const response = circle(7);
+console.table(response);
+
 module.exports = circle;
