@@ -32,7 +32,7 @@ describe('#circle', () => {
     assert.deepStrictEqual(Object.keys(circle(1)).length, 3);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.strictEqual(circle(), undefined);
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2. 
+    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     // 2 * Math.PI * 2 = 12.56
     assert.strictEqual(circle(2).circumference, 12.56);
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
