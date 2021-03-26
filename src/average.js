@@ -15,12 +15,16 @@
 const average = (valores) => {
   let media = 0;
 
+  if (valores.length === 0) {
+    return undefined;
+  }
+
   for (let index = 0; index < valores.length; index += 1) {
     if (typeof (valores[index]) !== 'number') return undefined;
     media += valores[index];
   }
   media /= (valores.length);
-  return (media);
+  return (Math.round(media));
 };
 
 module.exports = average;
