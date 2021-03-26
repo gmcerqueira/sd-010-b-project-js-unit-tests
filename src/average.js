@@ -11,25 +11,18 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
 const average = (array) => {
-  let media = 0;
-  let continua = true;
-  for (let index of array){
-    if (typeof index !== 'number'){
-      media = undefined;
-      continua = false;
-    }
-
-  } if (continua) {
-    let soma = 0;
-    for (let index of array) {
-      soma += index;
-    }
-    media = Math.round(soma / array.length);
-}
-  return media
+  let media;
+  let saida;
+  if (array.some((el) => typeof (el) !== 'number') || array.length === 0) { //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+    media = undefined;
+  } else {
+    let somatorio = (soma, elemento) => soma + elemento;
+    let total = array.reduce(somatorio); //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+    media = total / array.length;
+    saida = Math.round(media);
+  }
+  return saida;
 };
 
-console.log(average([3, 4, 5]));
-// module.exports = average;
+module.exports = average;
