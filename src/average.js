@@ -21,19 +21,19 @@ const average = (array) => {
   }
 
   for (let index = 0; index < array.length; index++) {
-    if (typeof(array[i]) === 'number') {
+    if (typeof (array[i]) === 'number') {
       validador += 1;
     }
   }
 
-  if (validador !== array.length ) {
+  if (validador !== array.length) {
     return undefined;
   }
 
   for (let index = 0; index < array.length; index++) {
-    soma += array[index];    
+    soma += array[index];
   }
-  let media = Math.round(soma/array.length);
+  let media = Math.round(soma / array.length);
   return media;
 };
 
