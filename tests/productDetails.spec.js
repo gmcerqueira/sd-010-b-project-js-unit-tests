@@ -42,7 +42,7 @@ describe('#productDetails', () => {
     assert.strictEqual(verify, true);
     const valueProductId0 = objects[0].details.productId;
     const valueProductId1 = objects[1].details.productId;
-    const result0 = valueProductId0.indexOf('123') > -1; // - Código retirado no site: https://blog.education-ecosystem.com/javascript-como-verificar-se-uma-string-contem-outra-substring/#:~:text=O%20m%C3%A9todo%20indexOf%20()%20para,m%C3%A9todo%20retorna%20'%2D1'.
+    const result0 = valueProductId0.indexOf('123') > -1; // Código retirado no site: https://blog.education-ecosystem.com/javascript-como-verificar-se-uma-string-contem-outra-substring/#:~:text=O%20m%C3%A9todo%20indexOf%20()%20para,m%C3%A9todo%20retorna%20'%2D1'.
     const result1 = valueProductId1.indexOf('123') > -1;
     let verifyCondition = false;
     if (result0 === true && result1 === true) { verifyCondition = true; }
