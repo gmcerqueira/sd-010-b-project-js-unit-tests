@@ -15,3 +15,6 @@
 const average = () => {};
 
 module.exports = average;
+
+
+//math.ceil() arredonda para cima e pode vir aq ser util
