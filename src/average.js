@@ -12,16 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (arr) => {
+const average = (numbers) => {
   let soma = 0;
-  const media = arr.length;
+  const media = numbers.length;
 
-  if (typeof (arr) === 'object' && arr.length === 0) return undefined;
+  if (typeof (numbers) === 'object' && numbers.length === 0) return undefined;
 
-  for (let i = 0; i < arr.length; i += 1) {
-    if (typeof (arr[i]) !== 'number') return undefined;
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (typeof (numbers[i]) !== 'number') return undefined;
 
-    soma += arr[i];
+    soma += numbers[i];
   }
   return Math.round(soma / media);
 };
