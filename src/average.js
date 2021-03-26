@@ -21,5 +21,5 @@ const average = (array) => {
   }
   return Math.round(med);
 };
-  console.log(average([4,6]))
+  
 module.exports = average;
