@@ -17,12 +17,10 @@
 
 const createStudent = (myString) => {
   const myObject = {
-   nome: myString,
-   feedback = () => {
-    return 'Eita pessoa boa!'
-    },
-  }
-  return myObject
+    nome: myString,
+    feedback: () => { 'Eita pessoa boa'; },
+  };
+  return myObject;
 };
 
 module.exports = createStudent;

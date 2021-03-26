@@ -19,8 +19,8 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = (operator) => {
-  
+const calculator = () => {
+
 };
 
 module.exports = calculator;
