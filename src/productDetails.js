@@ -40,3 +40,7 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
+
+let input = productDetails('product1', 'product2')[0].details.productId
+
+console.log(productDetails('product1', 'product2')[0].details.productId.substring(productDetails('product1', 'product2')[0].details.productId.length - 3));
