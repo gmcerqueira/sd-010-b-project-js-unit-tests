@@ -2,8 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
-//const createMenu = require('../src/restaurant');
-
+const createMenu = require('../src/restaurant');
+ 
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -51,6 +51,76 @@ const assert = require('assert');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();    
+    // Objetivo: Escrever um teste que verifica se a função createMenu(), retorna um objeto que possui, 
+    // mas não é necessariamente é limitado à chave fetchMenu, a qual tem como valor uma função.
+    // Resultado: Criando dentro da função createMenu, dentro do objeto cardápio, um objeto fetchMenu com Key Value {food: 'coxinha'}
+    assert.deepStrictEqual(createMenu({food: 'coxinha'}).fetchMenu, {food: 'coxinha'});
+
+    // Objetivo: Escrever um teste que verifica se, dado que a função createMenu foi chamada com o
+    // objeto: { food: {}, drink: {} }, checa se 'objetoRetornado.fetchMenu()' retorna um objeto cujas
+    // chaves são somente food e drink.
+    const objetoRetornadoPorCreateMenu = createMenu({food: {}, drink: {}});
+    const objetoRetornadoPorFetch = objetoRetornadoPorCreateMenu.fetchMenu;
+    const keys = Object.keys(objetoRetornadoPorFetch);
+    assert.deepStrictEqual(keys,['food', 'drink']);
+
+    // Objetivo: No arquivo tests/restaurant.spec.js, escreva um teste que verifica se o menu passado pra função createMenu 
+    // é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'.
+    const retorno = {food: {}, drink: {}};
+    const menu = createMenu(retorno);
+    assert.deepStrictEqual(menu.fetchMenu, retorno);
+
+    // No arquivo tests/restaurant.spec.js, escreva um teste que verifica se 'objetoRetornado.consumption', 
+    // após a criação do menu, retorna um array vazio.
+    const objetoRetornado = createMenu({food: {}, drink: {}});
+    assert.deepStrictEqual(objetoRetornado.consumption, []);
+
+    // No arquivo tests/restaurant.spec.js, escreva um teste que verifica se ao chamar uma função associada à 
+    // chave order no objeto retornado, passando uma string como parâmetro, como objetoRetornado.order('coxinha'), 
+    // tal string é adicionada ao array retornado em objetoRetornado.consumption
+    const orderRetornado = createMenu({food: {}, drink: {}});
+    orderRetornado.order('coxinha');
+    assert.deepStrictEqual(orderRetornado.consumption, ['coxinha']);
+
+    // No arquivo tests/restaurant.spec.js, escreva um teste que verifica se as três orders seguintes, de 
+    // bebidas e comidas mescladas, somam três itens no array objetoRetornado.consumption conforme os itens pedidos.
+    let expected = createMenu({
+      food: {'coxinha': 3.90, 'sanduiche': 9.90},
+      drinks: {'agua': 3.90, 'cerveja': 6.90}
+    });
+    const orderRepeated = ['coxinha','agua','saduiche','cerveja']    
+    for (const key in orderRepeated) {
+      expected.order(orderRepeated[key]);      
+    }
+    assert.deepStrictEqual(expected.consumption, orderRepeated);
+
+    // No arquivo tests/restaurant.spec.js, escreva um teste que verifica se a função order aceita que pedidos 
+    // repetidos sejam acrescidos a consumption.
+    expected = {};
+    expected = createMenu({
+        food: {'coxinha': 3.90, 'sanduiche': 9.90},
+        drinks: {'agua': 3.90, 'coxinha': 6.90}
+      });
+    for (const key in orderRepeated) {
+      expected.order(orderRepeated[key]);      
+    }
+    assert.deepStrictEqual(expected.consumption, orderRepeated);
+
+    // No arquivo tests/restaurant.spec.js, escreva um teste que verifica que, ao chamar 
+    // objetoRetornado.pay(), retorna-se a soma dos preços de tudo que foi pedido, conforme registrado 
+    // em objetoRetornado.consumption.
+    const myOrder = createMenu({food: {}, drink: {}});
+    expected = {};
+    expected = createMenu({
+      food: {'coxinha': 3.90, 'sanduiche': 9.90},
+      drinks: {'agua': 3.90}
+    });
+
+    expected.order('sanduiche');
+    expected.order('agua');
+    expected.order('coxinha');
+    expected.order('coxinha');
+    assert.strictEqual(myOrder.pay(), '23.76');
+
   });
 });
