@@ -26,7 +26,7 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-  //retorna média
+  //retorna média e usei o math.round para que o valor esteja arredondado.
   return Math.round(sum / array.length);
 };
 
