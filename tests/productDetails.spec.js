@@ -1,4 +1,4 @@
-/* eslint-disable max-len*/
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
@@ -48,6 +48,6 @@ describe('#productDetails', () => {
 
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.strictEqual(productDetails()[0].details.productId.includes('123'), true);
-    assert.strictEqual(productDetails()[1].details.productId.includes('123'), true); 
+    assert.strictEqual(productDetails()[1].details.productId.includes('123'), true);
   });
 });
