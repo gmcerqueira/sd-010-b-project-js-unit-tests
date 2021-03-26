@@ -23,7 +23,7 @@ const calculator = {
   add: (numOne, numTwo) => Math.floor(numOne + numTwo),
   mult: (numOne, numTwo) => Math.floor(numOne * numTwo),
   div: (numOne, numTwo) => Math.floor(numOne / numTwo),
-  sub: (numOne, numTwo) => Math.floor(numOne - numTwo)
+  sub: (numOne, numTwo) => Math.floor(numOne - numTwo),
 };
 
 module.exports = calculator;

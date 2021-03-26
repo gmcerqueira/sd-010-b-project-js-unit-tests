@@ -21,9 +21,7 @@
 const circle = (radius) => {
   const PI = 3.14;
 
-  const precise = (number) => {
-    return parseFloat((number).toPrecision(4))
-  }
+  const precise = (number) => parseFloat((number).toPrecision(4));
 
   if (!radius) {
     return undefined;
