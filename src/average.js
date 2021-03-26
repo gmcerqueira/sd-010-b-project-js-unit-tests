@@ -18,7 +18,7 @@ const average = (array) => {
     return undefined;
   }
   for (let empytIndex = 0; empytIndex < array.length; empytIndex += 1) {
-    if (typeof(array[empytIndex]) !== 'number') {
+    if (typeof (array[empytIndex]) !== 'number') {
       return undefined;
     }
   }
