@@ -12,16 +12,19 @@
 */
 
 const average = (arr) => {
+  if (arr.length === 0) {
+    return undefined;
+  }
+  for(let index = 0; index < arr.length; index += 1){
+    if (typeof(arr[index]) !== 'number') {
+      return undefined;
+    };
+  };
   let result = 0;
   for (let index = 0; index < arr.length; index += 1) {
-    if (typeof(arr) === [] || typeof[arr[index]] === 'string' ) {
-      return undefined;
-    }
     result += arr[index];
-  }
-  return Math.ceil(result / arr.length);
+  };
+  return Math.round(result / arr.length);
 };
 
 module.exports = average;
-
-console.log(average([1, '2']));
