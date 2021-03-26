@@ -14,19 +14,16 @@
 
 const average = (array) => {
   // inicialmente vou criar um for para que qualquer string dentro do array retorne undefined
-  let sum = 0;                                              
+  let sum = 0;
   for (let index = 0; index < array.length; index += 1) {
-    const element = array[index];
-      if (typeof array[index] === 'string') {       
-        return undefined;
-      }
+    if (typeof array[index] === 'string') {
+      return undefined;
+    }
     sum += array[index];
   }
-  // teste para arrays vazias
   if (array.length === 0) {
     return undefined;
   }
-  //retorna média e usei o math.round para que o valor esteja arredondado.
   return Math.round(sum / array.length);
 };
 
