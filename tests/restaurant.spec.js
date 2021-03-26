@@ -2,7 +2,7 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable no-unused-vars */
 
-// const assert = require('assert');
+const assert = require('assert');
 // const createMenu = require('../src/restaurant');
 
 /*
@@ -51,8 +51,8 @@
 */
 
 // describe('#createMenu', () => {
-// it('tests the function has the correct behaviour', () => {
-//   assert.fail();
+//   it('tests the function has the correct behaviour', () => {
+//     assert.fail();
 // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
 // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
 // ```
