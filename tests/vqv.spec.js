@@ -31,7 +31,6 @@ describe('#vqv', () => {
       vqv('Tunico', 29),
       'Oi, meu nome é Tunico!\n'
         + 'Tenho 29 anos,\n'
-        // eslint-disable-next-line sonarjs/no-duplicate-string
         + 'trabalho na Trybe e mando muito em programação!\n'
         + '#VQV!',
     );
