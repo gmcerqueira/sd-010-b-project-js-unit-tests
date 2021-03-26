@@ -14,24 +14,17 @@
 
 const average = (arr) => {
   let cont = 0;
-  let cont1 = 0;
-  let media = 0;
   if (arr.length === 0) {
     return undefined;
   }
   for (let i = 0; i < arr.length; i += 1) {
-    if (typeof (arr[i]) === 'number') {
-      cont1 += 1;
+    cont += arr[i];
+    if (typeof (arr[i]) !== 'number') {
+      return undefined;
     }
   }
-  if (cont1 !== arr.length) {
-    return undefined;
-  }
-  for (let i = 0; i < arr.length; i += 1) {
-    cont += arr[i];
-  }
-  media = Math.round(cont / arr.length);
-  return media;
+  return Math.round(cont / arr.length);
 };
+console.log(average([3, 4, 5]));
 
 module.exports = average;
