@@ -41,6 +41,5 @@ describe('#circle', () => {
     /* assert.deepStrictEqual(3,{radius: 3, area: 28.26, circumference: 18.84}); */
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.ok(parseFloat((circle(3).area).toPrecision(4)) === 28.26 && parseFloat((circle(3).circumference).toPrecision(4)) === 18.84);
-
   });
 });
