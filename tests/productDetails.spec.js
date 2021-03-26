@@ -39,35 +39,20 @@ describe('#productDetails', () => {
       true
     );
 
-    // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(productDetails('iphone', 'celular').length, 2);
-
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof productDetails('iphone', 'celular'), 'object');
-
-    // Teste que os dois objetos são diferentes entre si.
     assert.notStrictEqual(
       productDetails('iphone', 'celular')[0],
       productDetails('iphone', 'celular')[1]
     );
-
-    // (Difícil) Teste que os dois productIds terminam com 123.
     const product1 = productDetails(
       'iphone',
       'celular'
     )[0].details.productId.slice(-3);
-
     const product2 = productDetails(
       'iphone',
       'celular'
     )[1].details.productId.slice(-3);
-
     assert.strictEqual(product1, product2, '123');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
