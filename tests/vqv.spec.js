@@ -19,32 +19,20 @@ const vqv = require('../src/vqv.js');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+const endSentence = 'trabalho na Trybe e mando muito em programação!\n'
+  + '#VQV!';
+
+const outputTunico = `Oi, meu nome é Tunico!\nTenho 29 anos,\n${endSentence}`;
+const outputAlberto = `Oi, meu nome é Alberto!\nTenho 30 anos,\n${endSentence}`;
+const outputHamaji = `Oi, meu nome é Hamaji!\nTenho 29 anos,\n${endSentence}`;
 
 describe('#vqv', () => {
   it('should return full trybe phrase with users name and age', () => {
     assert.strictEqual(typeof vqv, 'function');
     assert.strictEqual(typeof vqv('Tunico', 30), 'string');
-    assert.strictEqual(
-      vqv('Tunico', 29),
-      'Oi, meu nome é Tunico!\n' +
-        'Tenho 29 anos,\n' +
-        'trabalho na Trybe e mando muito em programação!\n' +
-        '#VQV!',
-    );
-    assert.strictEqual(
-      vqv('Alberto', 30),
-      'Oi, meu nome é Alberto!\n' +
-        'Tenho 30 anos,\n' +
-        'trabalho na Trybe e mando muito em programação!\n' +
-        '#VQV!',
-    );
-    assert.strictEqual(
-      vqv('Hamaji', 29),
-      'Oi, meu nome é Hamaji!\n' +
-        'Tenho 29 anos,\n' +
-        'trabalho na Trybe e mando muito em programação!\n' +
-        '#VQV!',
-    );
+    assert.strictEqual(vqv('Tunico', 29), outputTunico);
+    assert.strictEqual(vqv('Alberto', 30), outputAlberto);
+    assert.strictEqual(vqv('Hamaji', 29), outputHamaji);
     assert.strictEqual(vqv(), undefined);
   });
 });
