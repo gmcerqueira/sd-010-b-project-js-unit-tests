@@ -92,17 +92,16 @@ const createMenu = (obj) => {
   let result = 0;
 
   const menu = {
-    fetchMenu: () => {
-      return obj;
-    },
+    fetchMenu: () => obj,
+
     consumption: [],
     order: orderFromMenu,
     pay: function () {
       for (let item of this.consumption) {
-        if (obj['drink'][item]) {
-          result += obj['drink'][item];
-        } else if (obj['food'][item]) {
-          result += obj['food'][item];
+        if (obj.drink[item]) {
+          result += obj.drink[item];
+        } else if (obj.food[item]) {
+          result += obj.food[item];
         }
       }
       return result + (10 * result) / 100;
