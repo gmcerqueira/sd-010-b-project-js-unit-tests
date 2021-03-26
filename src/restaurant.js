@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema,
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
-  - ler o menu cadastrado; 
+  - ler o menu cadastrado;
   - fazer pedidos;
   - verificar o que foi pedido;
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. 
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema.
   Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
@@ -79,6 +79,36 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const obj = {
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
+};
+
+function orderFromMenu(value) {
+  return this.consumption.push(value);
+}
+
+const createMenu = (obj) => {
+  let result = 0;
+
+  const menu = {
+    fetchMenu: () => {
+      return obj;
+    },
+    consumption: [],
+    order: orderFromMenu,
+    pay: function () {
+      for (let item of this.consumption) {
+        if (obj['drink'][item]) {
+          result += obj['drink'][item];
+        } else if (obj['food'][item]) {
+          result += obj['food'][item];
+        }
+      }
+      return result + (10 * result) / 100;
+    },
+  };
+  return menu;
+};
 
 module.exports = createMenu;
