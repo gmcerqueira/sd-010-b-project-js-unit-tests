@@ -8,7 +8,7 @@ const createMenu = (obj) => {
     fetchMenu: () => obj,
     consumption: [],
     order: orderFromMenu,
-    pay () {
+    pay() {
       for (let item of this.consumption) {
         if (obj.drink[item]) {
           result += obj.drink[item];
