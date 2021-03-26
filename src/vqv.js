@@ -16,15 +16,13 @@
       #VQV!'
 */
 
-
 const vqv = (nome, idade) => {
   if (nome && idade) {
     const text = `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
-console.log(text)
-    return text;
+  return text;
   }
   return undefined;
 };
