@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/betrybe/sd-0x-block8-project-js-unit-test#readme",
   "devDependencies": {
+<<<<<<< HEAD
     "jest": "26.1.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.2.0",
@@ -32,5 +33,10 @@
   },
   "dependencies": {
     "eslint-config-trybe-fundamentals": "1.1.0"
+=======
+    "acorn": ">=5.7.4",
+    "jest": "^24.9.0",
+    "minimist": ">=1.2.2"
+>>>>>>> 34773663f4768d4ed7c361e1edd29a98d6d72ec4
   }
 }
