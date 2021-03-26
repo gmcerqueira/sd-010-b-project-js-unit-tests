@@ -19,6 +19,19 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
-
+const calculator = {
+  add: (numb1, numb2) => {
+    return Math.ceil(numb1 + numb2);
+  }, 
+  mult: (numb1, numb2) => {
+    return Math.ceil(numb1 * numb2);
+  }, 
+  div: (numb1, numb2) => {
+    return Math.ceil(numb1 / numb2);
+  },
+  sub: (numb1, numb2) => {
+    return Math.ceil(numb1 - numb2);
+  }
+};
+console.log((calculator.div(5, 2)))
 module.exports = calculator;
