@@ -34,7 +34,7 @@ describe('#circle', () => {
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
 
     assert.deepStrictEqual(circle(), undefined);
-    assert.deepStrictEqual(circle(), typeof('object');
+    assert.deepStrictEqual(circle(), typeof('object'));
     assert.deepStrictEqual(circle(1), { radius: 1, area: 3.14, circumference: 6.28 });
     assert.deepStrictEqual(circle(2), { radius: 2, area: 12.56, circumference: 12.56 });
     assert.deepStrictEqual(circle(3), { radius: 3, area: 28.26, circumference: 18.84 });
