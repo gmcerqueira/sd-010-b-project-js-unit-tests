@@ -29,7 +29,7 @@ const average = (array) => {
 
   aver = aver / array.length;
 
-  return aver;
+  return Math.round(aver);
 };
 
 module.exports = average;
