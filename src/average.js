@@ -16,7 +16,7 @@ const average = (myArray) => {
   
   let result = 0;
   for (let i = 0; i < myArray.length; i += 1) {
-    if (myArray[i] !== Number || myArray[i] == String) {
+    if (myArray[i] !== Number) {
       return undefined;
     }
     result = result + myArray[i];
