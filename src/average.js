@@ -15,7 +15,7 @@
 const average = (array) => {
   let result = 0;
   if (array.length === 0) {
-    result = "undefined";
+    result = 'undefined';
   }
   for (let index = 0; index < array.length; index++) {
     if (typeof array[index] === "string" || array[index] === " ") {
