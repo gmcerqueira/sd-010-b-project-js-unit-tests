@@ -19,7 +19,7 @@ const average = (arr) => {
     if (typeof number === 'string') return undefined;
     value += number;
   }
-  return value / arr.length;
+  return Math.round(value / arr.length);
 };
 
 console.log(average([1, 2]));
