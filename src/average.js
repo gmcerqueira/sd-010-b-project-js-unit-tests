@@ -13,5 +13,5 @@
 */
 
 const average = () => {};
-
+  console.log ('Xablau world!');
 module.exports = average;
