@@ -11,7 +11,7 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
+// iniciando
 const average = (param) => {
   let result = 0;
   if (param.length === 0) {
