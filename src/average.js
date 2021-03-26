@@ -21,14 +21,12 @@ const average = (arr) => {
   for (let index = 0; index < arr.length; index += 1) {
     if (typeof arr[index] !== 'number') {
       return;
-    } else {
-      sum += (Math.ceil(arr[index]));
     }
+    sum += (Math.ceil(arr[index]));
   }
-  result = sum / arr.length
+  result = sum / arr.length;
   result = Math.round(result);
   return result;
-
 };
 
 module.exports = average;
