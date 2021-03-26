@@ -28,7 +28,7 @@ const calculator = {
 
 module.exports = calculator
 
-console.log(calculator.add(1, 1))
+// console.log(calculator.add(1, 1))
 console.log(calculator.div(3, 2))
 console.log(calculator.sub(3, 2))
 console.log(calculator.mult(3, 2))

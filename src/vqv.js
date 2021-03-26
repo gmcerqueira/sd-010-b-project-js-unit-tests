@@ -27,5 +27,5 @@ const vqv = (nome, idade) => {
   #VQV!`
 }
 
-// module.exports = vqv
+module.exports = vqv
 console.log(vqv)
