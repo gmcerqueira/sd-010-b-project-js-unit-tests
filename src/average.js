@@ -18,10 +18,11 @@ const average = (arraylist) => {
     return undefined;
   }
   for (let index = 0; index <= arraylist.length; index += 1) {
-    if (typeof (arraylist[index]) !== 'Number') {
+    if (typeof (arraylist[index]) === 'Number') {
+      result += arraylist[index];
+    } else {
       return undefined;
     }
-    result += arraylist[index];
   }
   return Math.round(result / arraylist.length);
 };
