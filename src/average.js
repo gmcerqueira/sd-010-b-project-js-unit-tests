@@ -13,7 +13,7 @@
 */
 
 const average = (array) => {
-  let results;
+  let results = 0;
   if (array.length < 1) {
     return undefined;
   }
