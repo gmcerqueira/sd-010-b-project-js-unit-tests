@@ -12,20 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-
 const average = (param) => {
   let sum = 0;
   console.log(param);
   if (param.length === 0) {
     return undefined;
   }
-  for (i = 0; i < param.length; i += 1) {
+  for (let i = 0; i < param.length; i += 1) {
     if (typeof (param[i]) !== 'number') {
       return undefined;
     }
     sum += param[i];
   }
-  const middle = Math.round(sum/param.length);
+  const middle = Math.round(sum / param.length);
   return middle;
 };
 
