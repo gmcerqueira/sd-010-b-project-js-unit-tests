@@ -15,24 +15,15 @@
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
 
-const average = (array) => {
-  if (array.length === 0) {
-    return undefined;
-  }
-
-  let aver = 0;
-
-  for (let num of array) {
-    if (typeof (num) !== 'number') {
-      return undefined;
+const myCounter = () => {
+  let myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
+    myArray.push(counter);
+    for (let secondCounter = 2; secondCounter <= 3; secondCounter += 1) {
+      myArray.push(counter);
     }
-
-    aver += num;
   }
-
-  aver /= array.length;
-
-  return Math.round(aver);
+  return myArray;
 };
 
-module.exports = average;
+module.exports = myCounter;
