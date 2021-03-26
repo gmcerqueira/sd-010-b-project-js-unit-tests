@@ -11,24 +11,18 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
+// Emerson Saturnino ajudou
 const average = (array) => {
-  let result = 0;
-  if (array.length === 0) {
-    result = 'undefined';
-  }
-  for (let index = 0; index < array.length; index++) {
-    if (typeof array[index] === 'string' || array[index] === ' ') {
-      result = 'undefined';
-    } else {
-      result += array[index];
-    }
-  }
-
-  if (result === 'undefined') {
-    return result;
+  if (!array || array.length === 0) {
+    return undefined;
   } else {
-    return result / array.length;
+    const resultado = array.reduce(
+      (numInicial, total) => numInicial + total,
+      0
+    );
+    return typeof resultado === 'number'
+      ? Math.round(resultado / array.length)
+      : undefined;
   }
 };
 
