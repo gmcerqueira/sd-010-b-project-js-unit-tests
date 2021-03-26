@@ -17,8 +17,13 @@
 
 const myCounter = () => {
   var myArray = [];
-  for (let index = 0; index <= 3; index++)
+  for (let index = 0; index < 4; index++) {
+    myArray.push(index);
+    for (let index2 = 2; index2 <= 3; index2++) {
+      myArray.push(index2);
+    }
+  }
+  return myArray;
 };
 
-console.log(myCounter())
 module.exports = myCounter;
