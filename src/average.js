@@ -12,6 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-console.log(avarage)
+const average = (arraylist) => {
+  let result = 0
+  for (let index = 0; index <= arraylist.length; index += 1) {
+    if (isNaN(arraylist[index])) {
+      return undefined;
+    } else {
+      result += arraylist[index];
+    }
+  }
+  return Math.round(result / arraylist.length);
+};
+
 module.exports = average;
