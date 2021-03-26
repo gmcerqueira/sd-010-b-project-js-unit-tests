@@ -14,11 +14,11 @@
 
 const average = (arraylist) => {
   let result = 0;
-  if (arraylist.length === 0){
+  if (arraylist.length === 0) {
     return undefined;
   }
   for (let index = 0; index <= arraylist.length; index += 1) {
-    if (typeof arraylist[index] !== Number) {
+    if (typeof arraylist[index] !== 'Number') {
       return undefined;
     }
     result += arraylist[index];
