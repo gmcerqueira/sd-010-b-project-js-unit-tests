@@ -15,6 +15,17 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (string) => {
+  const obj = {};
+
+  obj.feedback = function () { // código retirado: https://ricardo-reis.medium.com/objetos-javascript-e347adc3a8ac
+    return 'Eita pessoa boa!';
+  };
+
+  obj.name = string;
+  return obj;
+};
+
+console.log(createStudent('Gabriel'));
 
 module.exports = createStudent;

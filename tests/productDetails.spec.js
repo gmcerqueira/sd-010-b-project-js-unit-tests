@@ -33,12 +33,19 @@ const productDetails = require('../src/productDetails');
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    const objects = productDetails('Alcool gel', 'Máscara');
+    assert.strictEqual(typeof objects, 'object');
+    const numbersItems = objects.length;
+    assert.strictEqual(numbersItems, 2);
+    let verify = false;
+    if (objects[0] !== objects[1]) { verify = true; }
+    assert.strictEqual(verify, true);
+    const valueProductId0 = objects[0].details.productId;
+    const valueProductId1 = objects[1].details.productId;
+    const result0 = valueProductId0.indexOf('123') > -1; // Código retirado no site: https://blog.education-ecosystem.com/javascript-como-verificar-se-uma-string-contem-outra-substring/#:~:text=O%20m%C3%A9todo%20indexOf%20()%20para,m%C3%A9todo%20retorna%20'%2D1'.
+    const result1 = valueProductId1.indexOf('123') > -1;
+    let verifyCondition = false;
+    if (result0 === true && result1 === true) { verifyCondition = true; }
+    assert.strictEqual(verifyCondition, true);
   });
 });
