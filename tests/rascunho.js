@@ -14,7 +14,7 @@ let array = [
   }
 ]
 
-console.log(array.length)
+console.log(typeof(array))
 
 const firstProductId = array[0].details.productId;
 const endFirstProduct = firstProductId[firstProductId.length -3] + firstProductId[firstProductId.length -2] + firstProductId[firstProductId.length -1]

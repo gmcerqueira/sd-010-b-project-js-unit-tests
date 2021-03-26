@@ -40,10 +40,8 @@ describe('#productDetails', () => {
     let array = productDetails('Alcool gel', 'Máscara');
     assert.strictEqual(array.length,2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.strictEqual(typeof (array[0].name),'object');
-    assert.strictEqual(typeof (array[0].details),'object');
-    assert.strictEqual(typeof (array[1].name),'object');
-    assert.strictEqual(typeof (array[1].details),'object');
+    assert.strictEqual(typeof (array[0]),'object');
+    assert.strictEqual(typeof (array[1]),'object');
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(array[0],array[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
