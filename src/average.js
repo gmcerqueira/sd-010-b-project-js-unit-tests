@@ -13,7 +13,9 @@
 */
 
 const average = (arr) => {
-  let media = arr.reduce()
+  for (let i = 0; i <= arr.length; i += 1) {
+    
+  }
 };
 
 module.exports = average;
