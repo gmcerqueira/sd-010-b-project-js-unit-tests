@@ -1,5 +1,5 @@
 // const assert = require('assert')
-// let array = [ 
+// let array = [
 //   {
 //     name: 'Alcool gel',
 //     details: {
@@ -13,9 +13,6 @@
 //     }
 //   }
 // ]
-
-
-
 // const firstProductId = array[0].details.productId.split('').reverse();
 // const endFirstProduct = firstProductId[2] + firstProductId[1] + firstProductId[0]
 // console.log(endFirstProduct)
