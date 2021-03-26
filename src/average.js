@@ -11,7 +11,6 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
 const average = (array) => {
   let med = 0;
   let count = 0;
@@ -30,5 +29,4 @@ const average = (array) => {
    return Math.round(med);
 };
 // console.log(average[4, 6]);
-  
- module.exports = average;
+module.exports = average;
