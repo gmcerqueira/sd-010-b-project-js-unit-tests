@@ -11,19 +11,37 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
 const average = (array) => {
-  const sum = 0;
-  for (i = 0; i < array.length; i += 1) {
-    if (array.length === 0 || typeof(array[i]) !== 'number') {
-      return undefined;
-    } else {
-      sum += array[i];
-    }
-    sum = Math.round(sum/array.length)
-    return sum;
+  let sum = 0;
+  if (array.length < 1){
+    return undefined;
   }
-};
+  for (i = 0; i < array.length; i += 1) {
+    if (typeof(array[i]) !== 'number') {
+      return undefined;
+    }
+  }
+  for (index = 0; index < array.length; index += 1) {
+    sum += array[index];
+  }
+  sum = Math.round(sum/array.length);
+  return sum;
+  // 
+  // for (i = 0; i <= array.length; i += 1) {
+  //   if (array.length === 0 || typeof(array[i]) !== 'number') {
+  //     return undefined;
+  //   } 
+  // }
+  // let sum = 0;
+  // for (index = 0; index <= array.length; index += 1) {
+
+  //   sum += array[index];
+  //   sum = Math.round(sum/array.length);
+  //   return sum;
+  // };
+    
+};    
+
 
 
 module.exports = average;
