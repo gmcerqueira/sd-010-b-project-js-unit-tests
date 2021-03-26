@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-const assert = require('assert')
-const productDetails = require('../src/productDetails')
+const assert = require('assert');
+const productDetails = require('../src/productDetails');
 
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -35,9 +35,9 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.strictEqual(Array.isArray(productDetails()), true)
+    assert.strictEqual(Array.isArray(productDetails()), true);
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2)
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.deepStrictEqual(
       typeof (
@@ -45,19 +45,19 @@ describe('#productDetails', () => {
         productDetails('Alcool gel', 'Máscara')[1]
       ),
       'object'
-    )
+    );
     // Teste que os dois objetos são diferentes entre si.
     assert.deepStrictEqual(
       productDetails('Alcool gel', 'Máscara')[0] !==
         productDetails('Alcool gel', 'Máscara'),
 
       true
-    )
+    );
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.deepStrictEqual(
       productDetails('Alcool gel', 'Máscara')[0].details.productId.slice(-3) &&
         productDetails('Alcool gel', 'Máscara')[1].details.productId.slice(-3),
       '123'
-    )
-  })
-})
+    );
+  });
+});

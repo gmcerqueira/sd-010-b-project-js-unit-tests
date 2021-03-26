@@ -19,11 +19,11 @@ const createStudent = (nome) => {
   const estudante = {
     name: nome,
     feedback: () => 'Eita pessoa boa!',
-  }
+  };
 
-  return estudante
-}
+  return estudante;
+};
 
-module.exports = createStudent
+module.exports = createStudent;
 
-console.log(createStudent)
+console.log(createStudent);
