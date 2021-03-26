@@ -12,8 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  initial commit
+const average = (myArray) => {
+  
+  let result = 0;
+  for (let i = 0; i < myArray.length; i += 1) {
+    if (myArray[i] !== Number || myArray[i] == String) {
+      return undefined;
+    }
+    result = result + myArray[i];
+    return (result / myArray.length);
+  }
 };
 
 module.exports = average;
