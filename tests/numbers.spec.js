@@ -21,12 +21,12 @@ describe('#numbers', () => {
     // assert.fail();
 
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
-    assert.strictEqual(([1, 2, 3, 4, 5]), true);
+    assert.Equal(([1, 2, 3, 4, 5]), true);
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
-    assert.strictEqual(([1, 2, '3', 4, 5]), false);
+    assert.Equal(([1, 2, '3', 4, 5]), false);
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
-    assert.strictEqual(([1, 'a', 3]), false);
+    assert.Equal(([1, 'a', 3]), false);
     // Escreva um teste em que a função recebe [' '] e retorna false
-    assert.strictEqual(([' ']), false);
+    assert.Equal(([' ']), false);
   });
 });
