@@ -1,7 +1,3 @@
-
-/* eslint-disable max-len*/
-/* eslint-disable no-unused-vars */
-
 const assert = require('assert');
 const productDetails = require('../src/productDetails');
 
@@ -37,9 +33,9 @@ describe('#productDetails', () => {
     // assert.fail();
     assert.strictEqual(Array.isArray(productDetails('iphone', 'celular')),true);
 
-    assert.strictEqual(productDetails('iphone', 'celular').length, 2);
+    assert.strictEqual(productDetails('iphone' , 'celular').length, 2);
 
-    assert.strictEqual(typeof productDetails('iphone', 'celular'), 'object');
+    assert.strictEqual(typeof productDetails('iphone' , 'celular'), 'object');
 
     assert.notStrictEqual(
       productDetails('iphone', 'celular')[0],
@@ -50,6 +46,6 @@ describe('#productDetails', () => {
 
     const product2 = productDetails('iphone','celular')[1].details.productId.slice(-3);
 
-    assert.strictEqual(product1, product2, '123');
+    assert.strictEqual(product1 , product2, '123');
   });
 });
