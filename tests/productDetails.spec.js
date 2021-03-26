@@ -38,15 +38,15 @@ describe('#productDetails', () => {
     const verificarObj = () => {
       let obj = '';
       for (let i = 0; i < productDetails.length; i += 1) {
-        if(typeof productDetails()[i] === 'object') {
-          obj = typeof productDetails()[i]
-        };
+        if (typeof productDetails()[i] === 'object') {
+          obj = typeof productDetails()[i];
+        }
       }
-      return obj
+      return obj;
     }
-    assert.deepStrictEqual(Array.isArray(productDetails()), true)
-    assert.deepStrictEqual(productDetails().length, 2)
-    assert.deepStrictEqual(verificarObj(), 'object')
+    assert.deepStrictEqual(Array.isArray(productDetails()), true);
+    assert.deepStrictEqual(productDetails().length, 2);
+    assert.deepStrictEqual(verificarObj(), 'object');
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
