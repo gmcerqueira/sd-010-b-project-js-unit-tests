@@ -28,3 +28,5 @@ const circle = (radius) => {
   };
 };
 module.exports = circle;
+
+// Exercício realizado em parceria com Wellington Passo

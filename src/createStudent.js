@@ -15,6 +15,14 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (name) => {
+  const obj = {
+    name: name,
+    feedback: () => 'Eita pessoa boa!' 
+  }
+  return obj;
+};
 
 module.exports = createStudent;
+
+// Exercício realizado em parceria com Wellington Passo

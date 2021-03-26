@@ -27,3 +27,5 @@ const vqv = (nome, idade) => {
 
 
 module.exports = vqv;
+
+// Exercício realizado em parceria com Wellington Passo
