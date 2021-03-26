@@ -12,8 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  
+//https://stackoverflow.com/questions/31951169/check-to-see-if-all-values-inside-an-array-is-a-number
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+// https://stackoverflow.com/questions/10359907/how-to-compute-the-sum-and-average-of-elements-in-an-array
+const average = arr => {
+  if (arr.length !== 0) {
+    if (arr.every((element) => typeof element === 'number')) {
+      return Math.round(arr.reduce((p, c) => p + c, 0) / arr.length);
+    }
+  }
 };
 
+console.log(average([1,26]));
 module.exports = average;
