@@ -20,7 +20,11 @@ const average = (array) => {
         return undefined;
       }
     sum += array[index];
-  }                                            
+  }            
+  if (array.length === 0) {
+    return undefined;
+  }
+                       
 };
 
 module.exports = average;
