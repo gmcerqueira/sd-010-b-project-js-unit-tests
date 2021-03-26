@@ -13,10 +13,12 @@
 */
 
 const average = (arr) => {
-  let total = 0;
+  // verifica se o array tem elementos.
   if (arr.length === 0) {
     return undefined;
   }
+  // caso tenha elemento faz o for com a verificando se o elemento é um number e soma os numeros
+  let total = 0;
   for (let i = 0; i < arr.length; i += 1) {
     total += arr[i];
     if (typeof arr[i] !== 'number') {
