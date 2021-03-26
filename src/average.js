@@ -13,11 +13,18 @@
 */
 
 const average = (numbers) => {
+  // Array Vazio
+  if (numbers.length === 0) {
+    console.log(`Tamanho do Array: ${numbers.lengt}`);
+    return undefined;
+  }
+
+  // Conteúdo diferente de numérico
   for (let i = 0; i < numbers.length; i += 1) {
-    if(typeof(numbers[i]) !== 'number') {
-      console.log(typeof(numbers[i]));
+    if (typeof (numbers[i]) !== 'number') {
+      console.log(typeof (numbers[i]));
       return undefined;
-    } 
+    }
   }
 
   let values = 0;
@@ -25,16 +32,16 @@ const average = (numbers) => {
   for (let i = 0; i < numbers.length; i += 1) {
     values += numbers[i];
   }
-
-  let result = Math.round(values / numbers.length);  
+  console.log(`Somatório: ${values}`);
+  const result = Math.round(values / numbers.length);
 
   console.log(`Average: ${result}`);
 
   return result;
 };
 
-let numbers = [3, 4, 5, '4'];
-let response = average(numbers);
+const numbers = [-11, -5, 2];
+const response = average(numbers);
 console.log(`Resposta: ${response}`);
 
 module.exports = average;
