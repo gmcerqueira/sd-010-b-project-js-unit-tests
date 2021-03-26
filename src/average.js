@@ -23,3 +23,5 @@ const average = (numArr) => {
 };
 
 module.exports = average;
+
+// exercicio realizado em conjunto com Paulo Xavier

@@ -19,3 +19,6 @@ const numbers = (myArray) => {
 };
 
 module.exports = numbers;
+
+
+// exercicio realizado em conjunto com Paulo Xavier

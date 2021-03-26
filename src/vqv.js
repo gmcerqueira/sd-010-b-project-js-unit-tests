@@ -25,3 +25,5 @@ const vqv = (nome, idade) => {
 };
 
 module.exports = vqv;
+
+// exercicio realizado em conjunto com Paulo Xavier
