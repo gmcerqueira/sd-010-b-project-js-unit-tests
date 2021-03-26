@@ -12,9 +12,24 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-const array = [1, 2]
+const average = (array) => {
+
+  let sizeArray = array.length;
+  let count = 0;
+  for(key in array){
+    if ((typeof array[key]) !== 'number' || sizeArray === 0 ){
+      return (undefined);
+
+      } else {
+     count += array[key];
+    }
+  }
+  let media = parseInt(count / array.length)
+    return media
 
 };
 
 module.exports = average;
+
+
+
