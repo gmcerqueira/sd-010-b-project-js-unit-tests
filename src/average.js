@@ -13,21 +13,21 @@
 */
 
 const average = (array) => {
-  let sum = 0
+  let sum = 0;
   if (array.length === 0) {
-    return undefined
+    return undefined;
   }
 
   for (let index in array) {
     if (typeof array[index] !== 'number') {
-      return undefined
+      return undefined;
     }
-    sum += array[index]
+    sum += array[index];
   }
-  let media = Math.round(sum / array.length)
+  let media = Math.round(sum / array.length);
 
-  return media
-}
+  return media;
+};
 
-module.exports = average
-console.log(average())
+module.exports = average;
+// console.log(average())
