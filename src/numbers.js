@@ -18,6 +18,4 @@ const numbers = (myArray) => {
   return true;
 };
 
-assert.strictEqual(numbers([1, 2, 3, 4, 5]), true)
-
 module.exports = numbers;
