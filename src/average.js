@@ -13,10 +13,13 @@
 */
 
 const average = (arr) => {
+  if (arr.length === 0) {
+    return;
+  }
   let sum = 0;
   let result;
   for (let index = 0; index < arr.length; index += 1) {
-    if (typeof arr[index] !== 'number' || arr.length === 0) {
+    if (typeof arr[index] !== 'number') {
       return;
     } else {
       sum += (Math.ceil(arr[index]));
