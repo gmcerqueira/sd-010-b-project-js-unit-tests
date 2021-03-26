@@ -23,7 +23,7 @@ const average = (param1) => {
     } else {
       total += (param1[i] / param1.length);
     }
-  } 
+  }
   return Math.round(total);
 };
 
