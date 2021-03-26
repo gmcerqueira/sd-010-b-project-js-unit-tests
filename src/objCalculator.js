@@ -20,7 +20,7 @@
 */
 
 const calculator = {
-  add: (a,b) => a + b,
+  add: (a, b) => a + b,
   mult: (a, b) => a * b,
 };
 
