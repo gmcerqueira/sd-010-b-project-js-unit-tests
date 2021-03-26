@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-/* eslint-disable max-lines-per-function */
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
@@ -135,5 +134,7 @@ describe('#createMenu', () => {
     testando.order('agua');
     testando.order('leite');
     assert.deepStrictEqual(testando.consumption, ['agua', 'leite']);
+    testando.order('agua');
+    assert.deepStrictEqual(testando.consumption, ['agua', 'leite', 'agua']);
   });
 });
