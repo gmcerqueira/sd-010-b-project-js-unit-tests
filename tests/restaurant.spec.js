@@ -57,29 +57,16 @@ describe('#createMenu', () => {
     assert.deepStrictEqual(typeof menu1.fetchMenu, 'function');
     assert.deepStrictEqual(menu1.fetchMenu(), objetoQualquer);
     assert.deepStrictEqual(menu1.consumption, []);
+    menu1.order('coxinha');
+    assert.deepStrictEqual(menu1.consumption, ['coxinha']);
+    menu1.order('agua');
+    menu1.order('sopa');
+    menu1.order('sashimi');
+    assert.deepStrictEqual(menu1.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
+    menu1.order('coxinha');
+    assert.deepStrictEqual(menu1.consumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha']);
 
-    const menu5 = createMenu(objetoQualquer);
-    menu5.order('coxinha');
-    assert.deepStrictEqual(menu5.consumption, ['coxinha']);
-
-    const menu6 = createMenu(objetoQualquer);
-    menu5.order('coxinha');
-    menu6.order('agua');
-    menu6.order('sopa');
-    menu6.order('sashimi');
-    assert.deepStrictEqual(menu5.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
-
-    const menu7 = createMenu(objetoQualquer);
-    menu7.order('coxinha');
-    menu7.order('agua');
-    menu7.order('coxinha');
-    assert.deepStrictEqual(menu5.consumption, ['coxinha', 'agua', 'coxinha']);
-
-    const menu8 = createMenu(objetoQualquer);
-    const somaDosPreçosDosPedidos = 0
-    menu8.order('coxinha');
-    menu8.order('agua');
-    menu8.order('coxinha');
-    assert.deepStrictEqual(menu5.pay, somaDosPreçosDosPedidos);
+    const somaDosPreçosDosPedidos = 0;
+    // assert.deepStrictEqual(menu5.pay, somaDosPreçosDosPedidos);
   });
 });
