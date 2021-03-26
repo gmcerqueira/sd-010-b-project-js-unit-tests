@@ -25,7 +25,7 @@ const average = (array) => {
   }
   // Cálculo da Média dos valores do Array
   let Average = 0;
-  for (let i in array) {
+  for (let i = 0; i < array.length; i += 1) {
     Average += array[i];
   }
   Average = Math.round(Average / array.length);
