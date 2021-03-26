@@ -11,6 +11,9 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+// test Math.round()
+console.log(Math.round(4.6));
+console.log(Math.round(1.3));
 
 const average = () => {};
 
