@@ -14,7 +14,7 @@
 
 const average = (array) => {
   let somaNumerosArray = 0;
-  let fail = undefined;
+  let fail;
   if (array.length === 0) {
     return fail;
   }
@@ -25,9 +25,8 @@ const average = (array) => {
     }
     somaNumerosArray += array[x];
   }
-  let result = somaNumerosArray/array.length;
+  let result = somaNumerosArray / array.length;
   return Math.round(result);
 };
-
 
 module.exports = average;
