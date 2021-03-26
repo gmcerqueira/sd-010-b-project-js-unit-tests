@@ -80,16 +80,29 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (parameter) => {
+  const consumption = [];
   return {
-    fetchMenu: () => {
-      const obj = {
-        food: {}, 
-        drink: {}
-      },
-      
-    }  
+    fetchMenu: () => 
+      consumption: consumption,
+      order: (value) => consumption.push(value),
+      pay: () => {
+        const { food, drink } = obj;
+        const foodKey = Object.keys(food);
+        const drinkKey = Object.keys(drink);
+        let valorConta = 0;
+  
+        for (let i = 0; i < consumption.length; i += 1) {
+          const order = consumption[i];
+          if (foodKey.includes(order)) {
+            valorConta += food[order];
+          }	
+          if (drinkKey.includes(order)) {
+            valorConta += drink[order];
+          }
+        }
+        return valorConta * 1.1;
+      }
+    }
   };
-};
-
     
 module.exports = createMenu;
