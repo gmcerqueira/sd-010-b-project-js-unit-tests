@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable max-lines-per-function */
 
 const assert = require('assert');
 const vqv = require('../src/vqv.js');
@@ -19,6 +20,8 @@ const vqv = require('../src/vqv.js');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+
+const workMessage = 'trabalho na Trybe e mando muito em programação!\n';
 
 describe('#vqv', () => {
   it('should return full trybe phrase with users name and age', () => {
