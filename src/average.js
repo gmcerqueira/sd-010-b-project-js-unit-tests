@@ -12,29 +12,26 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const { round } = require("lodash");
+const {
+  round
+} = require("lodash");
 
 const average = (array) => {
-
   let sizeArray = array.length;
-  if(sizeArray === 0){
+  if (sizeArray === 0) {
     return undefined
   }
   let count = 0;
-  for(key in array){
-    if ((typeof array[key]) !== 'number'){
+  for (key in array) {
+    if ((typeof array[key]) !== 'number') {
       return (undefined);
 
-      } else {
-     count += array[key];
+    } else {
+      count += array[key];
     }
   }
   let media = round(count / array.length)
-    return media
-
+  return media
 };
 
 module.exports = average;
-
-
-
