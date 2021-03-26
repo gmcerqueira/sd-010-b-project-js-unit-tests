@@ -28,11 +28,10 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     assert.strictEqual(circle(),undefined);
 
-    assert.strictEqual(() => {
-      let value = circle(3);
-      value['area'] = parseFloat(value['area']).toPrecision(4);
-      return value;
-    }, {radius: 3, area: 28.26, circumference: 18.84});
+    let value = circle(3);
+    value['area'] = parseFloat(value['area']).toPrecision(4) * 1;
+
+    assert.strictEqual(value, {radius: 3, area: 28.26, circumference: 18.84});
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
