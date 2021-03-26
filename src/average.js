@@ -18,11 +18,10 @@ const average = (array) => {
       return undefined;
     }
   }
-  let total = array.reduce((total, num) => total + num);
+  let contador = 0;
+  let total = array.reduce((contador, num) => contador + num);
   let division = array.length;
-  total = total / division;
-  total = Math.round(total);
-  return total;
+  return Math.round(total / division);
 };
 
 module.exports = average;
