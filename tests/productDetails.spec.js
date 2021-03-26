@@ -43,7 +43,7 @@ describe('#productDetails', () => {
         }
       }
       return obj;
-    }
+    };
     assert.deepStrictEqual(Array.isArray(productDetails()), true);
     assert.deepStrictEqual(productDetails().length, 2);
     assert.deepStrictEqual(verificarObj(), 'object');

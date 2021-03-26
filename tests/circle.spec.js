@@ -29,7 +29,7 @@ describe('#circle', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     const numObj = Object.keys(circle(1)).length;
     const circum = circle(2).circumference;
-    const area = circle(3).area;
+    const area = object.circle(3).area
     const fullObj = Object.values(circle(3));
     assert.deepStrictEqual(typeof circle(1), 'object');
     assert.deepStrictEqual(numObj, 3);
