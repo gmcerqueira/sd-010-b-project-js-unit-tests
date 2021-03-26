@@ -20,8 +20,8 @@ describe('#numbers', () => {
   it('should return an array and return if it has only numbers or not', () => {
     assert.deepStrictEqual(numbers([1, 2, 3, 4, 5]), true);
     assert.deepStrictEqual(numbers([1, 2, '3', 4, 5]), false);
-    assert.deepStrictEqual(numbers([1, 'a', 3], false));
-    assert.DeepStrictEqual(numbers[' '], false);
+    assert.deepstrictEqual(numbers([1, 'a', 3], false));
+    assert.deepStrictEqual(numbers([' '], false));
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
