@@ -11,10 +11,24 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-// test Math.round()
-console.log(Math.round(4.6));
-console.log(Math.round(1.3));
 
-const average = () => {};
+
+const average = (param) => {
+  let sum = 0;
+  console.log(param);
+  if (param.length === 0) {
+    return undefined;
+  }
+  for (i = 0; i < param.length; i += 1) {
+    if (typeof (param[i]) !== 'number') {
+      return undefined;
+    }
+    sum += param[i];
+  }
+  const middle = Math.round(sum/param.length);
+  return middle;
+};
+
+console.log(average([]));
 
 module.exports = average;
