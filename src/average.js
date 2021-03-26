@@ -12,8 +12,29 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // commit
+const average = (array) => {
+  let validador = 0;
+  let soma = 0;
+
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  for (let index = 0; index < array.length; index++) {
+    if (typeof(array[i]) === 'number') {
+      validador += 1;
+    }
+  }
+
+  if (validador !== array.length ) {
+    return undefined;
+  }
+
+  for (let index = 0; index < array.length; index++) {
+    soma += array[index];    
+  }
+  let media = Math.round(soma/array.length);
+  return media;
 };
 
 module.exports = average;
