@@ -11,14 +11,15 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
 const average = (array) => {
-  if(array.some( el => typeof(el) !== "number")){
+  let a ;
+  if(array.some( el => typeof(el) !== "number") || array.length === 0){
     return undefined
   } else {
     let somaTudo = (acc, current) => acc + current
-    let media = array.reduce(somaTudo) / 2
-    return Math.round(media)
+    let media = array.reduce(somaTudo) / array.length
+    let mediaRounded = Math.round(media)
+    return mediaRounded
   }
 };
 
