@@ -25,5 +25,6 @@ describe('#numbers', () => {
     assert.ok(numbers([1, 2, 3, 4, 5]), true);
     assert.toString(numbers([1, 2, '3', 4, 5], false));
     assert.toString(numbers([1, 'a', 3], false));
+    assert.toString(numbers([' '], false));
   });
 });
