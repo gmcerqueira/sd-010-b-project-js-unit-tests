@@ -13,20 +13,19 @@
 */
 
 const average = (array) => {
-   let tamArray = array.length;
-   if (tamArray === 0) {
-     return undefined;
-   }
-   let count = 0;
-   for (key in array){
-    if (typeof(array[key]) !== 'number'){
+  let tamArray = array.length;
+  if (tamArray === 0) {
+    return undefined;
+  }
+  let count = 0;
+  for (let key in array) {
+    if (typeof (array[key]) !== 'number') {
       return undefined;
-    } else {
-      count += array[key];
     }
-   }
-   let total = Math.round(count / tamArray);
-   return total;
+    count += array[key];
+  }
+  let total = Math.round(count / tamArray);
+  return total;
 };
 
 module.exports = average;
