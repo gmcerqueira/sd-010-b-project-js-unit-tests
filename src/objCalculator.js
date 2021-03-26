@@ -24,14 +24,14 @@ const calculator = {
     return Math.ceil(numb1 + numb2);
   }, 
   mult: (numb1, numb2) => {
-    return Math.ceil(numb1 * numb2);
+    return Math.floor(numb1 * numb2);
   }, 
   div: (numb1, numb2) => {
-    return Math.ceil(numb1 / numb2);
+    return Math.floor(numb1 / numb2);
   },
   sub: (numb1, numb2) => {
-    return Math.ceil(numb1 - numb2);
+    return Math.floor(numb1 - numb2);
   }
 };
-console.log((calculator.div(5, 2)))
+console.log((calculator.add(1, 3)))
 module.exports = calculator;
