@@ -14,18 +14,22 @@
 
 const average = (array) => {
   let media = 0;
+  let continua = true;
   for (let index of array){
     if (typeof index !== 'number'){
       media = undefined;
+      continua = false;
     }
-  }
-  let soma = 0;
-  for (let index of array) {
-    soma += index;
-  }
-  media = Math.round(soma / array.length);
+
+  } if (continua) {
+    let soma = 0;
+    for (let index of array) {
+      soma += index;
+    }
+    media = Math.round(soma / array.length);
+}
   return media
 };
 
-console.log(average[3, 4, 5]);
+console.log(average([3, 4, 5]));
 // module.exports = average;
