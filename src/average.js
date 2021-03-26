@@ -12,8 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () =>{
-  //oi
+const average = (valores) => {
+  let media = 0;
+
+  for (let index = 0; index < valores.length; index += 1) {
+    if (typeof (valores[index]) !== 'number') return undefined;
+    media += valores[index];
+  }
+  media /= (valores.length);
+  return media;
 };
 
 module.exports = average;
