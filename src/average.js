@@ -12,6 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+<<<<<<< HEAD
 const average = (num) => {
   let sum = 0;
 
@@ -31,6 +32,34 @@ const average = (num) => {
   return totalAverage;
 };
 console.log(average([2, 2]))
+=======
+const average = (num) => { 
+  let undefined = 'undefined'
+  
+  let soma = 0;  
+
+  for(i = 0; i < num.length; i += 1) {
+    if (typeof num[i] !== 'number'){
+      soma = undefined
+    }
+    soma += num[i]
+
+  }
+
+  let total = soma / num.length;
+  let end = Math.round(total)
+
+  console.log(soma)
+  console.log(total)
+  console.log(end)
+};
+
+// average()
+
+
+
+
+>>>>>>> b6d0c4db5c61b903de76a6166ad3e1d2f50ef7ac
 
 
 module.exports = average;
