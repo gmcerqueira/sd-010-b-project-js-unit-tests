@@ -18,10 +18,10 @@ const average = (array) => {
     return undefined;
   }
   for (let key = 0; key < array.length; key += 1) {
-    if (typeof array[key] !== 'number') {
-      return undefined;
-    } else {
+    if (typeof array[key] === 'number') {
       sum += array[key];
+    } else {
+      return undefined;
     }
   }
   let output = Math.round(sum / array.length);
