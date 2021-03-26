@@ -15,11 +15,20 @@
 const average = (array) => {
   let med = 0;
   let count = 0;
+  if (array.length === 0) {
+    return undefined;
+  }  
   for (let arr = 0; arr < array.length; arr += 1) {
+     if (typeof array[arr] !== 'number') {
+      return undefined;
+    
+    } 
     count += array[arr];
-    med = count / array.length
-  }
-  return Math.round(med);
+  //   med = count / array.length
+   };
+   med = count / array.length
+   return Math.round(med);
 };
+// console.log(average[4, 6]);
   
-module.exports = average;
+ module.exports = average;
