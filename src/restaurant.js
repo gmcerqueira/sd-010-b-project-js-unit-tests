@@ -2,15 +2,15 @@ const assert = require('assert');
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um cardapioe. Deve ser possível, através desse sistema, 
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema,
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
-  - ler o menu cadastrado; 
+  - ler o menu cadastrado;
   - fazer pedidos;
   - verificar o que foi pedido;
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. 
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema.
   Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
@@ -71,8 +71,8 @@ const assert = require('assert');
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `cardapio`
 //
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `cardapio` a string recebida no parâmetro `request`.
-// // Essa função deve ser associada à chave `order` de `cardapio`
+// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
+// // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/cardapio.spec.js`.
 
