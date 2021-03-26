@@ -17,10 +17,10 @@
 */
 
 const vqv = (nome, idade) => {
-  const template = `'Oi, meu nome é ${nome}!
+  const template = `Oi, meu nome é ${nome}!
   Tenho ${idade} anos,
   trabalho na Trybe e mando muito em programação!
-  #VQV!'`
+  #VQV!`
 
   return template;
 };
