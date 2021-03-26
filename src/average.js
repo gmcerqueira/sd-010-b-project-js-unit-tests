@@ -5,22 +5,23 @@
   Todos os resultados devem ser arredondados para valores inteiros. Ex: 4,6 vira 5; 1,3 vira 1.
 
   Parâmetros:
-    - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
-  Comportamento:
-    - average([2, 2]) // Retorno: 2;
+    - Um array. mplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
+  Comportamento:   - average([2, 2])Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
 
 const average = (arr) => {
   let result = 0;
-  if (typeof(arr) !== 'number' || typeof(arr) === []) {
-    throw new Error('Deve ser um array de números');
-  }
-  for (let index = 0; index <= arr.length; index += 1) {
+  for (let index = 0; index < arr.length; index += 1) {
+    if (typeof(arr) === [] || typeof[arr[index]] === 'string' ) {
+      return undefined;
+    }
     result += arr[index];
   }
-  return  Math.ceil(result / arr.length);
+  return Math.ceil(result / arr.length);
 };
 
 module.exports = average;
+
+console.log(average([1, '2']));
