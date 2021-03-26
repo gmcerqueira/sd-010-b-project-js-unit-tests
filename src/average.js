@@ -13,12 +13,15 @@
 */
 
 const average = (array) => {
-  for (let index = 0; index < array.length; index += 1) {
+  for (let index in array) {
     if (typeof (array[index]) !== 'number') {
       return undefined;
     }
   }
-  let total = array.reduce((contador, num) => contador + num);
+  let total = 0;
+  for (let count in array) {
+    total += array[count];
+  }
   let division = array.length;
   return Math.round(total / division);
 };
