@@ -16,8 +16,8 @@ const average = (array) => {
   let validador = 0;
   let soma = 0;
 
-  for (let index = 0; index < array.length; index+= 1) {
-    if (typeof (array[i]) === 'number') {
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof (array[index]) === 'number') {
       validador += 1;
     }
   }
@@ -28,7 +28,7 @@ const average = (array) => {
     return undefined;
   }
 
-  for (let index = 0; index < array.length; index+= 1) {
+  for (let index = 0; index < array.length; index += 1) {
     soma += array[index];
   }
   let media = Math.round(soma / array.length);
