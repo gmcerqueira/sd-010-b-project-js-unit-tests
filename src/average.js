@@ -12,6 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-  console.log ('Xablau world!');
+const average = (array) => {
+  let results;
+  if (array.length < 1) {
+    return undefined;
+  }
+  for (let index in array) {
+    if (typeof array[index] === 'string') {
+      return undefined;
+    }
+  }
+  for (let i in array) {
+    results += array[i];
+  }
+  results = Math.round(results / array.length);
+  return results;
+};
 module.exports = average;
