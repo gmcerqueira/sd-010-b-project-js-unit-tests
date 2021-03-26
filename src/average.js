@@ -18,14 +18,14 @@ const average = (array) => {
     result = 'undefined';
   }
   for (let index = 0; index < array.length; index++) {
-    if (typeof array[index] === "string" || array[index] === " ") {
-      result = "undefined";
+    if (typeof array[index] === 'string' || array[index] === ' ') {
+      result = 'undefined';
     } else {
       result += array[index];
     }
   }
 
-  if (result === "undefined") {
+  if (result === 'undefined') {
     return result;
   } else {
     return result / array.length;
@@ -33,5 +33,3 @@ const average = (array) => {
 };
 
 module.exports = average;
-
-console.log(average([1, 2, 3]));
