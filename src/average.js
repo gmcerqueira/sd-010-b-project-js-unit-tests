@@ -19,9 +19,9 @@ const average = (number) => {
   let aux = 0;
   for (let index = 0; index < number.length; index += 1) {
     if (number !== typeof(number)) {
-
+      return undefined;
     }
-    aux = aux + number[index];
+    aux += number[index];
   }
   return Math.round(aux/number.length);
 };
