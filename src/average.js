@@ -11,19 +11,25 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
 const average = (array) => {
-  let soma = 0;
-  for (let i in array) {
-    if (typeof (array[i]) !== 'number') {
-      throw new Error('Informe um número');
-    } else { soma += array[i]; }
+  if (array.length === 0) {
+    return undefined;
   }
-  let media = soma / array.length;
+  let soma = 0;
+  let media = 0;
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof (array[index]) !== 'number') {
+      return undefined; // throw Error('Informe um número');
+    }
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    soma += array[index];
+  }
+  media = soma / array.length;
   return Math.round(media);
 };
 module.exports = average;
 
-const num = [5, 7, 9, 11, 25, 13];
+const num = [];
 
 console.log(average(num));
