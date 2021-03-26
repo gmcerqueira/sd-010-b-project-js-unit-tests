@@ -19,7 +19,7 @@ const average = (array) => {
   }
 
   const sum = 0;
-  const output= sum / array.length
+  const output= sum / array.length;
 
   for (let key = 0; key < array.length; key += 1){
     sum += array.[key]
