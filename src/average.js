@@ -13,12 +13,12 @@
 */
 
 const average = (array) => {
-  let validador = true;
+  let validador = 0;
   let soma = 0;
 
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof (array[index]) !== 'number') {
-      validador = false;
+    if (typeof (array[index]) === 'number') {
+      validador += 1;
     }
   }
 
