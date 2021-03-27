@@ -24,5 +24,6 @@ const createStudent = (nome) => {
 };
 
 // console.log(createStudent('Misael'))
+// console.log(typeof createStudent())
 
 module.exports = createStudent;
