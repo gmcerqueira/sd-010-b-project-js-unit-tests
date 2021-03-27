@@ -40,8 +40,9 @@ describe('#productDetails', () => {
     const idOne = functionTest[1].details.productId;
     const lenZfin = functionTest[0].details.productId.length - 3;
     const lenOfin = functionTest[1].details.productId.length - 3;
-    assert.strictEqual(Array.isArray(functionTest), true);
     const finish = () => (idZero.includes('123', lenZfin) === idOne.includes('123', lenOfin));
+    // Break Row
+    assert.strictEqual(Array.isArray(functionTest), true);
     // Teste que o retorno da função é um array.
     // Para resolver essa questão, utilizei como fonte de pesquisa o seguinte site: https://www.tutorialrepublic.com/faq/how-to-check-if-object-is-an-array-in-javascript.php#:~:text=Answer%3A%20Use%20the%20Array.,an%20array%3B%20otherwise%20returns%20false%20. , onde aprendi a verificar se um objeto é uma função.
     assert.strictEqual(functionTest.length, 2);
