@@ -86,16 +86,6 @@ const cardapio = {};
 const orderFromMenu = (request) => cardapio.consumption.push(request);
 let summation = 0;
 
-const createMenu = (object) => {
-  cardapio.fetchMenu = object;
-  cardapio.consumption = [];
-  cardapio.order = (string) => {
-    orderFromMenu(string);
-  };
-  cardapio.pay = order;
-  return cardapio;
-};
-
 function findFood(food, pedido) {
   for (let index = 0; index < Object.keys(food).length; index += 1) {
     const chaveFood = Object.keys(food)[index];
@@ -131,6 +121,16 @@ const order = () => {
   summation = findFoodAndDrink(food, drink);
   summation += summation * (10 / 100);
   return summation.toPrecision(4);
+};
+
+const createMenu = (object) => {
+  cardapio.fetchMenu = object;
+  cardapio.consumption = [];
+  cardapio.order = (string) => {
+    orderFromMenu(string);
+  };
+  cardapio.pay = order;
+  return cardapio;
 };
 
 module.exports = createMenu;
