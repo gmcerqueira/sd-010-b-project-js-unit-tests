@@ -30,6 +30,21 @@ const productDetails = require('../src/productDetails');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+const verifyAllProducts = (products) => {
+  let cont = 0;
+  for (let product of products) {
+    if (typeof product === 'object') {
+      cont += 1;
+    }
+  }
+  let messege = null;
+  if (cont === 2) {
+    messege = true;
+  } else {
+    messege = false;
+  }
+  return messege;
+};
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
@@ -39,21 +54,6 @@ describe('#productDetails', () => {
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(productDetails('chocolate', 'bala').length, 2, 'O valor retornado pela função deveria ter dois itens dentro.');
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    const verifyAllProducts = (products) => {
-      let cont = 0;
-      for (let product of products) {
-        if (typeof product === 'object') {
-          cont += 1;
-        }
-      }
-      let messege = null;
-      if (cont === 2) {
-        messege = true;
-      } else {
-        messege = false;
-      }
-      return messege;
-    };
     const products = productDetails('chocolate', 'bala');
     assert.strictEqual(verifyAllProducts(products), true, 'Todos os valores retornados deveriam ser objetos!');
     // Teste que os dois objetos são diferentes entre si.
