@@ -13,9 +13,12 @@
 */
 
 const average = (array) => {
+  if(array.langht === undefined) {
+    return;
+  }
   let soma = 0;
   for (let cont = 0; cont < array.length; cont += 1) {
-    if (typeof array[cont] !== 'number') {
+    if (typeof array[cont] !== 'number' || array.length === undefined) {
       return;
     }
     soma += array[cont];
@@ -24,3 +27,6 @@ const average = (array) => {
 };
 
 module.exports = average;
+
+
+
