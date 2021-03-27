@@ -21,7 +21,7 @@ const vqv = (nome, idade) => {
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
-  const resultado = nome === '' || idade === '' ? undefined : mensagem;
+  const resultado = nome === undefined || idade === undefined ? undefined : mensagem;
   return resultado;
 };
 
