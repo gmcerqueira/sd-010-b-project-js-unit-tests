@@ -13,15 +13,13 @@
 */
 
 const verificaArray = (array) => {
-  if (array.length === 0) {
-    return undefined;
-  }
   for (let i = 0; i < array.length; i += 1) {
     if (typeof array[i] !== 'number') {
       return undefined;
     }
   }
-  return true;
+  const avaliacao = array.length === 0 ? undefined : true;
+  return avaliacao;
 };
 
 const average = (array) => {
