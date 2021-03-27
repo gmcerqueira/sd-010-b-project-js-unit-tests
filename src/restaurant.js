@@ -108,7 +108,7 @@ const resumeBill = (consumptions, menu) => {
   for (let consumption = 0; consumption < consumptions.length; consumption += 1) {
     UpdateItemBill(consumptions[consumption], menu);
   }
-  return resumeBillValue;
+  return Math.round(resumeBillValue * 1.1);
 };
 
 const createMenu = (objetoPassadoPorParametro) => {
