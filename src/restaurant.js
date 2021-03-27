@@ -84,7 +84,20 @@ const createMenu = (parameter) => {
     fetchMenu: () => parameter,
     consumption: [],
     order: (request) => { restaurant.consumption.push(request); },
-    // pay: pay(),
+    pay: () => {
+      const menuFood = Object.entries(restaurant.fetchMenu().food);
+      const menuDrink = Object.entries(restaurant.fetchMenu().drink);
+      const wholeMenu = menuFood.concat(menuDrink);
+      let sum = 0;
+      for (let item of restaurant.consumption) {
+        for (let entry of wholeMenu) {
+          if (item === entry[0]) {
+            sum += entry[1];
+          }
+        }
+      }
+      return sum * 1.1;
+    },
   };
   return restaurant;
 };
@@ -98,5 +111,6 @@ const createMenu = (parameter) => {
 // objetoRetornado.order('agua');
 // objetoRetornado.order('coxinha');
 // console.log(objetoRetornado.consumption);
+// console.log(objetoRetornado.pay());
 
 module.exports = createMenu;
