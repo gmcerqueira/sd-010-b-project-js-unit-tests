@@ -15,7 +15,7 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
-//source = Gustavo Cerqueira;
+// source = Gustavo Cerqueira;
 const vqv = (nome, idade) => {
   if (!nome || !idade) {
     return undefined;
