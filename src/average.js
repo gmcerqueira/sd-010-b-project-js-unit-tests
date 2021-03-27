@@ -19,11 +19,10 @@ const average = (array) => {
   }
   for (let arr = 0; arr < array.length; arr += 1) {
     if (typeof array[arr] !== 'number') {
-        return undefined;
+      return undefined;
     }
 
     count += array[arr];
-
   }
   med = count / array.length;
   return Math.round(med);
