@@ -14,12 +14,19 @@
 
 const average = (arr) => {
   let arrSum = 0;
-  for (i in arr) {
-    arrSum += arr[i];
+  for (let i in arr) {
+    if (typeof arr[i] ==! 'number') {
+      return undefined
+    } else {
+      arrSum += arr[i];
+    }
   }
   const average = arrSum / arr.length;
   let roundedAverage = Math.round(average);
   return roundedAverage;
 };
+
+
+console.log(average([1, '2']));
 
 module.exports = average;
