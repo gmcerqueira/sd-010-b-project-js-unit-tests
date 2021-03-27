@@ -83,21 +83,32 @@ const quatroPatas = {};
 
 const addOrder = (order) => quatroPatas.consumption.push(order);
 
-const resumeBill = (consumptions, menu) => {
-  let theBill = 0;
-  for (let consumption in consumptions) {
-    const typeFoods = Object.keys(menu);
-    for (let listFood in typeFoods) {
-      const foods = Object.keys(menu[typeFoods[listFood]]);
-      const valuesFods = Object.values(menu[typeFoods[listFood]]);
-      for (let food in foods) {
-        if (consumptions[consumption] === foods[food]) {
-          theBill += valuesFods[food];
-        }
-      }
+let resumeBillValue;
+
+const lintFdp = (foods, values, item) => {
+  for (let food in foods) {
+    if (item === foods[food]) {
+      resumeBillValue += values[food];
+      break;
     }
   }
-  return theBill;
+};
+
+const UpdateItemBill = (item, menu) => {
+  const typeFoods = Object.keys(menu);
+  for (let listFood = 0; listFood < typeFoods.length; listFood += 1) {
+    const keyfoods = Object.keys(menu[typeFoods[listFood]]);
+    const valuesFoods = Object.values(menu[typeFoods[listFood]]);
+    lintFdp(keyfoods, valuesFoods, item);
+  }
+};
+
+const resumeBill = (consumptions, menu) => {
+  resumeBillValue = 0;
+  for (let consumption = 0; consumption < consumptions.length; consumption += 1) {
+    UpdateItemBill(consumptions[consumption], menu);
+  }
+  return resumeBillValue;
 };
 
 const createMenu = (objetoPassadoPorParametro) => {
