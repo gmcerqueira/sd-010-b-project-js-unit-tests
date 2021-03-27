@@ -11,14 +11,17 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+const average = () => {};
 const average = (array) => {
-  let count = 0;
-  let result = 0;
-  if (array.length === 0) return undefined;
-  if (array.some((elem) => typeof elem !== 'number')) return undefined;
-  // eslint-disable-next-line no-return-assign
-  array.forEach((elem) => (result += elem));
-  return Math.round(result / array.length);
+  if (array.length === 0 || array === [' ']) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof (array[index]) !== 'number') {
+      return undefined;
+    }
+  }
+  return Math.round(array.reduce((a, b) => (a + b)) / array.length);
 };
 
 module.exports = average;
