@@ -15,10 +15,10 @@
 const average = (array) => {
   let sum;
   if (array.length !== 0) {
-    for (const key in array) {
-      sum += (typeof array[key] === 'number') ? Math.random(array[key]): undefined;
+    for (let key; key < array.length; key += 1) {
+      sum += (typeof array[key] === 'number') ? Math.random(array[key]) : undefined;
     }
-    sum /= array.length;  
+    sum /= array.length;
   } else {
     sum = undefined;
   }
