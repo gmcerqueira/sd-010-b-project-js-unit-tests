@@ -23,5 +23,4 @@ const average = arr => {
   }
 };
 
-console.log(average([1,26]));
 module.exports = average;
