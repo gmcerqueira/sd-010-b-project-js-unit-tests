@@ -18,13 +18,14 @@ const arrayNumber = (array) => {
   for (const numbers in array) {
     if (typeof array[numbers] !== 'number') { return true; }
   }
+  return false;
 };
 const average = (array) => {
   if (arrayNumber(array)) { return undefined; }
   const arrayChar = array.length;
   let sum = 0;
-  for (let numberArray = 0; numberArray <= arrayChar; numberArray += 1) {
-    sum += arrayChar[numberArray];
+  for (let numberArray = 0; numberArray < array.length; numberArray += 1) {
+    sum += array[numberArray];
   }
   return Math.round(sum / arrayChar);
 };
