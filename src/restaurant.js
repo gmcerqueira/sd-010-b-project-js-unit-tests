@@ -117,8 +117,9 @@ function findFoodAndDrink(food, drink) {
 
 const order = () => {
   const desestruturing = cardapio.fetchMenu.drinks;
+  const desestruturing2 = cardapio.fetchMenu.food;;
   const drink = desestruturing;
-  const food = cardapio.fetchMenu.food;
+  const food = desestruturing2;
   summation = findFoodAndDrink(food, drink);
   summation += summation * (10 / 100);
   return summation.toPrecision(4);
