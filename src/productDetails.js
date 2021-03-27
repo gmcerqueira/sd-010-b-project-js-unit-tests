@@ -24,8 +24,7 @@
   ]
 */
 
-const productDetails = (firstProduct, secondProduct) => [
-  {
+const productDetails = (firstProduct, secondProduct) => [{
     name: firstProduct,
     details: {
       productId: `${firstProduct}123`,
@@ -38,5 +37,30 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+const outPut1 = (productDetails('Alcool gel', 'Máscara')[0].details.productId);
+const outPut2 = (productDetails('Alcool gel', 'Máscara')[1].details.productId);
+const teste1 = (outPut1) => {
+  let newString1 = '';
+  for (let index = (outPut1.length - 3); index <= outPut1.length - 1; index += 1) {
+    newString1 += outPut1[index];
+  }
+  if (newString1 === '123') {
+    return true;
+  }
+  return false;
+};
+
+const teste2 = (outPut2) => {
+  let newStrng2 = '';
+  for (let index = (outPut2.length - 3); index <= outPut2.length - 1; index += 1) {
+    newStrng2 += outPut2[index];
+  }
+  if (newStrng2 === '123') {
+    return true;
+  }
+  return false;
+}
+
+console.log(teste1(outPut1), teste2(outPut2))
 
 module.exports = productDetails;
