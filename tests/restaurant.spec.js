@@ -86,9 +86,8 @@ describe('#createMenu', () => {
     const orderRepeated = ['coxinha', 'agua', 'saduiche'];
     for (const key in orderRepeated) {
       if (Object.hasOwnProperty.call(orderRepeated, key)) {
-          expected.order(orderRepeated[key]);
-          
-        }      
+        expected.order(orderRepeated[key]);
+      }
     }
     assert.deepStrictEqual(expected.consumption, orderRepeated);
 
