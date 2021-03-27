@@ -88,10 +88,8 @@ let summation = 0;
 
 function findFood(food, pedido) {
   for (const key in Object.keys(food)) {
-    if (Object.hasOwnProperty.call(Object.keys(food), key)) {
-      if (pedido === Object.keys(food)[key]) {
-        summation += food[pedido];
-      }
+    if (pedido === Object.keys(food)[key]) {
+      summation += food[pedido];
     }
   }
   return summation;
