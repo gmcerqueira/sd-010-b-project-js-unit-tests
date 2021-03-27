@@ -133,7 +133,10 @@ describe('#createMenu', () => {
     objetoRetornado4.fetchMenu();
     objetoRetornado4.order('coxinha');
     objetoRetornado4.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado4.consumption, ['coxinha', 'coxinha']);
+    assert.deepStrictEqual(objetoRetornado4.consumption, [
+      'coxinha',
+      'coxinha',
+    ]);
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
     // objetoRetornado.order('coxinha');
@@ -148,4 +151,14 @@ describe('#createMenu', () => {
   //   drink: { agua: 3.9, cerveja: 6.9 },
   // });
   // const objetoRetornado2 = createMenu(objetoRetornado.fetchMenu());
+  const objetoRetornado5 = createMenu({
+    food: { coxinha: 3.9, sopa: 9.9 },
+    drink: { agua: 3.9, cerveja: 6.9 },
+  });
+  objetoRetornado5.fetchMenu();
+  objetoRetornado5.order('coxinha');
+  objetoRetornado5.order('agua');
+  objetoRetornado5.order('coxinha');
+  objetoRetornado5.orderFromMenu('request');
+  assert.deepStrictEqual(objetoRetornado5.pay(), 12.87);
 });

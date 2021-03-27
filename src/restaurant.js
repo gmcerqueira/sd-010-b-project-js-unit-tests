@@ -107,16 +107,4 @@ const createMenu = (e) => {
   };
   return menu;
 };
-
-const test = createMenu({
-  food: { coxinha: 3.9, sopa: 9.9 },
-  drink: { agua: 3.9, cerveja: 6.9 },
-});
-// test.fetchMenu();
-// test.order('coxinha');
-// test.order('agua');
-// test.order('sopa');
-// test.order('cerveja');
-// test.orderFromMenu('request');
-// console.log(test.pay());
 module.exports = createMenu;
