@@ -14,11 +14,12 @@ const myCounter = () => {
   var myArray = [];
   for (var counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
+    for (var counter = 3; counter <= 1; counter += 1) {
       myArray.push(counter);
     }
   }
   return myArray;
 };
 
-module.exports = myCounter;
+console.log(myCounter([0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3]));
+// module.exports = myCounter;
