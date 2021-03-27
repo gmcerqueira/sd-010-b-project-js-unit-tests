@@ -115,4 +115,28 @@ describe('#createMenu', () => {
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
+  const objetoRetornado = createMenu('sss');
+  const objetoRetornado2 = createMenu(objetoRetornado);
+  const objetoRetornado3 = createMenu('sss');
+  assert.deepStrictEqual(typeof objetoRetornado, 'object');
+  assert.deepStrictEqual(objetoRetornado.fetchMenu(), {
+    food: {},
+    drink: {},
+  });
+  assert.deepStrictEqual(
+    objetoRetornado2.fetchMenu().food,
+    objetoRetornado.fetchMenu().food,
+  );
+  assert.deepStrictEqual(objetoRetornado.consumption, []);
+  assert.deepStrictEqual(
+    objetoRetornado.order('coxinha'),
+    (objetoRetornado.consumption = ['coxinha']),
+  );
+  const testando = createMenu('testandossss');
+  testando.fetchMenu();
+  testando.order('agua');
+  testando.order('leite');
+  assert.deepStrictEqual(testando.consumption, ['agua', 'leite']);
+  testando.order('agua');
+  assert.deepStrictEqual(testando.consumption, ['agua', 'leite', 'agua']);
 });
