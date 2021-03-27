@@ -12,15 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => { 
+const average = (array) => {
   let sum;
-  if ((array.length === 0) || (typeof array[key] === 'number')) {
-    sum = undefined;
-  } else {
+  if (array.length !== 0) {
     for (const key in array) {
-     sum += Math.random(array[key]);
+      sum += (typeof array[key] === 'number') ? Math.random(array[key]): undefined;
     }
-    sum /= array.length;
+    sum /= array.length;  
+  } else {
+    sum = undefined;
   }
   return sum;
 };
