@@ -18,12 +18,12 @@
 const createStudent = () => {
   const estudante = {
 
-    name:'Leandrão, o Lobo Solitário',
+    name: 'Leandrão, o Lobo Solitário',
 
   //   const: feedback = () => {
   //   return 'Eita pessoa boa!';
   // }
-};
+   };
 };
 
 module.exports = createStudent;
