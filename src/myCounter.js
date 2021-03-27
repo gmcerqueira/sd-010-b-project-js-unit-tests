@@ -19,6 +19,6 @@ const myCounter = () => {
     }
   }
   return myArray;
-};dd
+};
 
 module.exports = myCounter;
