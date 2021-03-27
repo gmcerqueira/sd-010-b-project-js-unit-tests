@@ -13,24 +13,18 @@
 */
 
 const average = (numeros) => {
-
-     if(numeros.length === 0){
-       return undefined;
-     }
-     else{
-       for(let i = 0; i < numeros.length; i += 1){
-         if(typeof numeros[i] !== 'number'){
-           return undefined;
-           break;
-         }
-       }
-     }
-
-  // array.reduce(armazenador e valor serão somados começando de 0)
-  //apelei e usei reduce
+  if (numeros.length === 0) {
+    return undefined;
+  } else {
+    for (let i = 0; i < numeros.length; i += 1) {
+      if (typeof numeros[i] !== 'number') {
+        return undefined;
+        break;
+      }
+    }
+  }
   let total = numeros.reduce((total, numero) => total + numero, 0);
-
-  return Math.round(total/numeros.length);
+  return Math.round(total / numeros.length);
 };
 
 module.exports = average;
