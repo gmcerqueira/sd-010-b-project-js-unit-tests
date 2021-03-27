@@ -89,7 +89,7 @@ let summation = 0;
 const order = () => {
   const food = cardapio.fetchMenu.food;
   const drink = cardapio.fetchMenu.drinks;
-  summation = findFoodAndDrink(food, drink, summation);
+  summation = findFoodAndDrink(food, drink);
   summation += summation * (10 / 100);
   return summation.toPrecision(4);
 };
@@ -103,15 +103,6 @@ const createMenu = (object) => {
   cardapio.pay = order;
   return cardapio;
 };
-
-function findFoodAndDrink(food, drink) {
-  for (let index = 0; index < cardapio.consumption.length; index += 1) {
-    const pedido = cardapio.consumption[index];
-    findFood(food, pedido);
-    findDrink(drink, pedido);
-  }
-  return summation;
-}
 
 function findFood(food, pedido) {
   for (let index = 0; index < Object.keys(food).length; index += 1) {
@@ -129,6 +120,15 @@ function findDrink(drink, pedido) {
     if (pedido === chaveDrink) {
       summation += drink[pedido];
     }
+  }
+  return summation;
+}
+
+function findFoodAndDrink(food, drink) {
+  for (let index = 0; index < cardapio.consumption.length; index += 1) {
+    const pedido = cardapio.consumption[index];
+    findFood(food, pedido);
+    findDrink(drink, pedido);
   }
   return summation;
 }
