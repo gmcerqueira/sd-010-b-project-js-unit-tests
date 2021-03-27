@@ -15,6 +15,9 @@
 const average = (array) => {
   let resultado = 0;
   let soma = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
       return undefined;
@@ -25,6 +28,6 @@ const average = (array) => {
   return resultado;
 };
 
-console.log(average(['5', 10, 15]));
+console.log(average([]));
 
 module.exports = average;
