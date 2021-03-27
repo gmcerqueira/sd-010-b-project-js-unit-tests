@@ -15,9 +15,9 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 // objeto
-const createStudent = (name) => {
+const createStudent = (n) => {
   let objeto = {
-    n: name,
+    name: n,
     feedback: () => {
       let message = 'Eita pessoa boa!';
       return message;
