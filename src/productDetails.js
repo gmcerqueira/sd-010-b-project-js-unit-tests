@@ -8,7 +8,7 @@ const productDetails = (firstProduct, secondProduct) => [
   {
     name: secondProduct,
     details: {
-      productId: `${ secondProduct }123`,
+      productId: `${secondProduct}123`,
     },
   },
 ];

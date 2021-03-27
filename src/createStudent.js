@@ -1,4 +1,4 @@
-const createStudent = () => {;
+const createStudent = () => {
   const student = {
     name: studantName,
     feedback: () => 'Eita pessoa boa!',
