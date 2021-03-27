@@ -43,6 +43,8 @@ describe('#productDetails', () => {
     assert.deepStrictEqual(productDetails.length, 2);
     assert.deepStrictEqual(typeof Object.keys(productDetails), 'object');
     assert.notDeepStrictEqual(productDetails()[0].name = 'A', productDetails()[1].name = 'B');
-    assert.strictEqual(productDetails().details.productId.includes('123'), true);
+    const search = productDetails('Alcool', 'Máscara');
+    assert.deepStrictEqual((search[0].details.productId).includes('123'), true);
+    assert.deepStrictEqual((search[1].details.productId).includes('123'), true);
   });
 });
