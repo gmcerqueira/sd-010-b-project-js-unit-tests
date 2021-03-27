@@ -14,7 +14,7 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-
+// objeto
 const createStudent = (name) => {
   let objeto = {
     n: name,
