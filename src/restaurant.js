@@ -83,14 +83,14 @@ const assert = require('assert');
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const cardapio = {};
-const orderFromMenu = request => (cardapio.consumption.push(request));
+const orderFromMenu = (request) => cardapio.consumption.push(request);
 let summation = 0;
 
 const order = () => {
   const food = cardapio.fetchMenu.food;
   const drink = cardapio.fetchMenu.drinks;
-  summation = (findFoodAndDrink(food, drink, summation));
-  summation += (summation * (10 / 100));
+  summation = findFoodAndDrink(food, drink, summation);
+  summation += summation * (10 / 100);
   return summation.toPrecision(4);
 };
 
@@ -133,5 +133,4 @@ function findDrink(drink, pedido) {
   return summation;
 }
 
- 
 module.exports = createMenu;
