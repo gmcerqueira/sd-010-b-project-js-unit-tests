@@ -12,15 +12,15 @@
 */
 
 const average = (array) => {
-  if (array.length === 0 || array === [' ']) {
-    return undefined;
+  let media;
+  let saida;
+  if (array.some((el) => typeof (el) !== 'number') || array.length === 0) { // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+    media = undefined;
+  } else {
+    let somatorio = (soma, elemento) => soma + elemento;
+    let total = array.reduce(somatorio); // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+    media = total / array.length;
+    saida = Math.round(media);
   }
-  for (let index = 0; index < array.length; index += 1) {
-    if (typeof (array[index]) !== 'number') {
-      return undefined;
-    }
-  }
-  return Math.round(array.reduce((a, b) => (a + b)) / array.length);
+  return saida;
 };
-
-module.exports = average;
