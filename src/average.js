@@ -17,11 +17,12 @@ const average = (numArr) => {
   if (numArr.length === 0) return undefined;
   for (let num of numArr) {
     if (typeof num !== 'number') return undefined;
-    sum += num
+    sum += num;
   }
-  return Math.round(sum / numArr.length)
+  return Math.round(sum / numArr.length);
 };
 
 module.exports = average;
+
 
 // exercicio realizado em conjunto com Paulo Xavier
