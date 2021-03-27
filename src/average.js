@@ -18,8 +18,8 @@ const average = (array) => {
   }
   const resultadoArray = array.reduce((num, result) => num + result);
   return typeof resultadoArray === 'number'
-  ? Math.round(resultadoArray / array.length)
-  :undefined;
+    ? Math.round(resultadoArray / array.length)
+    : undefined;
 };
 // console.log(average([1, 2, 3, 4, 5]))
 // reduce https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
