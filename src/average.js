@@ -15,16 +15,16 @@
 const average = (numeros) => {
   if (numeros.length === 0) {
     return undefined;
-  } else {
-    for (let i = 0; i < numeros.length; i += 1) {
-      if (typeof numeros[i] !== 'number') {
-        return undefined;
-        break;
-      }
-    }
   }
-  let total = numeros.reduce((total, numero) => total + numero, 0);
-  return Math.round(total / numeros.length);
+  let count = 0;
+  for (let i = 0; i < numeros.length; i += 1) {
+    if (typeof numeros[i] !== 'number') {
+      return undefined;
+    }
+    count += numeros[i];
+  }
+  let media = (count / numeros.length);
+  return Math.round(media);
 };
 
 module.exports = average;
