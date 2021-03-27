@@ -78,26 +78,45 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
+const resturant = {};
 const createMenu = (e) => {
-  e = {
+  let menu = {
     fetchMenu: () => {
-      e.consumption = [];
-      return { food: {}, drink: {} };
+      menu.consumption = [];
+      if (e === undefined) return { food: {}, drink: {} };
+      return e;
     },
-    order: (value) => {
-      e.consumption.push(value);
-      return e.consumption;
+    order: (item) => {
+      menu.consumption.push(item);
+      return menu.consumption;
+    },
+    orderFromMenu: (request) => {
+      if (request === 'request') {
+        resturant.consumption = menu.consumption;
+      }
+    },
+    pay: () => {
+      let total = 0;
+      resturant.consumption.forEach((index) => {
+        Object.values(e).forEach((index2) => {
+          if (index2[`${index}`]) total += index2[`${index}`];
+        });
+      });
+      return total + total * 0.1;
     },
   };
-  return e;
+  return menu;
 };
 
-const test = createMenu('222');
-test.fetchMenu();
-test.order('coxinha');
-test.order('agua');
-console.log(test.consumption);
-// const testee = createMenu('sss');
-// console.log(testee);
+const test = createMenu({
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
+});
+// test.fetchMenu();
+// test.order('coxinha');
+// test.order('agua');
+// test.order('sopa');
+// test.order('cerveja');
+// test.orderFromMenu('request');
+// console.log(test.pay());
 module.exports = createMenu;
