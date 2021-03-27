@@ -20,9 +20,9 @@ const createStudent = () => {
 
     name:'Leandrão, o Lobo Solitário',
 
-    const: feedback = () => {
-    return 'Eita pessoa boa!';
-  }
+  //   const: feedback = () => {
+  //   return 'Eita pessoa boa!';
+  // }
 };
 };
 
