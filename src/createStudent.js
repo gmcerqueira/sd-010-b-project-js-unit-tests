@@ -22,7 +22,7 @@ const createStudent = () => {
 
     const: feedback = () => {
     return 'Eita pessoa boa!';
-  };
+  }
 };
 };
 
