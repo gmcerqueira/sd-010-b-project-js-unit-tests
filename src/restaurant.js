@@ -106,9 +106,11 @@ function findDrink(drink, pedido) {
 
 function findFoodAndDrink(food, drink) {
   for (const key in cardapio.consumption) {
-    const pedido = cardapio.consumption[key];
-    findFood(food, pedido);
-    findDrink(drink, pedido);
+    if (key) {
+      const pedido = cardapio.consumption[key];
+      findFood(food, pedido);
+      findDrink(drink, pedido);
+    }
   }
   return summation;
 }
