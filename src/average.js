@@ -13,9 +13,7 @@
 */
 
 const average = (props) => {
-  if (!props || props.length === 0) {
-    return undefined;
-  }
+  if (!props || props.length === 0) return undefined;
   const total = props.reduce((acumulador, valorAtual) => acumulador + valorAtual);
   return typeof total === 'number'
     ? Math.round(total / props.length)
