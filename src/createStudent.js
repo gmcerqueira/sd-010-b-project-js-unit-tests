@@ -21,7 +21,7 @@ const createStudent = () => {
 
   name:'Leandrão, o Lobo Solitário',
 
-  const feedback = () => {
+  const: feedback = () => {
     return 'Eita pessoa boa!'
   }
 }
