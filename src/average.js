@@ -19,11 +19,10 @@ const average = (array) => {
     return undefined;
   }
   for (let key = 0; key < array.length; key += 1) {
-    const elemento = array[key];
-    if (typeof elemento !== 'number') {
+    if (typeof array[key] !== 'number') {
       return undefined;
     }
-    soma += elemento;
+    soma += array[key];
   }
   media = (soma / array.length);
   return Math.round(media);
