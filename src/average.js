@@ -35,11 +35,9 @@ const average = (array) => {
   }
 
   // Verifico se a média é um valor inteiro. Se for, retorno-a. Caso contrário, retorno seu valor arredondado.
-  let resto = mediaAritmetica % 1;
-  if (resto !== 0) {
-    return Math.round(mediaAritmetica);
-  }
-  return mediaAritmetica;
+  const resto = mediaAritmetica % 1;
+  const resultado = resto !== 0 ? Math.round(mediaAritmetica) : mediaAritmetica;
+  return resultado;
 };
 
 module.exports = average;
