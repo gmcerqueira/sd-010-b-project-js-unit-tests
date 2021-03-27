@@ -87,39 +87,43 @@ const orderFromMenu = (request) => cardapio.consumption.push(request);
 let summation = 0;
 
 function findFood(food, pedido) {
-  for (let index = 0; index < Object.keys(food).length; index += 1) {
-    const chaveFood = Object.keys(food)[index];
-    if (pedido === chaveFood) {
-      summation += food[pedido];
+  for (const key in Object.keys(food)) {
+    if (Object.hasOwnProperty.call(Object.keys(food), key)) {
+      if (pedido === Object.keys(food)[key]) {
+        summation += food[pedido];
+      }
     }
   }
   return summation;
 }
 
 function findDrink(drink, pedido) {
-  for (let index = 0; index < Object.keys(drink).length; index += 1) {
-    const chaveDrink = Object.keys(drink)[index];
-    if (pedido === chaveDrink) {
-      summation += drink[pedido];
+  for (const key in Object.keys(drink)) {
+    if (Object.hasOwnProperty.call(Object.keys(drink), key)) {
+      if (pedido === Object.keys(drink)[key]) {
+        summation += drink[pedido];
+      }
     }
   }
   return summation;
 }
 
 function findFoodAndDrink(food, drink) {
-  for (let index = 0; index < cardapio.consumption.length; index += 1) {
-    const pedido = cardapio.consumption[index];
-    findFood(food, pedido);
-    findDrink(drink, pedido);
+  for (const key in cardapio.consumption) {
+    if (Object.hasOwnProperty.call(cardapio.consumption, key)) {
+      const pedido = cardapio.consumption[key];
+      findFood(food, pedido);
+      findDrink(drink, pedido);
+    }
   }
   return summation;
 }
 
 const order = () => {
-  const desestruturing = cardapio.fetchMenu.drinks;
-  const desestruturing2 = cardapio.fetchMenu.food;
-  const drink = desestruturing;
-  const food = desestruturing2;
+  const desestruturingDrinks = cardapio.fetchMenu.drinks;
+  const desestruturingFood = cardapio.fetchMenu.food;
+  const drink = desestruturingDrinks;
+  const food = desestruturingFood;
   summation = findFoodAndDrink(food, drink);
   summation += summation * (10 / 100);
   return summation.toPrecision(4);
