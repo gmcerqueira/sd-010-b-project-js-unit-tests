@@ -40,3 +40,12 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
+
+function pega123() {
+  let array = productDetails('Alcool gel', 'Máscara')
+  
+  return array[0].details.productId;
+}
+
+//pegar o 123 dos objs
+console.log(pega123())
