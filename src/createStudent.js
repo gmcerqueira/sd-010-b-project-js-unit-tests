@@ -14,10 +14,27 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+const assert = require('assert');
 
+const message = 'Eita pessoa boa!';
 const createStudent = (student) => {
   const obj = { name: student };
-  obj.feedback = () => 'Eita pessoa boa';
+  obj.feedback = () => 'Eita pessoa boa!';
+  return obj;
 };
-
+const estudante = createStudent('Leandrão, o Lobo Solitário');
+assert.strictEqual(typeof estudante, 'object');
+assert.strictEqual(typeof estudante.feedback, 'function');
+assert.strictEqual(estudante.name, 'Leandrão, o Lobo Solitário');
+assert.strictEqual(estudante.feedback(), message);
+const estudante2 = createStudent('Nobre');
+assert.strictEqual(typeof estudante2, 'object');
+assert.strictEqual(typeof estudante2.feedback, 'function');
+assert.strictEqual(estudante2.name, 'Nobre');
+assert.strictEqual(estudante2.feedback(), message);
+const estudante3 = createStudent('Inácio');
+assert.strictEqual(typeof estudante3, 'object');
+assert.strictEqual(typeof estudante3.feedback, 'function');
+assert.strictEqual(estudante3.name, 'Inácio');
+assert.strictEqual(estudante3.feedback(), message);
 module.exports = createStudent;
