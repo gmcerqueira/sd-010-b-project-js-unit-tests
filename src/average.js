@@ -28,4 +28,4 @@ const average = (array) => {
   return Math.round(media / array.length);
 };
 
-module.exports = media;
+module.exports = average;
