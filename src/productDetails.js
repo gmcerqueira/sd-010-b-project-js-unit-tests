@@ -38,5 +38,9 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+/* const products = productDetails('chocolate', 'bala');
+
+
+console.log(getProductIdTermination(0), getProductIdTermination(1)); */
 
 module.exports = productDetails;
