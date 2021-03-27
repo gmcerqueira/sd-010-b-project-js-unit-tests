@@ -18,14 +18,14 @@ const average = (array) => {
     return undefined;
   }
   for (let arr = 0; arr < array.length; arr += 1) {
-   if (typeof array[arr] !== 'number') {
-    return undefined;
-   }
+    if (typeof array[arr] !== 'number') {
+        return undefined;
+    }
 
-   count += array[arr];
-   
-  };
-  med = count / array.length
+    count += array[arr];
+
+  }
+  med = count / array.length;
   return Math.round(med);
 };
 // console.log(average[4, 6]);
