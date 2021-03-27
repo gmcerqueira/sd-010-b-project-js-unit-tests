@@ -58,7 +58,9 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     let objetoRetornado = createMenu({ food: {}, drink: {} });
-    assert.deepStrictEqual([typeof objetoRetornado, Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu')], ['object', true]);
+    assert.deepStrictEqual([typeof objetoRetornado,
+      Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu')],
+    ['object', true]);
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
@@ -66,7 +68,9 @@ describe('#createMenu', () => {
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     let interno = objetoRetornado.fetchMenu;
-    assert.deepStrictEqual([typeof interno, Object.hasOwnProperty.call(interno, 'food'), Object.hasOwnProperty.call(interno, 'drink'), Object.keys(interno).length], ['object', true, true, 2]);
+    assert.deepStrictEqual([typeof interno, Object.hasOwnProperty.call(interno, 'food'),
+      Object.hasOwnProperty.call(interno, 'drink'), Object.keys(interno).length],
+    ['object', true, true, 2]);
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
