@@ -51,22 +51,36 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    const objetoQualquer = { food: {}, drink: {} };
-    const menu1 = createMenu(objetoQualquer); // Retorno: { fetchMenu: () => {}, ... }
-    assert.deepStrictEqual(typeof menu1, 'object');
-    assert.deepStrictEqual(typeof menu1.fetchMenu, 'function');
-    assert.deepStrictEqual(menu1.fetchMenu(), objetoQualquer);
-    assert.deepStrictEqual(menu1.consumption, []);
-    menu1.order('coxinha');
-    assert.deepStrictEqual(menu1.consumption, ['coxinha']);
-    menu1.order('agua');
-    menu1.order('sopa');
-    menu1.order('sashimi');
-    assert.deepStrictEqual(menu1.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
-    menu1.order('coxinha');
-    assert.deepStrictEqual(menu1.consumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha']);
-
-    const somaDosPreçosDosPedidos = 0;
-    // assert.deepStrictEqual(menu5.pay, somaDosPreçosDosPedidos);
+    const items = {
+      foods: { coxinha: 3.9, sopa: 9.9, sashimi: 15.8 },
+      drinks: { agua: 3.9, cerveja: 6.9 },
+    };
+    const restaurant = createMenu(items); // Retorno: { fetchMenu: () => {}, ... }
+    assert.deepStrictEqual(typeof restaurant, 'object');
+    assert.deepStrictEqual(typeof restaurant.fetchMenu, 'function');
+    assert.deepStrictEqual(restaurant.fetchMenu(), items);
+    assert.deepStrictEqual(restaurant.consumption, []);
+    restaurant.order('coxinha');
+    assert.deepStrictEqual(restaurant.consumption, ['coxinha']);
+    restaurant.order('agua');
+    restaurant.order('sopa');
+    restaurant.order('sashimi');
+    assert.deepStrictEqual(restaurant.consumption, [
+      'coxinha',
+      'agua',
+      'sopa',
+      'sashimi',
+    ]);
+    restaurant.order('coxinha');
+    assert.deepStrictEqual(restaurant.consumption, [
+      'coxinha',
+      'agua',
+      'sopa',
+      'sashimi',
+      'coxinha',
+    ]);
+    restaurant.pay();
+    const somaDosPreçosDosPedidos = 41.14;
+    assert.deepStrictEqual(restaurant.payment, somaDosPreçosDosPedidos);
   });
 });

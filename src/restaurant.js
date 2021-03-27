@@ -84,13 +84,27 @@ const orderFromMenu = (request) => {
   restaurant.consumption.push(request);
 };
 
-const pay = () => {};
+const pay = () => {
+  let payment = 0;
+  let tip = 1.1;
+  const { foods } = restaurant.menu;
+  const { drinks } = restaurant.menu;
+  const { consumption } = restaurant;
+  for (let i = 0; i < consumption.length; i += 1) {
+    if (foods[consumption[i]]) payment += foods[consumption[i]];
+    if (drinks[consumption[i]]) payment += drinks[consumption[i]];
+  }
+
+  restaurant.payment = parseFloat((payment * tip).toFixed(2));
+};
 
 const createMenu = (myMenu) => {
+  restaurant.menu = myMenu;
   restaurant.fetchMenu = () => myMenu;
   restaurant.consumption = [];
   restaurant.order = orderFromMenu;
   restaurant.pay = pay;
+  restaurant.payment = 0;
   return restaurant;
 };
 
