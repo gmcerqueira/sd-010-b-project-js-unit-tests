@@ -57,7 +57,8 @@ describe('#circle', () => {
      * https://www.w3schools.com/nodejs/met_assert_deepstrictequal.asp
      */
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepStrictEqual(circle(3), Object({ radius: 3, area: (Math.PI.toFixed(2) * 3 * 3), circumference: (2 * Math.PI.toFixed(2) * 3) }));
+    assert.deepStrictEqual(circle(3),
+      Object({ radius: 3, area: (Math.PI.toFixed(2) * 3 * 3), circumference: (2 * Math.PI.toFixed(2) * 3) }));
     /**
      * não funcionou. pq?
      * assert.deepStrictEqual(circle(3), () => ({ radius: 3, area: (Math.PI.toFixed(2) * 3 * 3), circumference: (2 * Math.PI.toFixed(2) * 3) }));
