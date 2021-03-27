@@ -92,7 +92,7 @@ describe('#createMenu', () => {
     }
     assert.deepStrictEqual(expected.consumption, orderRepeated);
 
-    //TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
+    // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
 
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que
     // foi pedido, conforme registrado em `objetoRetornado.consumption`
