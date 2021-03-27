@@ -27,7 +27,7 @@
 //   it('given a radius, should return an object with circles info', () => {
 //     // ESCREVA SEUS TESTES ABAIXO:
 //     // Teste se circle retorna um objeto.
-//     assert.strictEqual(typeof 150, 'object');
+//     assert.strictEqual(typeof circle, 'object');
 //     // Teste se o objeto retornado tem 3 entradas.
 //     assert.strictEqual(150, 'number', 'number', 'number');
 //     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
