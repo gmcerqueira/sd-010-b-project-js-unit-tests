@@ -21,9 +21,13 @@ const verificaArray = (array) => {
       return undefined;
     }
   }
+  return true;
 };
 
 const average = (array) => {
+  if (verificaArray(array) === undefined) {
+    return undefined;
+  }
   // Faço as operações matematicas para obter a média.
   let mediaAritmetica;
   let somaTotal = 0;
