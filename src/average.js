@@ -13,14 +13,16 @@
 */
 
 const average = (array) => {
-  if (array !== 'number' || array === null) {
-    throw new Error('É esperado um array, que seja somente do tipo number');
-  }
+    if (array.length === 0) {
+      return undefined;
+    }
   let dividendo = array.length;
-  let sum = array;
   let sumArr = 0;
   for (let i = 0; i < array.length; i += 1) {
-    sumArr += sum[i];
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    sumArr += array[i];
   }
   sumArr = Math.round(sumArr / dividendo);
   return sumArr;
