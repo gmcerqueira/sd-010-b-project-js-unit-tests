@@ -27,6 +27,8 @@ const average = (array) => {
   for (let numberArray = 0; numberArray < array.length; numberArray += 1) {
     sum += array[numberArray];
   }
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+  // A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo.
   return Math.round(sum / arrayChar);
 };
 
