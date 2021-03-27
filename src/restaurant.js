@@ -105,7 +105,7 @@ function findDrink(drink, pedido) {
 }
 
 function findFoodAndDrink(food, drink) {
-  for (let index = 0; index < cardapio.consumption.length; index++) {
+  for (let index = 0; index < cardapio.consumption.length; index += 1) {
     const pedido = cardapio.consumption[index];
     findFood(food, pedido);
     findDrink(drink, pedido);
