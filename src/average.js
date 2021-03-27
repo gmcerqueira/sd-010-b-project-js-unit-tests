@@ -12,6 +12,38 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const verificaArray = (array) => {
+  // Verifico se a array não é vazia.
+  if (array.length === 0) {
+    return 'undefined';
+  }
+
+  // Verifico se todos os valores inseridos são números.
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return 'undefined';
+    }
+  }
+};
+
+const average = (array) => {
+  if (verificaArray(array) === 'undefined') {
+    return 'undefined';
+  }
+  // Faço as operações matematicas para obter a média.
+  let mediaAritmetica;
+  let somaTotal = 0;
+  for (let i = 0; i < array.length; i += 1) {
+    somaTotal += array[i];
+    mediaAritmetica = somaTotal / array.length;
+  }
+
+  // Verifico se a média é um valor inteiro. Se for, retorno-a. Caso contrário, retorno seu valor arredondado.
+  let resto = mediaAritmetica % 1;
+  if (resto !== 0) {
+    return Math.round(mediaAritmetica);
+  }
+  return mediaAritmetica;
+};
 
 module.exports = average;
