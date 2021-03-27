@@ -21,9 +21,4 @@ const myCounter = () => {
   return myArray;
 };
 
-const assert = require('assert');
-
-const expectedOutput = [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
-assert.deepStrictEqual(myCounter(), expectedOutput);
-
 module.exports = myCounter;
