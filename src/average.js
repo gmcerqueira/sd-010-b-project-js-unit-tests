@@ -13,7 +13,7 @@
 */
 
 const average = (array) => {
-  if(array.langht === undefined) {
+  if (array.langht === undefined) {
     return;
   }
   let soma = 0;
@@ -27,6 +27,3 @@ const average = (array) => {
 };
 
 module.exports = average;
-
-
-
