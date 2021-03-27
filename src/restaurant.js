@@ -80,16 +80,23 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (parameter) => {
-  let object = {
+  let restaurant = {
     fetchMenu: () => parameter,
     consumption: [],
+    order: (request) => { restaurant.consumption.push(request); },
+    // pay: pay(),
   };
-  return object;
+  return restaurant;
 };
 
-const objetoRetornado = createMenu({ food: { pizza: 15.00 }, drink: { refrigerante: 7.50 } });
-console.log(objetoRetornado);
-const objectFetched = objetoRetornado.fetchMenu({ food: { pizza: 15.00 }, drink: { refrigerante: 7.50 } });
-console.log(objectFetched);
+// const objetoQualquer = {
+//   food: { coxinha: 5.00 },
+//   drink: { agua: 4.00 },
+// };
+// const objetoRetornado = createMenu(objetoQualquer);
+// objetoRetornado.order('coxinha');
+// objetoRetornado.order('agua');
+// objetoRetornado.order('coxinha');
+// console.log(objetoRetornado.consumption);
 
 module.exports = createMenu;
