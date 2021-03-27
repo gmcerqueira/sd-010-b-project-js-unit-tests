@@ -79,11 +79,6 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-let menu = {
-  food: { coxinha: 3.90, sopa: 9.90, sushi: 20.00 },
-  drinks: { agua: 3.90, cerveja: 6.90 },
-};
-
 const setOrder = function (str) {
   this.comsunption.push(str);
 };
