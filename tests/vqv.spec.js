@@ -22,7 +22,6 @@ const vqv = require('../src/vqv.js');
 */
 
 const workMessage = 'trabalho na Trybe e mando muito em programação!\n';
-
 describe('#vqv', () => {
   it('should return full trybe phrase with users name and age', () => {
     assert.strictEqual(typeof vqv, 'function');
