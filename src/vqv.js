@@ -15,16 +15,17 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
-
+//source = Gustavo Cerqueira;
 const vqv = (nome, idade) => {
   if (!nome || !idade) {
     return undefined;
   }
-  const mensagem = `Oi, meu nome é ${nome}!
-  Tenho ${idade} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`;
-  return mensagem;
+  return (
+    `Oi, meu nome é ${nome}!\n`
+    + `Tenho ${idade} anos,\n`
+    + 'trabalho na Trybe e mando muito em programação!\n'
+    + '#VQV!'
+  );
 };
 
 module.exports = vqv;
