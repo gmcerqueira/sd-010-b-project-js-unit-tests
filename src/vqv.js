@@ -17,14 +17,15 @@
 */
 
 const vqv = (nome, idade) => {
-  if (typeof nome === 'undefined' && typeof idade === 'undefined') {
-    return undefined;
-  } else {
-    return `Oi, meu nome é ${nome}!
-    Tenho ${idade} anos,
-    trabalho na Trybe e mando muito em programação!
-    #VQV!`;
+  let messege = null;
+  messege = undefined;
+  if (typeof nome !== 'undefined' && typeof idade !== 'undefined') {
+    messege = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
   }
+  return messege;
 };
 
 /* console.log(vqv('Tunico', 29)); */
