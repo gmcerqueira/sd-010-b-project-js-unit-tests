@@ -108,11 +108,9 @@ function findDrink(drink, pedido) {
 
 function findFoodAndDrink(food, drink) {
   for (const key in cardapio.consumption) {
-    if (Object.hasOwnProperty.call(cardapio.consumption, key)) {
-      const pedido = cardapio.consumption[key];
-      findFood(food, pedido);
-      findDrink(drink, pedido);
-    }
+    const pedido = cardapio.consumption[key];
+    findFood(food, pedido);
+    findDrink(drink, pedido);
   }
   return summation;
 }
