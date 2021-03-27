@@ -86,14 +86,6 @@ const cardapio = {};
 const orderFromMenu = (request) => cardapio.consumption.push(request);
 let summation = 0;
 
-const order = () => {
-  const food = cardapio.fetchMenu.food;
-  const drink = cardapio.fetchMenu.drinks;
-  summation = findFoodAndDrink(food, drink);
-  summation += summation * (10 / 100);
-  return summation.toPrecision(4);
-};
-
 const createMenu = (object) => {
   cardapio.fetchMenu = object;
   cardapio.consumption = [];
@@ -132,5 +124,13 @@ function findFoodAndDrink(food, drink) {
   }
   return summation;
 }
+
+const order = () => {
+  const food = cardapio.fetchMenu.food;
+  const drink = cardapio.fetchMenu.drinks;
+  summation = findFoodAndDrink(food, drink);
+  summation += summation * (10 / 100);
+  return summation.toPrecision(4);
+};
 
 module.exports = createMenu;
