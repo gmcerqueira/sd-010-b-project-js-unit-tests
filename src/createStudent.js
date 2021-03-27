@@ -17,7 +17,7 @@
 
 const createStudent = (name) => {
   let objeto = {
-    name: name,
+    n: name,
     feedback: () => {
       let message = 'Eita pessoa boa!';
       return message;

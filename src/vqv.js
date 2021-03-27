@@ -17,7 +17,7 @@
 */
 // source = Gustavo Cerqueira;
 const vqv = (nome, idade) => {
-  if (!nome || !idade) {
+  if (nome === undefined || idade === undefined) {
     return undefined;
   }
   return (
