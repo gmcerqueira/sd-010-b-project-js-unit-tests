@@ -79,6 +79,33 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const quatroPatas = {};
+
+const addOrder = (order) => quatroPatas.consumption.push(order);
+
+const resumeBill = (consumptions, menu) => {
+  let theBill = 0;
+  for (let consumption in consumptions) {
+    const typeFoods = Object.keys(menu);
+    for (let listFood in typeFoods) {
+      const foods = Object.keys(menu[typeFoods[listFood]]);
+      const valuesFods = Object.values(menu[typeFoods[listFood]]);
+      for (let food in foods) {
+        if (consumptions[consumption] === foods[food]) {
+          theBill += valuesFods[food];
+        }
+      }
+    }
+  }
+  return theBill;
+};
+
+const createMenu = (objetoPassadoPorParametro) => {
+  quatroPatas.fetchMenu = () => objetoPassadoPorParametro;
+  quatroPatas.consumption = [];
+  quatroPatas.order = (order) => addOrder(order);
+  quatroPatas.pay = () => resumeBill(quatroPatas.consumption, quatroPatas.fetchMenu());
+  return quatroPatas;
+};
 
 module.exports = createMenu;
