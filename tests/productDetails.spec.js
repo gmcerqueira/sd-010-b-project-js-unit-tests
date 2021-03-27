@@ -39,16 +39,16 @@ describe('#productDetails', () => {
       let obj = '';
       for (let index = 0; productDetails.length; index += 1) {
         if (typeof productDetails()[index] === 'object') {
-          obj = typeof productDetails()[index]
-        };
+          obj = typeof productDetails()[index];
+        }
       }
       return obj;
-    }
+    };
     // Teste que o retorno da função é um array.
-    assert.deepStrictEqual(Array.isArray(productDetails()), true)
+    assert.deepStrictEqual(Array.isArray(productDetails()), true);
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.deepStrictEqual(verificaObj(), 'object')
+    assert.deepStrictEqual(verificaObj(), 'object');
     // Teste que os dois objetos são diferentes entre si.
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
