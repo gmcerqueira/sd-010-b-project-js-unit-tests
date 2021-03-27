@@ -99,10 +99,8 @@ function findFood(food, pedido) {
 
 function findDrink(drink, pedido) {
   for (const key in Object.keys(drink)) {
-    if (Object.hasOwnProperty.call(Object.keys(drink), key)) {
-      if (pedido === Object.keys(drink)[key]) {
-        summation += drink[pedido];
-      }
+    if (pedido === Object.keys(drink)[key]) {
+      summation += drink[pedido];
     }
   }
   return summation;
