@@ -19,6 +19,7 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 /*
+  Material consultado sobre Math.floor
   https://www.w3schools.com/jsref/jsref_floor.asp
  */
 const calculator = {
