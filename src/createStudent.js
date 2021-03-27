@@ -16,16 +16,12 @@
 */
 
 const createStudent = (string) => {
-  const obj = {};
-
-  obj.feedback = function () { // código retirado: https://ricardo-reis.medium.com/objetos-javascript-e347adc3a8ac
-    return 'Eita pessoa boa!';
+  const obj = {
+    feedback: () => 'Eita pessoa boa!',
+    name: string,
   };
 
-  obj.name = string;
   return obj;
 };
-
-console.log(createStudent('Gabriel'));
 
 module.exports = createStudent;
