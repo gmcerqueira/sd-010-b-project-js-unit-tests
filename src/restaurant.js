@@ -87,20 +87,20 @@ const createMenu = (object) => ({
   },
   pay: () => {
     totalOfOrder();
-  }
+  },
 });
 
 const addOrder = (string) => {
   objetoRetornado.consumption.push(string);
-}
+};
 
 const totalOfOrder = () => {
   let total = 0;
   const order = objetoRetornado.consumption;
-  const menu  = objetoRetornado.fetchMenu();
-  for(key in order) {
-    for (key2 in menu) {
-      for (key3 in menu[key2]) {
+  const menu = objetoRetornado.fetchMenu();
+  for (let key in order) {
+    for (let key2 in menu) {
+      for (let key3 in menu[key2]) {
         if (order[key] === key3) {
           total += menu[key2][key3];
         }
@@ -110,6 +110,6 @@ const totalOfOrder = () => {
   total *= 1.1;
   total = parseFloat(total.toPrecision(4));
   console.log(total);
-}
+};
 
 module.exports = createMenu;

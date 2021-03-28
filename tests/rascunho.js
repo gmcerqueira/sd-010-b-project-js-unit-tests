@@ -8,13 +8,13 @@
 //         totalOfOrder();
 //     }
 //   });
-  
+
 //   const objetoRetornado = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
 
 //   const addOrder = (string) => {
 //     objetoRetornado.consumption.push(string);
 //   }
-  
+
 //   objetoRetornado.order('coxinha')
 //   console.log(objetoRetornado.consumption)
 //   objetoRetornado.order('sopa')
@@ -51,4 +51,3 @@
 // objetoRetornado.order('coxinha')
 // console.log(objetoRetornado.consumption)
 // objetoRetornado.pay()
-  
