@@ -13,14 +13,21 @@
 */
 
 const average = (arei) => {
-  for(i=0; i<arei.length; i++){
-    if(typeof arei[i] != number && arei.length <= 0){
-      const soma = soma+Math.round(arei[i]);
-      return soma/arei.length
-    } else {
-      return undefined;
+  let soma = 0;
+  let avaliacao = 0;
+  for (var i = 0; i < arei.length; i += 1) {
+    soma += Math.round(arei[i]);
+    var soTemNumero = soma / arei.length;
+    var temNaoNumero;
+    if (typeof arei[i] === 'number') {
+      avaliacao += 1;
     }
   }
+  if (avaliacao === arei.length) {
+    return soTemNumero;
+  }
+  return temNaoNumero;
 };
+console.log(average([]));
 
 module.exports = average;
