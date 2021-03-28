@@ -86,15 +86,15 @@ const comsumidor = function (string) {
 };
 
 const createMenu = (objeto) => ({
-    fetchMenu: () => objeto,
-    consumption: [],
-    order: comsumidor,
-    pay: () => {
-      let soma = 0;
-      for (let index = 0; index < consumption.length; index += 1){
-        soma += fetchMenu.consumidor
-      }
+  fetchMenu: () => objeto,
+  consumption: [],
+  order: comsumidor,
+  /* pay: () => {
+    let soma = 0,
+    for (let index = 0; index < consumption.length; index += 1) {
+      soma += fetchMenu.consumidor;
     }
+  } */
 });
 
 module.exports = createMenu;
