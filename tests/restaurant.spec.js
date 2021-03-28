@@ -89,10 +89,18 @@ describe('#createMenu', () => {
         expected.order(orderRepeated[key]);
       }
     }
-    assert.deepStrictEqual(expected.consumption, orderRepeated);
+    assert.deepStrictEqual(expected.consumption.length, 3);
 
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
-
+    let expected2 = createMenu({
+      food: { coxinha: 3.9, sanduiche: 9.9 },
+      drinks: { agua: 3.9 },
+    });
+    const orderRepeated2 = ['coxinha', 'agua', 'saduiche'];
+    expected2.order('coxinha');
+    expected2.order('agua');
+    expected2.order('saduiche');
+    assert.deepStrictEqual(expected2.consumption, orderRepeated2);
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que
     // foi pedido, conforme registrado em `objetoRetornado.consumption`
     const myOrder = createMenu({ food: {}, drink: {} });
