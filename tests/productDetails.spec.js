@@ -62,9 +62,10 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     const getProduct = (indexProduct) => products[indexProduct];
     assert.notStrictEqual(getProduct(0), getProduct(1),
-      'Erro! Todos os objetos em Java Script são diferentes entre si, por mais que suas chaves e valores sejam diferentes!');
+      'Erro! Todos os objetos em Java Script são diferentes entre si,'
+      + 'por mais que suas chaves e valores sejam diferentes!');
     // (Difícil) Teste que os dois productIds terminam com 123.
-    const getProductIdTermination = (indexProduct) => products[indexProduct].details.productId.substr(-3);
+    const getProductIdTermination = (index) => products[index].details.productId.substr(-3);
     assert.strictEqual(getProductIdTermination(0), getProductIdTermination(1),
       'Os produtos não terminal com o mesmo ID');
   });
