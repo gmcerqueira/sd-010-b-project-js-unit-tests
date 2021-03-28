@@ -14,16 +14,23 @@
 
 const arrayNumber = (array) => {
   // iniciando o projeto em 26/03
+  // condição para verificarse o array está vazio ou é nullo
   if (array === null || array.length === 0) { return true; }
+  // condição para verificar se o elemento da string não é um número
   for (const numbers in array) {
     if (typeof array[numbers] !== 'number') { return true; }
   }
   return false;
 };
+
 const average = (array) => {
+  // Caso a função receba algum valor não númerico ou um array vazio
   if (arrayNumber(array)) { return undefined; }
+  // variável para pegar o comprimeto do array
   const arrayChar = array.length;
+  // variave para somar
   let sum = 0;
+  // consição que fará a soma dos elementos dentro de array
   for (let numberArray = 0; numberArray < array.length; numberArray += 1) {
     sum += array[numberArray];
   }
