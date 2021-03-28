@@ -83,12 +83,12 @@ const resturante = {};
 const orderFromMenu = (request) => {
   resturante.consumption.push(request);
 };
-const pay = () => {
+
+const pay = (objetoPassadoPorParametro) => {
   let total = 0;
-  const foods = resturante.fetchMenu().food;
-  const drinks = resturante.fetchMenu().drink;
+  const foods = objetoPassadoPorParametro.food;
+  const drinks = objetoPassadoPorParametro.drink;
   const totalconsumption = resturante.consumption;
-  console.log(foods, drinks);
   for (let index = 0; index < totalconsumption.length; index += 1) {
     if (foods[totalconsumption[index]]) {
       total += foods[totalconsumption[index]];
@@ -98,17 +98,17 @@ const pay = () => {
     }
   }
 
-  resturante.pagamento = total;
+  return total * 1.1;
 };
 const createMenu = (objetoPassadoPorParametro) => {
   resturante.fetchMenu = () => objetoPassadoPorParametro;
-  //resturante.menu = objetoPassadoPorParametro;
+  // resturante.menu = objetoPassadoPorParametro;
   resturante.consumption = [];
   resturante.order = orderFromMenu;
-  resturante.pay = pay;
-  resturante.pagamento = 0;
-  console.log(resturante)
+  resturante.pay = () => pay(objetoPassadoPorParametro);
   return resturante;
 };
 
 module.exports = createMenu;
+
+// Meus sinceros agradecimentos aos amigos de Trybe e tribo B - Gustavo Cerqueira- Henrique Zózimo - Allan Tanaka - /// Lucas Pedroso-Fernanda Porto.
