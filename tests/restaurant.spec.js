@@ -61,7 +61,8 @@ describe('#createMenu', () => {
     const fetchMenuExists = objetoRetornado.fetchMenu !== undefined;
     const fetchMenuType = typeof objetoRetornado.fetchMenu;
 
-    assert.deepStrictEqual([typeof objetoRetornado, fetchMenuExists, fetchMenuType], ['object', true, 'function']);
+    assert.deepStrictEqual([typeof objetoRetornado, fetchMenuExists, fetchMenuType],
+      ['object', true, 'function']);
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
@@ -137,7 +138,8 @@ describe('#createMenu', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    objetoRetornado = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+    objetoRetornado = createMenu({ food: { coxinha: 3.9, sopa: 9.9 },
+      drink: { agua: 3.9, cerveja: 6.9 } });
     objetoRetornado.consumption = [];
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
