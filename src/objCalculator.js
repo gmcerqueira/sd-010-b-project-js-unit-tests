@@ -23,15 +23,13 @@
   https://www.w3schools.com/jsref/jsref_floor.asp
  */
 const calculator = {
-  add(integer1, integer2) {
-    // retorna a soma de integer1 e integer2
-    return integer1 + integer2;
-  },
-  mult(integer1, integer2) {
-    // retorna a multiplicação de integer1 por integer2
-    return integer1 * integer2;
-  },
-  div(integer1, integer2) {
+  // retorna a soma de integer1 e integer2
+  add: (integer1, integer2) => integer1 + integer2,
+
+  // retorna a multiplicação de integer1 por integer2
+  mult: (integer1, integer2) => integer1 * integer2,
+
+  div: (integer1, integer2) => {
     // dispara erro caso divisor (integer2) seja igual a zero
     if (integer2 === 0) throw new Error('parameter integer2 must not be 0');
 
@@ -40,10 +38,9 @@ const calculator = {
 
     return Math.floor(result); // arredonda resultado para baixo
   },
-  sub(integer1, integer2) {
-    // retorna a subtração de integer1 por integer2
-    return integer1 - integer2;
-  },
+
+  // retorna a subtração de integer1 por integer2
+  sub: (integer1, integer2) => integer1 - integer2,
 };
 
 module.exports = calculator;
