@@ -29,25 +29,13 @@
   - Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá o preço com acréscimo de 10%.
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
 */
-
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 //
-const createMenu = (objeto) => {
-  let saida = {};
-  saida = { fetchMenu: () => objeto };
-  return saida;
-};
-let meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
-
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
-
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
-meuRestaurante.consumption = [];
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro,
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
@@ -62,11 +50,34 @@ meuRestaurante.consumption = [];
 //
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
 // // Essa função deve ser associada à chave `order` de `restaurant`
-// Essa função deve ser associada à chave `order` de `restaurant`
 // ```
-let clientOrder = (pedido) => {
-  meuRestaurante.consumption.push(pedido);
+// Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
+//------------------------------------------------------------------------------------------
+// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
+// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
+// você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+
+const setOrder = function (str) {
+  this.comsunption.push(str);
 };
 
-let orderFromMenu = clientOrder('agua');
-console.log(meuRestaurante);
+const createMenu = (obj) => {
+  let objMenu = {
+    fetchMenu: () => obj,
+    comsunption: [],
+    order: setOrder,
+    pay: () => {
+      let values = [];
+      objMenu.comsunption.forEach((el) => {
+        let v = obj.food[el] || obj.drinks[el];
+        values.push(v);
+      });
+      let soma = values.reduce((acc, cur) => acc + cur);
+      let total = soma + (soma * 0.1);
+      return total;
+    },
+  };
+  return objMenu;
+};
+
+module.exports = createMenu;
