@@ -23,9 +23,11 @@ const average = (array) => {
       return undefined;
     }
     soma += Math.round(array[index]);
-    resultado = soma / array.length;
+    resultado = Math.round(soma / array.length);
   }
   return resultado;
 };
+
+console.log(average([-11, -5, 2]));
 
 module.exports = average;
