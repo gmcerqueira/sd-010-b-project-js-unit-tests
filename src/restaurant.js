@@ -64,7 +64,7 @@ const pagamento = (menu) => {
       total += bebida[consumo[item]];
     }
   }
-  return total;
+  return total * 1.1;
 };
 
 const createMenu = (objeto) => {

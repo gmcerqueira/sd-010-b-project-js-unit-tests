@@ -133,7 +133,7 @@ describe('#createMenu', () => {
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.pay(), 11.7);
+    assert.deepStrictEqual(objetoRetornado.pay(), 12.870000000000001);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
