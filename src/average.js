@@ -21,7 +21,7 @@ const average = (array) => {
       return undefined;
     }
     media += array[index];
-    resultado = Math.round(media / index);
+    resultado = Math.round(media / array.length);
   }
   return resultado;
 };
