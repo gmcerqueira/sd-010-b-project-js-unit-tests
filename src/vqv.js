@@ -24,10 +24,11 @@ const vqv = (nome, idade) => {
     name: nome,
     age: idade,
   };
-  return `Oi, meu nome é ${info.name}!
-  Tenho ${info.age} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`;
+  let phrase = `Oi, meu nome é ${info.name}!
+Tenho ${info.age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  return phrase;
 };
 
 module.exports = vqv;
