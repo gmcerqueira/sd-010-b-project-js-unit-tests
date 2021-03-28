@@ -65,7 +65,7 @@ describe('#createMenu', () => {
       verify2 = true;
     }
     assert.strictEqual(typeof arrayLength, 'object');
-    assert.deepStrictEqual(verify2, true);
+    assert.strictEqual(verify2, true);
 
     // TESTE 5: Verifique que chamar uma função associada à chave `order`, tal string é adicionada ao array objetoRetornado.consumption
     objetoRetornado.order('coxinha');
