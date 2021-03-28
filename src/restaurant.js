@@ -47,14 +47,31 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 //
-let meuRestaurante = {};
+const meuRestaurante = {};
 
-let request = (pedido) => meuRestaurante.consumption.push(pedido);
+const request = (pedido) => meuRestaurante.consumption.push(pedido);
+
+const pagamento = (menu) => {
+  const comida = menu.food;
+  const bebida = menu.drink;
+  const consumo = meuRestaurante.consumption;
+  let total = 0;
+  for (let item = 0; item < consumo.length; item += 1) {
+    if (Object.hasOwnProperty.call(comida, consumo[item])) {
+      total += comida[consumo[item]];
+    }
+    if (Object.hasOwnProperty.call(bebida, consumo[item])) {
+      total += bebida[consumo[item]];
+    }
+  }
+  return total;
+};
 
 const createMenu = (objeto) => {
   meuRestaurante.fetchMenu = () => objeto;
   meuRestaurante.consumption = [];
   meuRestaurante.order = request;
+  meuRestaurante.pay = () => pagamento(objeto);
   return meuRestaurante;
 };
 
