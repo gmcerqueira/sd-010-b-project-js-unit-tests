@@ -85,8 +85,8 @@ const orderFromMenu = (request) => restaurant.consumption.push(request);
 
 const checkPay = (item) => {
   let consumo = restaurant.consumption;
-  let drink = item.drink;
-  let food = item.food;
+  const drink = item.drink;
+  const food = item.food;
   let total = 0;
   for (let index = 0; index < consumo.length; index += 1) {
     if (food[consumo[index]]) {
