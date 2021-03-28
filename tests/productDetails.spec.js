@@ -40,6 +40,6 @@ describe('#productDetails', () => {
     assert.notStrictEqual(itens[0], itens[1]);
     assert.strictEqual(itens[0].details.productId
       .substr(-3), itens[0].details.productId
-      .substr(-3),[123, 123]);
+      .substr(-3), [123, 123]);
   });
 });
