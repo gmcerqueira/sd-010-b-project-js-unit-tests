@@ -22,11 +22,11 @@ const average = (arei) => {
       avaliacao += 1;
     }
   }
-  if (avaliacao === arei.length) {
+  if (avaliacao === arei.length && avaliacao !== 0) {
     return Math.round(soTemNumero);
   }
   return undefined;
 };
-console.log(average([1, 2, 3, 4]));
+console.log(average([]));
 
 module.exports = average;
