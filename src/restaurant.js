@@ -98,7 +98,7 @@ const pay = (objetoPassadoPorParametro) => {
     }
   }
 
-  return total * 1.1;
+  return Number((total * 1.1).toFixed(2));
 };
 const createMenu = (objetoPassadoPorParametro) => {
   resturante.fetchMenu = () => objetoPassadoPorParametro;
