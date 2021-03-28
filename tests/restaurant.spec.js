@@ -52,29 +52,23 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-
     let objetoRetornado = createMenu({ food: {}, drink: {} });
-
     let avaliator = false;
     console.log(objetoRetornado);
-
     if (objetoRetornado.fetchMenu) {
       avaliator = true;
-    };
-
+    }
     let result = false;
-
     if (objetoRetornado.fetchMenu().food && objetoRetornado.fetchMenu().drink) {
       result = true;
-    };
-
+    }
     let resultado = false;
-
     if (Object.keys(objetoRetornado.fetchMenu()).length === 2) {
       resultado = true;
-    };
-
-    assert.deepStrictEqual([typeof objetoRetornado, avaliator, typeof objetoRetornado.fetchMenu], ['object', true, 'function']);
+    }
+    assert.deepStrictEqual([typeof objetoRetornado, avaliator,
+      typeof objetoRetornado.fetchMenu],
+    ['object', true, 'function']);
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
     // ```
@@ -131,7 +125,8 @@ describe('#createMenu', () => {
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
+    assert.deepStrictEqual(objetoRetornado.consumption,
+      ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
@@ -141,7 +136,16 @@ describe('#createMenu', () => {
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
     // Agora faça o TESTE 8 deste arquivo.
-    objetoRetornado = createMenu ({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
+    objetoRetornado = createMenu({
+      food: {
+        coxinha: 3.9,
+        sopa: 9.9,
+      },
+      drink: {
+        agua: 3.9,
+        cerveja: 6.9,
+      },
+    });
     objetoRetornado.consumption = [];
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
