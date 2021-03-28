@@ -41,6 +41,6 @@ describe('#circle', () => {
     const area1 = (circle(3).area * 100) / 100;
     const circum = circle(3).circumference;
     const total = [rad, area1, circum];
-    assert.strictEqual((total), [3, 28.26, 18.84]);
+    assert.deepStrictEqual((total), [3, 28.26, 18.84]);
   });
 });
