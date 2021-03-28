@@ -82,9 +82,22 @@
 const createMenu = (obj) => {
   const menu = {
     fetchMenu: () => obj,
-    consumption: '',
-    order: '',
-    pay: '',
+    consumption: [],
+    order(ord) {
+      this.consumption.push(ord);
+    },
+    pay() {
+      const keyValue = [...Object.entries(obj.food), ...Object.entries(obj.drink)];
+      let soma = null;
+
+      this.consumption.forEach((request) => {
+        keyValue.forEach((list) => {
+          if (request === list[0]) soma += list[1];
+        });
+      });
+
+      return soma;
+    },
   };
 
   return menu;
