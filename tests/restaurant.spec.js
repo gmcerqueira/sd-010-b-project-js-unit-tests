@@ -52,7 +52,6 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
     // ```
@@ -102,9 +101,9 @@ describe('#createMenu', () => {
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
     // objetoRetornado.order("coxinha");
-    objetoRetornado.order("agua");
-    objetoRetornado.order("sopa");
-    objetoRetornado.order("sashimi");
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sopa');
+    objetoRetornado.order('sashimi');
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     assert.deepStrictEqual(objetoRetornado.consumption,
