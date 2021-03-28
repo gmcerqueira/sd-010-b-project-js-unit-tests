@@ -1,68 +1,37 @@
+// const addOrder = (string) => {
+//   objetoRetornado.consumption.push(string);
+// };
+
+// const totalOfOrder = () => {
+//   let total = 0;
+//   const order = objetoRetornado.consumption;
+//   const menu = {};
+//   Object.assign(menu, objetoRetornado.fetchMenu().food, objetoRetornado.fetchMenu().drinks);
+//   for (let key in order) {
+//     if (menu[order[key]] !== undefined) {
+//       total += menu[order[key]];
+//     }
+//   }
+//   total *= 1.1;
+//   total = parseFloat(total.toPrecision(4));
+//   console.log(total);
+// };
+
 // const createMenu = (object) => ({
-//     fetchMenu: () => object,
-//     consumption: [],
-//     order: (string) => {
-//         addOrder(string);
-//       },
-//     pay: () => {
-//         totalOfOrder();
-//     }
-//   });
+//   fetchMenu: () => object,
+//   consumption: [],
+//   order: (string) => {
+//     addOrder(string);
+//   },
+//   pay: () => {
+//     totalOfOrder();
+//   },
+// });
 
-//   const objetoRetornado = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
-
-//   const addOrder = (string) => {
-//     objetoRetornado.consumption.push(string);
-//   }
-
-//   objetoRetornado.order('coxinha')
-//   console.log(objetoRetornado.consumption)
-//   objetoRetornado.order('sopa')
-
-//   const totalOfOrder = () => {
-//     let total = 0
-//     const order = objetoRetornado.consumption;
-//     // console.log(order)
-//     const menu  = objetoRetornado.fetchMenu();
-//     // console.log(menu)
-//     for(key in order) {
-//       // console.log(key)
-//       for (key2 in menu) {
-//         // console.log(menu[key2])
-//         for (key3 in menu[key2]) {
-//           // console.log(key3)
-//           if (order[key] === key3) {
-//             // console.log(order[key])
-//             // console.log(menu[key2][key3])
-//             total += menu[key2][key3];
-//           }
-//         }
-//       }
-//     }
-//     total *= 1.1;
-//     total = parseFloat(total.toPrecision(4));
-//     console.log(total);
-//   }
-
-//  totalOfOrder()
-
-// const objetoRetornado = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
-// console.log(objetoRetornado.fetchMenu())
+// const objetoRetornado = createMenu({
+//   food: {'coxinha': 3.90, 'sanduiche': 9.90},
+//   drinks: {'agua': 3.90, 'cerveja': 6.90}
+// });
 // objetoRetornado.order('coxinha')
-// console.log(objetoRetornado.consumption)
-// objetoRetornado.pay()
-
-const createMenu = (object) => ({
-  fetchMenu: () => object,
-  consumption: [],
-  order: (string) => {
-    addOrder(string);
-  },
-  pay: () => {
-    totalOfOrder();
-  },
-});
-let menu = {}
-const objetoRetornado = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
-Object.assign(menu,objetoRetornado.fetchMenu().food, objetoRetornado.fetchMenu().drink);
-console.log(menu)
+// // console.log(objetoRetornado.consumption)
+// objetoRetornado.pay();
