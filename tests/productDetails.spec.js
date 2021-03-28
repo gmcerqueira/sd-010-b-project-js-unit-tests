@@ -45,9 +45,8 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.strictEqual(exemplo[0] !== exemplo[1], true);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    let produto1 = 'Alcool gel';
-    assert.strictEqual(exemplo[0][0] - `${produto1}`, '123');
-    let produto2 = 'Máscara';
-    assert.strictEqual(exemplo[0][0] - `${produto2}`, '123');
+    let exemplo1 = exemplo[0].details.productId.slice(-3);
+    let exemplo2 = exemplo[1].details.productId.slice(-3);
+    assert.strictEqual(exemplo1 && exemplo2, '123');
   });
 });
