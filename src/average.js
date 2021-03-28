@@ -21,15 +21,12 @@ const average = (array) => {
       validador += 1;
     }
   }
-
   if (validador !== array.length || array.length === 0) {
     return undefined;
   }
-
   for (let index = 0; index < array.length; index += 1) {
     soma += array[index];
   }
-  
   let media = Math.round(soma / array.length);
   return media;
 
