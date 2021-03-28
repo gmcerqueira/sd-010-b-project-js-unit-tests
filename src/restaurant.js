@@ -92,7 +92,7 @@ function totalOfOrder() {
   total *= 1.1;
   total = parseFloat(total.toPrecision(4));
   console.log(total);
-  return total
+  return total;
 }
 
 function addOrder(string) {
