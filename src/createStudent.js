@@ -16,5 +16,10 @@
 */
 
 const createStudent = () => {
+  const estudante = {
+
+    name: 'Leandrão, o Lobo Solitário',
+    feeback: () => 'Eita pessoa boa!',
+  };
 };
 module.exports = createStudent;
