@@ -29,6 +29,7 @@ const average = (array) => {
   for (let index = 0; index < array.length; index += 1) {
     soma += array[index];
   }
+  
   let media = Math.round(soma / array.length);
   return media;
 
