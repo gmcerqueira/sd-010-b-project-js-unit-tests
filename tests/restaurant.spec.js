@@ -49,9 +49,40 @@ const createMenu = require('../src/restaurant');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.strictEqual(createMenu());
+    let meuRestaurante = createMenu({
+      food: { coxinha: 3.90, sanduiche: 9.90 },
+      drinks: { agua: 3.90, cerveja: 6.90 },
+    });
+    const fetch = meuRestaurante.fetchMenu;
+    const existFetch = meuRestaurante.fetchMenu !== undefined;
+    const arrayCompare = [typeof meuRestaurante, typeof fetch, existFetch];
+    assert.deepStrictEqual(arrayCompare, ['object', 'function', true]);
+    const objectReturned = createMenu({ food: {}, drink: {} });
+    const fetchReturned = Object.keys(objectReturned.fetchMenu());
+    assert.deepStrictEqual(fetchReturned, ['food', 'drink']);
+    assert.deepStrictEqual({ food: {}, drink: {} }, objectReturned.fetchMenu());
+    let objetoRetornado = createMenu({});
+    assert.deepStrictEqual(objetoRetornado.consumption, []);
+    objetoRetornado.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sopa');
+    objetoRetornado.order('sashimi');
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    assert.deepStrictEqual(objectReturned.consumption,
+      ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
+      objetoRetornado = createMenu({ food: { coxinha: 3.9, sopa: 9.9 },
+        drink: { agua: 3.9, cerveja: 6.9 } });
+      objetoRetornado.consumption = [];
+      objetoRetornado.order('coxinha');
+      objetoRetornado.order('agua');
+      objetoRetornado.order('coxinha');
+      assert.strictEqual(objetoRetornado.pay(), (3.90 + 3.90 + 3.90) * 1.1);
+      // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    });
   });
-});
