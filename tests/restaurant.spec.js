@@ -76,13 +76,13 @@ describe('#createMenu', () => {
     objetoRetornado.order('coxinha');
     assert.deepStrictEqual(objectReturned.consumption,
       ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
-      objetoRetornado = createMenu({ food: { coxinha: 3.9, sopa: 9.9 },
-        drink: { agua: 3.9, cerveja: 6.9 } });
-      objetoRetornado.consumption = [];
-      objetoRetornado.order('coxinha');
-      objetoRetornado.order('agua');
-      objetoRetornado.order('coxinha');
-      assert.strictEqual(objetoRetornado.pay(), (3.90 + 3.90 + 3.90) * 1.1);
-      // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
-    });
+    objetoRetornado = createMenu({ food: { coxinha: 3.9, sopa: 9.9 },
+      drink: { agua: 3.9, cerveja: 6.9 } });
+    objetoRetornado.consumption = [];
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    assert.strictEqual(objetoRetornado.pay(), (3.90 + 3.90 + 3.90) * 1.1);
+    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
+});
