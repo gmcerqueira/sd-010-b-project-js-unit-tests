@@ -91,21 +91,20 @@ const checkPay = (item) => {
   for (let index = 0; index < consumo.length; index += 1) {
     if (food[consumo[index]]) {
       total += food[consumo[index]];
-    };
+    }
     if (drink[consumo[index]]) {
       total += drink[consumo[index]];
-    };
-  };
+    }
+  }
   return total * 1.10;
 };
 
-  const createMenu = (item) => {
-    restaurant.fetchMenu = () => item;
-    restaurant.consumption = [];
-    restaurant.order = orderFromMenu;
-    restaurant.pay = () => checkPay(item);
-    return restaurant;
-  };
+const createMenu = (item) => {
+  restaurant.fetchMenu = () => item;
+  restaurant.consumption = [];
+  restaurant.order = orderFromMenu;
+  restaurant.pay = () => checkPay(item);
+  return restaurant;
+};
 
-
-  module.exports = createMenu;
+module.exports = createMenu;
