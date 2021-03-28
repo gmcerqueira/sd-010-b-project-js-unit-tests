@@ -1,10 +1,8 @@
-const assert = require('assert');
-
 const calculator = {
-  add: (first, second) => { parseFloat(first + second); },
-  mult: (first, second) => { parseFloat(first * second); },
-  divisor: (first, second) => { parseFloat(first / second); },
-  subtra: (first, second) => { parseFloat(first - second); },
+  add: (first, second) => { Math.floor(first + second); },
+  mult: (first, second) => { Math.floor(first * second); },
+  divisor: (first, second) => { Math.floor(first / second); },
+  subtra: (first, second) => { Math.floor(first - second); },
 };
 
 module.exports = calculator;
