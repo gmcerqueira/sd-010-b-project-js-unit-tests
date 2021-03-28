@@ -30,9 +30,10 @@ const productDetails = require('../src/productDetails');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+let alcool = 'Alcool gel'
 const expected = [
   {
-    name: 'Alcool gel',
+    name: alcool,
     details: {
       productId: 'Alcool gel123',
     },
