@@ -52,7 +52,7 @@ describe('#productDetails', () => {
     ];
     assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara'), expected);
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(Object.keys(productDetails('Alcool gel', 'Máscara')).length, 2);
+    assert.strictEqual(Object.keys(productDetails()).length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof productDetails()[0], 'object');
     assert.strictEqual(typeof productDetails()[1], 'object');
