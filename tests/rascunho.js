@@ -51,3 +51,18 @@
 // objetoRetornado.order('coxinha')
 // console.log(objetoRetornado.consumption)
 // objetoRetornado.pay()
+
+const createMenu = (object) => ({
+  fetchMenu: () => object,
+  consumption: [],
+  order: (string) => {
+    addOrder(string);
+  },
+  pay: () => {
+    totalOfOrder();
+  },
+});
+let menu = {}
+const objetoRetornado = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
+Object.assign(menu,objetoRetornado.fetchMenu().food, objetoRetornado.fetchMenu().drink);
+console.log(menu)
