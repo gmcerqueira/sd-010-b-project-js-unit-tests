@@ -19,7 +19,7 @@
 /*
   Essa função verifica se uma variável foi definida
  */
-const isVariableDefine = (variable) => variable !== undefined;
+const isDefinedVariable = (variable) => variable !== undefined;
 
 /*
   Material consultado sobre arguments.length
@@ -28,7 +28,7 @@ const isVariableDefine = (variable) => variable !== undefined;
  */
 const vqv = (nome, idade) => {
   // verifica se os parametros foram definidos
-  if (isVariableDefine(nome) && isVariableDefine(idade)) {
+  if (isDefinedVariable(nome) && isDefinedVariable(idade)) {
     // retorna frase pre-definida como requisito
     return `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
