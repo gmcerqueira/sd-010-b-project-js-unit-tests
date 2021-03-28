@@ -27,6 +27,5 @@ const average = (arei) => {
   }
   return undefined;
 };
-console.log(average([]));
 
 module.exports = average;
