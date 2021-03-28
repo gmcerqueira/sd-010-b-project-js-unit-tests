@@ -12,17 +12,23 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => {
-  let sum;
-  if (array.length !== 0) {
-    for (let key; key < array.length; key += 1) {
-      sum += (typeof array[key] === 'number') ? Math.random(array[key]) : undefined;
-    }
-    sum /= array.length;
-  } else {
-    sum = undefined;
-  }
-  return sum;
-};
+// https://medium.com/aprendajs/10-javascript-array-m%C3%A9todos-que-voc%C3%AA-deveria-saber-789ea95667d0
+// Referencia usada para realização
 
+const average = (array) => {
+  let result;
+  let number
+  if (array .length !== 0) {
+    number = array.every(num => typeof num === 'number'); 
+    result = (number) ? array.reduce((total, value) => total + value, 0) : undefined;
+    if (result === 1) {
+      result *= 0;
+    } else if ((result > 1) || (result < 0))  {
+      result /= array.length;
+      result = Math.round(result);
+    } 
+  }
+  return result;
+};
+console.log(average([-11, 2, 5]));
 module.exports = average;
