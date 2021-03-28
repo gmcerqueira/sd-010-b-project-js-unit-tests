@@ -109,9 +109,4 @@ const createMenu = (object) => ({
   },
 });
 
-const objetoRetornado = createMenu({
-  food: {'coxinha': 3.90, 'sanduiche': 9.90},
-  drinks: {'agua': 3.90, 'cerveja': 6.90},
-});
-
 module.exports = createMenu;
