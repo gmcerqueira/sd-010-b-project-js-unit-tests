@@ -50,7 +50,7 @@ describe('#productDetails', () => {
       verify = true;
     }
     assert.strictEqual(verify, true);
-     // (Difícil) Teste que os dois productIds terminam com 123.
+    // (Difícil) Teste que os dois productIds terminam com 123.
     const valueProductId0 = obj1.details.productId;
     const valueProductId1 = obj2.details.productId;
     // Código retirado no site: https://blog.education-ecosystem.com/javascript-como-verificar-se-uma-string-contem-outra-substring/#:~:text=O%20m%C3%A9todo%20indexOf%20()%20para,m%C3%A9todo%20retorna%20'%2D1'.
