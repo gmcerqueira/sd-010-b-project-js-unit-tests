@@ -37,60 +37,45 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    const objetoRetornado = createMenu('{ food: {}, drink: {} }');
+    const objetoRetornado = createMenu({ food: {}, drink: {} });
     assert.strictEqual(typeof objetoRetornado, 'object');
     assert.strictEqual(typeof objetoRetornado.fetchMenu, 'function');
+    assert.strictEqual(typeof objetoRetornado.order, 'function');
+    assert.strictEqual(typeof objetoRetornado.pay, 'function');
 
     const fetchMenuKeys = objetoRetornado.fetchMenu();
-    assert.deepStrictEqual(fetchMenuKeys, '{ food: {}, drink: {} }');
+    assert.strictEqual(typeof fetchMenuKeys, 'object');
+    assert.deepStrictEqual(fetchMenuKeys, { food: {}, drink: {} });
 
-    const objetoRetornado2 = createMenu('{ food: {coxinha: 3.9, drink: {agua: 3.9}');
-    const returnFetchMenu = objetoRetornado2.fetchMenu();
-    assert.strictEqual('{ food: {coxinha: 3.9, drink: {agua: 3.9}', returnFetchMenu);
-
-    const arrayLength = objetoRetornado2.consumption;
+    const arrayLength = objetoRetornado.consumption;
     let verify2 = false;
     if (arrayLength.length === 0) {
       verify2 = true;
     }
+    assert.strictEqual(typeof arrayLength, 'object');
     assert.deepStrictEqual(verify2, true);
 
-    objetoRetornado2.order('coxinha');
-    const valueConsumption = objetoRetornado2.consumption;
+    objetoRetornado.order('coxinha');
+    const valueConsumption = objetoRetornado.consumption;
     assert.deepStrictEqual(valueConsumption, ['coxinha']);
 
-    objetoRetornado2.order('coca-cola');
-    objetoRetornado2.order('pastel');
-    const valueConsumption2 = objetoRetornado2.consumption;
-    assert.deepStrictEqual(valueConsumption2, ['coxinha', 'coca-cola', 'pastel']);
-    // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
-    // --------------------------------------------------------------------------------------
-    // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
-    // ```
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
-    // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
-    // ```
-    // Agora faça o TESTE 7 deste arquivo.
-    // --------------------------------------------------------------------------------------
-    // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
-    // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
-    // ```
-    // Agora faça o TESTE 8 deste arquivo.
-    // --------------------------------------------------------------------------------------
-    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
-    // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
-    // ```
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sopa');
+    objetoRetornado.order('sashimi');
+    const valueConsumption2 = objetoRetornado.consumption;
+    assert.deepStrictEqual(valueConsumption2, ['coxinha', 'agua', 'sopa', 'sashimi']);
+
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    assert.deepStrictEqual(valueConsumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
+
+    const objetoRetornado2 = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+    objetoRetornado2.order('coxinha');
+    objetoRetornado2.order('agua');
+    objetoRetornado2.order('coxinha');
+    const totalPay = objetoRetornado2.pay();
+
+    assert.strictEqual(totalPay, 12.87);
   });
 });

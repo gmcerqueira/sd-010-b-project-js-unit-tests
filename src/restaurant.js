@@ -31,12 +31,6 @@
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
 */
 
-//------------------------------------------------------------------------------------------
-
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
-// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
-// você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
 let menuItems = {};
 
 const addOrder = (item) => {
@@ -47,12 +41,36 @@ const addOrder = (item) => {
   return menuItems.consumption.push(item);
 };
 
+const pay = (menu) => {
+  const foodMenu = menu.food;
+
+  const drinksMenu = menu.drink;
+
+  const consumptionItems = menuItems.consumption;
+
+  let sum = 0;
+
+  for (let index = 0; index < consumptionItems.length; index += 1) {
+    // código retirado no site https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+    if (Object.hasOwnProperty.call(foodMenu, consumptionItems[index])) {
+      sum += foodMenu[consumptionItems[index]];
+    }
+    if (Object.hasOwnProperty.call(drinksMenu, consumptionItems[index])) {
+      sum += drinksMenu[consumptionItems[index]];
+    }
+  }
+  const increase = 1.1;
+  return Number((sum * increase).toFixed(2));
+};
+
 const createMenu = (parameter) => {
   menuItems = {
     fetchMenu: () => parameter,
     consumption: [],
 
     order: (item) => addOrder(item),
+
+    pay: () => pay(parameter),
 
   };
   return menuItems;
