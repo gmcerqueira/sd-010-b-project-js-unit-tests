@@ -16,18 +16,17 @@ const average = (arei) => {
   let soma = 0;
   let avaliacao = 0;
   for (var i = 0; i < arei.length; i += 1) {
-    soma += Math.round(arei[i]);
+    soma += arei[i];
     var soTemNumero = soma / arei.length;
-    var temNaoNumero;
     if (typeof arei[i] === 'number') {
       avaliacao += 1;
     }
   }
   if (avaliacao === arei.length) {
-    return soTemNumero;
+    return Math.round(soTemNumero);
   }
-  return temNaoNumero;
+  return undefined;
 };
-console.log(average([]));
+console.log(average([1, 2, 3, 4]));
 
 module.exports = average;
