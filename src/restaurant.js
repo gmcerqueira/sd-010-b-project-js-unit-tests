@@ -92,11 +92,11 @@ function totalOfOrder() {
   total *= 1.1;
   total = parseFloat(total.toPrecision(4));
   console.log(total);
-};
+}
 
 function addOrder(string) {
   this.consumption.push(string);
-};
+}
 
 const createMenu = (object) => ({
   fetchMenu: () => object,
