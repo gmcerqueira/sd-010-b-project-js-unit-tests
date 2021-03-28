@@ -50,6 +50,7 @@ const createMenu = require('../src/restaurant');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
+// Feito com ajuda do domingão do plantão
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
