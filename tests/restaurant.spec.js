@@ -84,7 +84,6 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
-    objetoRetornado.consumption = [];
     assert.deepStrictEqual(objetoRetornado.consumption, []);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -95,17 +94,18 @@ describe('#createMenu', () => {
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
-    objetoRetornado.order = ['coxinha'];
-    assert.deepStrictEqual(objetoRetornado.order, ['coxinha']);
+    objetoRetornado.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
     // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sopa');
+    objetoRetornado.order('sashimi');
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -128,3 +128,4 @@ describe('#createMenu', () => {
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
+// projeto concluído com ajuda de jefferson andrade t10b / fernanda porto t10b / diegho moraes t10b/ lucas martis t10b/ denis rossati t10b/ gustavo cerqueira t10b

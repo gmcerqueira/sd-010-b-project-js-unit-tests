@@ -47,12 +47,16 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 //
+let meuRestaurante = {};
+
+let request = (pedido) => meuRestaurante.consumption.push(pedido);
+
 const createMenu = (objeto) => {
-  let saida = {};
-  saida = { fetchMenu: () => objeto };
-  return saida;
+  meuRestaurante.fetchMenu = () => objeto;
+  meuRestaurante.consumption = [];
+  meuRestaurante.order = request;
+  return meuRestaurante;
 };
-let meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
 
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
@@ -60,7 +64,7 @@ let meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { ag
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
-meuRestaurante.consumption = [];
+
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -79,12 +83,6 @@ meuRestaurante.consumption = [];
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
 // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
-let clientOrder = (pedido) => {
-  meuRestaurante.consumption.push(pedido);
-};
-
-let orderFromMenu = clientOrder('agua');
-console.log(meuRestaurante);
 
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
