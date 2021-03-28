@@ -38,7 +38,9 @@ describe('#productDetails', () => {
     const teste = productDetails('teste1', 'teste2');
     assert.strictEqual(typeof Object.values(teste), 'object');
     assert.ok((teste[0] !== teste[1]), true);
-    assert.strictEqual(teste[0].details.productId.slice(-3) && teste[1].details.productId.slice(-3), '123');
+    const productId1 = teste[0].details.productId.slice(-3);
+    const productId2 = teste[1].details.productId.slice(-3);
+    assert.strictEqual(productId1 && productId2, '123');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
