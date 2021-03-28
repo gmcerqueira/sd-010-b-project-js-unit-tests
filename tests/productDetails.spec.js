@@ -53,8 +53,8 @@ const compareObj = () => {
 
 let productId1 = expected[0].details.productId;
 let productId2 = expected[1].details.productId;
-const parteString = (productId1, productId2) => {
-  if (productId1.substr(-3) === '123' && productId2.substr(-3)) {
+const parteString = (str1, str2) => {
+  if (str1.substr(-3) === '123' && str2.substr(-3)) {
     return true;
   }
   return false;
