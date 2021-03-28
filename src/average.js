@@ -14,25 +14,19 @@
 
 const average = (array) => {
   let total = 0;
-  let media = 0;
-  for (let i in array){
-    if (typeof(array[i]) !== 'number'){
-        return undefined;
-      }
-  }
-  if (array.length === 0 || array === []){
+
+  if (array.length === 0) {
     return undefined;
   }
 
-  for (let i = 0; i < array.length; i += 1){
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof (array[i]) !== 'number') {
+      return undefined;
+    }
     total += array[i];
   }
-  media = total / array.length;
+  let media = total / array.length;
   return Math.round(media);
 };
-console.log(average([0, 0, 0, 0, 0, 0, 1]));
-console.log(average([]));
-console.log(average(['10', 10]));
-console.log(average([1, 1]));
 
 module.exports = average;
