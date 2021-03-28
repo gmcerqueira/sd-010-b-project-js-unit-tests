@@ -10,12 +10,18 @@
     - Um número.
   Comportamento:
     vqv(Tunico, 30) // Retorna:
-      'Oi, meu nome é Tunico!
+      Oi, meu nome é Tunico!
       Tenho 30 anos,
       trabalho na Trybe e mando muito em programação!
-      #VQV!'
+      #VQV!
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  const frase = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  return frase;
+};
 
 module.exports = vqv;
