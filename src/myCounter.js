@@ -11,22 +11,14 @@
 */
 
 const myCounter = () => {
-<<<<<<< HEAD
-  let newArray = [];
-  for (let counter1 = 0; counter1 <= 3; counter1 += 1) {
-    newArray.push(counter1);
-    for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
-      newArray.push(counter2);
-=======
   var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
->>>>>>> e6034514f3ea8749d53d535c657d04f636428cbc
+    for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
+      myArray.push(counter2);
     }
   }
-  return newArray;
+  return myArray;
 };
 
 module.exports = myCounter;
