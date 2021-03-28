@@ -47,4 +47,4 @@ describe('#productDetails', () => {
     assert.strictEqual(productDetails()[1].details.productId.includes('123'), true);
     // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
   });
-});
+ });
