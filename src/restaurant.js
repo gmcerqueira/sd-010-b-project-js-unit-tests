@@ -107,4 +107,6 @@ const createMenu = (menu) => {
   return restaurant;
 };
 
+// Feito com ajuda do domingão do plantão
+
 module.exports = createMenu;
