@@ -14,14 +14,13 @@
 
 const average = (array) => {
   let soma = 0;
-  let divisao = 0;
+  if (array.length === 0) return undefined;
   for (let index = 0; index < array.length; index += 1) {
-    soma += array[index];
-    divisao = soma / array.length;
+    if (typeof (array[index]) === 'number') {
+      soma += array[index];
+    } else return undefined;
   }
-  return divisao;
-}
+  return Math.round(soma / array.length);
+};
 
-module.exports = average
-
-console.log(average([5,10,15]));
+module.exports = average;
