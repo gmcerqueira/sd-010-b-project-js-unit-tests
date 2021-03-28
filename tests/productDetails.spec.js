@@ -50,17 +50,22 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.strictEqual(typeof productDetails('chocolate', 'bala'), 'object', 'O retorno deveria ser um objeto');
+    assert.strictEqual(typeof productDetails('chocolate', 'bala'), 'object',
+      'O retorno deveria ser um objeto');
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(productDetails('chocolate', 'bala').length, 2, 'O valor retornado pela função deveria ter dois itens dentro.');
+    assert.strictEqual(productDetails('chocolate', 'bala').length, 2, 
+      'O valor retornado pela função deveria ter dois itens dentro.');
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     const products = productDetails('chocolate', 'bala');
-    assert.strictEqual(verifyAllProducts(products), true, 'Todos os valores retornados deveriam ser objetos!');
+    assert.strictEqual(verifyAllProducts(products), true, 
+      'Todos os valores retornados deveriam ser objetos!');
     // Teste que os dois objetos são diferentes entre si.
     const getProduct = (indexProduct) => products[indexProduct];
-    assert.notStrictEqual(getProduct(0), getProduct(1), 'Erro! Todos os objetos em Java Script são diferentes entre si, por mais que suas chaves e valores sejam diferentes!');
+    assert.notStrictEqual(getProduct(0), getProduct(1), 
+      'Erro! Todos os objetos em Java Script são diferentes entre si, por mais que suas chaves e valores sejam diferentes!');
     // (Difícil) Teste que os dois productIds terminam com 123.
     const getProductIdTermination = (indexProduct) => products[indexProduct].details.productId.substr(-3);
-    assert.strictEqual(getProductIdTermination(0), getProductIdTermination(1), 'Os produtos não terminal com o mesmo ID');
+    assert.strictEqual(getProductIdTermination(0), getProductIdTermination(1),
+      'Os produtos não terminal com o mesmo ID');
   });
 });
