@@ -49,7 +49,7 @@ const createMenu = require('../src/restaurant');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-//fui auxiliado pelo colega Henrique Zózimo para a execução da questão
+//  fui auxiliado pelo colega Henrique Zózimo para a execução da questão
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     let objetoRetornado = createMenu({ food: {}, drink: {} });
