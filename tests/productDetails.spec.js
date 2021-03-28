@@ -30,10 +30,11 @@ const productDetails = require('../src/productDetails');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-let alcool = 'Alcool gel'
+let productD = productDetails('Alcool gel', 'Máscara');
+
 const expected = [
   {
-    name: alcool,
+    name: 'Alcool gel',
     details: {
       productId: 'Alcool gel123',
     },
@@ -47,7 +48,7 @@ const expected = [
 ];
 
 const compareObj = () => {
-  let storeFunction = productDetails('Alcool gel', 'Máscara');
+  let storeFunction = productD;
 
   return storeFunction[0] === storeFunction[1];
 };
@@ -63,9 +64,9 @@ const parteString = (str1, str2) => {
 
 describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.strictEqual(Array.isArray(productDetails('Alcool gel', 'Máscara')), true);
-    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
-    assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'), 'object');
+    assert.strictEqual(Array.isArray(productD), true);
+    assert.strictEqual(productD.length, 2);
+    assert.strictEqual(typeof productD, 'object');
     assert.strictEqual(compareObj(), false);
     assert.strictEqual(parteString(productId1, productId2), true);
     // ESCREVA SEUS TESTES ABAIXO:
