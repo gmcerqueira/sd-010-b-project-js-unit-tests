@@ -87,17 +87,15 @@ const orderFromMenu = (request) =>
   restaurant.consumption.push(request);
 
 const payment = (object) => {
-  // const getItems = restaurant.order;
   let total = 0;
-  const selectOrder = Object.values(object);
-  console.log(selectOrder);
+  const selectMenu = Object.values(object);
   const { consumption } = restaurant;
   for (let i = 0; i < consumption.length; i += 1) {
-    if (selectOrder[0][consumption[i]]) {
-      total += selectOrder[0][consumption[i]];
+    if (selectMenu[0][consumption[i]]) {
+      total += selectMenu[0][consumption[i]];
     }
-    if (selectOrder[1][consumption[i]]) {
-      total += selectOrder[1][consumption[i]];
+    if (selectMenu[1][consumption[i]]) {
+      total += selectMenu[1][consumption[i]];
     }
   }
   return total * 1.1;
