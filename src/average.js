@@ -15,13 +15,13 @@
 // Fontes de pesquisa utilizadas para este exercício: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
-const average = () => {
+const average = (arr) => {
   const arr = [];
   if (arr !== 'number' || arr === '') {
     return undefined;
   }
-  const result = arr.reduce((acc, number) => acc + number);
-  let media = Math.round(result / arr.length);
+  const result = arr.reduce((acc, number) => acc + number, 0);
+  const media = Math.round(result / arr.length);
   return media;
 };
 
