@@ -20,7 +20,9 @@
 */
 const add = (a, b) => a + b;
 const mult = (a, b) => a * b;
-const div = (a, b) => (a / b);
+// Consultei "https://stackoverflow.com/questions/4228356/how-do-i-perform-integer-division-and-separately-get-the-remainder-in-javascri" pra descobrir o math.floor
+// Consultei "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor" pra entendê-lo
+const div = (a, b) => Math.floor(a / b);
 const sub = (a, b) => a - b;
 const calculator = {
   add,
