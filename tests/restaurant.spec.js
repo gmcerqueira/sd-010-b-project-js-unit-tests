@@ -96,8 +96,9 @@ describe('#createMenu', () => {
     objetoRetornadoTeste6.order('agua');
     objetoRetornadoTeste6.order('sopa');
     objetoRetornadoTeste6.order('sashimi');
-    objetoRetornadoTeste6.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
-    assert.deepStrictEqual(objetoRetornadoTeste6.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
+    assert.deepStrictEqual(
+      objetoRetornadoTeste6.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']
+    );
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
@@ -106,13 +107,11 @@ describe('#createMenu', () => {
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
-    
     // ```
     const objetoRetornadoTeste7 = createMenu({ food: {}, drink: {} });
     objetoRetornadoTeste7.order('coxinha');
     objetoRetornadoTeste7.order('agua');
     objetoRetornadoTeste7.order('coxinha');
-    objetoRetornadoTeste7.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     assert.deepStrictEqual(objetoRetornadoTeste7.consumption, ['coxinha', 'agua', 'coxinha']);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -131,7 +130,7 @@ describe('#createMenu', () => {
     objetoRetornadoTeste8.order('coxinha');
     objetoRetornadoTeste8.order('agua');
     objetoRetornadoTeste8.order('coxinha');
-    objetoRetornadoTeste8.pay() // Retorno: somaDosPreçosDosPedidos
+    objetoRetornadoTeste8.pay(); // Retorno: somaDosPreçosDosPedidos
     assert.strictEqual(objetoRetornadoTeste8.pay(), 22);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
