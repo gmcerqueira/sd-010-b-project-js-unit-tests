@@ -31,7 +31,9 @@ describe('#circle', () => {
     let value = circle(3);
     value.area = parseFloat(value.area).toPrecision(4) * 1;
 
-    assert.deepStrictEqual(value, { radius: 3, area: 28.26, circumference: 18.84 });
+    assert.deepStrictEqual(circle(1), { radius: 1, area: 3.14, circumference: 6.28 });
+    assert.deepStrictEqual(circle(7), { radius: 7, area: 153.86, circumference: 43.96 });
+
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
