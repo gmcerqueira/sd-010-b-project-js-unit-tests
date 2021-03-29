@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
+const { constants } = require('buffer');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -40,8 +41,10 @@ describe('#productDetails', () => {
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual((Object.keys(productDetails('Alcool', 'luva')).length), 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.strictEqual(typeof (Object.entries(productDetails('Alcool', 'luva'))[0]), 'object');
-    assert.strictEqual(typeof (Object.entries(productDetails('Alcool', 'luva'))[1]), 'object');
+    const produto0 = Object.entries(productDetails('Alcool', 'luva'))[0];
+    const produto1 = Object.entries(productDetails('Alcool', 'luva'))[1];
+    assert.strictEqual(typeof (produto0), 'object');
+    assert.strictEqual(typeof (produto1), 'object');
     // Teste que os dois objetos são diferentes entre si.
     assert.strictEqual((Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0]) !== (Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[1]), true);
     // (Difícil) Teste que os dois productIds terminam com 123.
