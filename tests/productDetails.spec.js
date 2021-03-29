@@ -37,7 +37,7 @@ const productDetails = require('../src/productDetails');
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/ToString
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
  */
-const isObject = (element) => element.toString() === '[object Object]';
+const isObject = (element) => toString.call(element) === '[object Object]';
 
 /*
   Essa função verifica se productId do elemento termina com '123'
