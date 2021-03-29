@@ -37,7 +37,7 @@ describe('#productDetails', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     const verificaObj = () => {
       let obj = '';
-      for (let index = 0; productDetails.length; index += 1) {
+      for (let index = 0; index < productDetails.length; index += 1) {
         if (typeof productDetails()[index] === 'object') {
           obj = typeof productDetails()[index];
         }
