@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  // Verifica se hà parametros na função.
+  if (!nome || !idade) {
+    return undefined;
+  }
+  // Retorno da string caso haja parametros.
+  return `Oi, meu nome é ${nome}!
+  Tenho ${idade} anos,
+  trabalho na Trybe e mando muito em programação!
+  #VQV!`;
+};
 
 module.exports = vqv;
