@@ -99,9 +99,8 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
-    restaurant.pay();
     const somaDosPreçosDosPedidos = 41.14;
-    assert.deepStrictEqual(restaurant.payment, somaDosPreçosDosPedidos);
+    assert.deepStrictEqual(restaurant.pay(), somaDosPreçosDosPedidos);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
