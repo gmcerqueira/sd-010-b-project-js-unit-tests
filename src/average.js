@@ -12,14 +12,17 @@
     - average([1, '2']) // Retorno: undefined;
 */
 // eu fiz esse requisito com a ajuda do meu colega Alexandre Damasceno.  Link do seu Pull request: https://github.com/tryber/sd-010-b-project-js-unit-tests/pull/132/commits/52457dd857c9e37eac7fea881b4de15e870399ee
-const average = ([array]) => {
+
+const average = (array) => {
+  let sum = 0;
+
   for (let index = 0; index < array.length; index += 1) {
-    if (array.length === 0 || typeof (array[index]) !== 'number') { // length igual a 0 é uma forma de dizer que o array está vazio
+    if (typeof (array[index]) !== 'number' || array.length === 0) { // length igual a 0 é uma forma de dizer que o array está vazio
       return undefined;
     }
-    var sum = 0;
     sum += array[index];
   }
+
   let calculateAverage = sum / array.length;
   return Math.round(calculateAverage); // aqui é pra arredondar a média.
 };
