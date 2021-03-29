@@ -37,5 +37,10 @@ const productDetails = (firstProduct, secondProduct) => [{
   },
 },
 ];
-console.log(typeof (Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0]));
+
+let teste = productDetails('gel', 'giz')[0];
+let testeDetalhes = teste.details.productId;
+let proId = testeDetalhes.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
+console.log(testeDetalhes);
+console.log(proId);
 module.exports = productDetails;

@@ -47,9 +47,17 @@ describe('#productDetails', () => {
     const produto1 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[1];
     assert.deepStrictEqual(produto0 !== produto1, true);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    const finalPn0 = productDetails('gel', 'giz')[0].details.productId.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
+    const prod0 = productDetails('gel', 'giz')[0];
+    const prod0Det = prod0.details.productId;
+    const proId0 = prod0Det.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
+
+    const prod1 = productDetails('gel', 'giz')[0];
+    const prod1Det = prod1.details.productId;
+    const proId1 = prod1Det.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
     const finalPn1 = productDetails('gel', 'giz')[1].details.productId.substr((productDetails('gel', 'giz')[1].details.productId.length - 3), 3);
-    assert.strictEqual(finalPn0, '123');
-    assert.strictEqual(finalPn1, '123');
+
+
+    assert.strictEqual(proId0, '123');
+    assert.strictEqual(proId1, '123');
   });
 });
