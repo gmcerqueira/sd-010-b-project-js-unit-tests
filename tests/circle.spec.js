@@ -26,12 +26,12 @@ const circle = require('../src/circle');
 // eslint-disable-next-line max-lines-per-function
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.strictEqual(circle(),undefined);
+    assert.strictEqual(circle(), undefined);
 
     let value = circle(3);
-    value['area'] = parseFloat(value['area']).toPrecision(4) * 1;
+    value.area = parseFloat(value.area).toPrecision(4) * 1;
 
-    assert.strictEqual(value, {radius: 3, area: 28.26, circumference: 18.84});
+    assert.deepStrictEqual(value, { radius: 3, area: 28.26, circumference: 18.84 });
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
