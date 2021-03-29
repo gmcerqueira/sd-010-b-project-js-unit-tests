@@ -82,8 +82,21 @@
 const createMenu = (object) => ({
   fetchMenu: () => object,
   consumption: [],
+  order(newOrder) {
+    this.consumption.push(newOrder);
+  },
+  pay() {
+    let sum = 0;
+    for (let index = 0; index <= this.consumption.length; index += 1) {
+      if (this.consumption[index].fetchMenu.food) {
+        sum += this.consumption.newOrder.fetchMenu.food[index];
+      } else {
+        sum += this.consumption.newOrder.fetchMenu.drink[index];
+      }
+    }
+    sum += sum * 0.1;
+    return sum;
+  },
 });
-
-const newFunction = (string) => createMenu().consumption.push(string);
 
 module.exports = createMenu;
