@@ -35,11 +35,16 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.strictEqual(Array.isArray(productDetails(), true));
+    assert.strictEqual(Array.isArray(productDetails()), true);
 
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(productDetails().length, 2);
+    
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
+
+/* https://www.arquivodecodigos.com.br/dicas/3732-javascript-usando-o-metodo-array-isarray-do-javascript-es5-para-verificar-se-um-objeto-e-um-vetor-ou-matriz.html
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray */
