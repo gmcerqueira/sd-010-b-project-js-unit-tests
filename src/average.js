@@ -30,5 +30,4 @@ const average = (arr) => {
   return Math.round(acc / arrCount);
 };
 
-
 module.exports = average;
