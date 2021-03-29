@@ -46,6 +46,8 @@ describe('#productDetails', () => {
     assert.notStrictEqual(productDetails([0].name), productDetails([1].name));
     // (Difícil) Teste que os dois productIds terminam com 123.
     // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
-    assert.ok(productDetails(productDetails.name, productDetails.details)[0].details.productId.endsWith('123') && productDetails(productDetails.name, productDetails.details)[1].details.productId.endsWith('123'));
+    assert.ok(
+      productDetails(productDetails.name, productDetails.details)[0].details.productId.endsWith('123'),
+    );
   });
 });
