@@ -15,7 +15,7 @@
 // Fontes de pesquisa utilizadas para este exercício: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
-const average = (arr=[]) => {
+const average = (arr = []) => {
   if (arr !== 'number' || arr === '') {
     return undefined;
   }
