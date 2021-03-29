@@ -101,7 +101,7 @@ const pay = (param) => {
     }
   }
   return (1.1 * sum).toPrecision(4);
-}
+};
 
 // REFERÊNCIA : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/HasOwnProperty
 
@@ -111,7 +111,7 @@ const createMenu = (param) => {
     consumption: [],
     order: (request) => newOrder(request),
     pay: () => pay(param),
-  }
+  };
   return myMenu;
 };
 
@@ -119,7 +119,5 @@ module.exports = createMenu;
 
 const returnedObj = createMenu({
   food: {},
-  drink: {}
+  drink: {},
 });
-returnedObj.order('coxinha')
-console.log(returnedObj.consumption)
