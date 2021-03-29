@@ -90,7 +90,6 @@ describe('#createMenu', () => {
     assert.deepStrictEqual(valueConsumption, ['coxinha']);
 
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
-
     returnedObj.order('sopa');
     returnedObj.order('agua');
     assert.deepStrictEqual(returnedObj.consumption.length, 3);

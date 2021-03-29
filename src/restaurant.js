@@ -92,17 +92,16 @@ const pay = (param) => {
   const consumptionItems = myMenu.consumption;
   let sum = 0;
 
-  for (let index = 0; index < consumptionItems.length; index += 1) {
-    if (Object.hasOwnProperty.call(foodItems, consumptionItems[index])) {
-      sum += foodItems[consumptionItems[index]];
+  for (let i = 0; i < consumptionItems.length; i += 1) {
+    if (Object.hasOwnProperty.call(foodItems, consumptionItems[i])) {
+      sum += foodItems[consumptionItems[i]];
     }
-    if (Object.hasOwnProperty.call(drinkItems, consumptionItems[index])) {
-      sum += drinkItems[consumptionItems[index]];
+    if (Object.hasOwnProperty.call(drinkItems, consumptionItems[i])) {
+      sum += drinkItems[consumptionItems[i]];
     }
   }
   return (1.1 * sum).toPrecision(4);
 };
-
 // REFERÊNCIA : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/HasOwnProperty
 
 const createMenu = (param) => {
