@@ -24,8 +24,7 @@
   ]
 */
 
-const productDetails = (firstProduct, secondProduct) => [
-  {
+const productDetails = (firstProduct, secondProduct) => [{
     name: firstProduct,
     details: {
       productId: `${firstProduct}123`,
@@ -38,5 +37,9 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+const produto0 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0];
+const produto1 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[1];
 
+console.log(produto0);
+console.log(produto1);
 module.exports = productDetails;
