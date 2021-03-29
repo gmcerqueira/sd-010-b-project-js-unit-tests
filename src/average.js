@@ -35,6 +35,7 @@ const average = (arr = []) => {
   }
   const arrCount = arr.length;
   const media = acc / arrCount;
+  return media;
 };
 
 module.exports = average;
