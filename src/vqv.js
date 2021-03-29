@@ -20,9 +20,8 @@ const vqv = (nome, idade) => {
   if (typeof (nome) !== 'string' || typeof (idade) !== 'number') {
     return undefined;
   }
-  return `Oi, meu nome é ${nome}!
-  Tenho ${idade} anos, 
-  trabalho na Trybe e mando muito em programação!`;
+  const whereWork = 'trabalho na Trybe e mando muito em programação!\n';
+  return `'Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n${whereWork}#VQV!'`;
 };
 
 console.log(vqv('Alexandre', 23));
