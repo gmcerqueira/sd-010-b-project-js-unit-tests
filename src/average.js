@@ -17,10 +17,9 @@ const average = ([array]) => {
     if (array.length === 0 || typeof (array[index]) !== 'number') { // length igual a 0 é uma forma de dizer que o array está vazio
       return undefined;
     }
-    let sum = 0;
+    var sum = 0;
     sum += array[index];
   }
-  // eslint-disable-next-line no-undef
   let calculateAverage = sum / array.length;
   return Math.round(calculateAverage); // aqui é pra arredondar a média.
 };
