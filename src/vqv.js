@@ -17,10 +17,10 @@
 */
 const vqv = (nome, idade) => {
   const age = idade.toString();
-  let result = `'Oi, meu nome é ${nome}!
+  let result = `Oi, meu nome é ${nome}!
   Tenho ${age} anos,
   trabalho na Trybe e mando muito em programação!
-  #VQV!'`;
+  #VQV!`;
 
   return result;
 };
