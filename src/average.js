@@ -20,7 +20,7 @@ const average = () => {
   if (arr !== 'number' || arr === '') {
     return undefined;
   }
-  let result = arr.reduce((result, number) => result + number);
+  const result = arr.reduce((acc, number) => acc + number);
   let media = Math.round(result / arr.length);
   return media;
 };
