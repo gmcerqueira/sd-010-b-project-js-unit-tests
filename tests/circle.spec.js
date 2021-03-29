@@ -1,8 +1,8 @@
 // /* eslint-disable max-len */
 // /* eslint-disable no-unused-vars */
 
-// const assert = require('assert');
-// const circle = require('../src/circle');
+ const assert = require('assert');
+ const circle = require('../src/circle');
 
 // /*
 //   Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
@@ -23,20 +23,20 @@
 //   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 // */
 
-// describe('#circle', () => {
-//   it('given a radius, should return an object with circles info', () => {
+ describe('#circle', () => {
+   it('given a radius, should return an object with circles info', () => {
 //     // ESCREVA SEUS TESTES ABAIXO:
 //     // Teste se circle retorna um objeto.
-//     assert.strictEqual(typeof circle, 'object');
+     assert.strictEqual(typeof circle, 'object');
 //     // Teste se o objeto retornado tem 3 entradas.
-//     assert.strictEqual(150, 'number', 'number', 'number');
+     assert.strictEqual(typeof circle, 'number', 'number', 'number');
 //     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-//     assert.strictEqual(null, undefined);
+     assert.strictEqual(circle(null), undefined);
 //     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-//     assert.strictEqual(2, radius = 2, area = 12.56, circumference = 12.56 );
+     assert.strictEqual(circle(2), radius = 2, area = 12.56, circumference = 12.56 );
 //     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-//     assert.strictEqual(2, radius = undefined, area = 28.259999999999998, circumference = undefined);
+     assert.strictEqual(circle(3), radius = undefined, area = 28.259999999999998, circumference = undefined);
 //     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-//     assert.strictEqual(2, radius = 3, area = 28.259999999999998, circumference = 18.84);
-//   });
-// });
+     assert.strictEqual(circle(3), radius = 3, area = 28.259999999999998, circumference = 18.84);
+   });
+ });
