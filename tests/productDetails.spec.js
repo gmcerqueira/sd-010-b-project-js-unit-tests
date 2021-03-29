@@ -50,11 +50,9 @@ describe('#productDetails', () => {
     const prod0 = productDetails('gel', 'giz')[0];
     const pro0De = prod0.details.productId;
     const proId0 = pro0De.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
-
     const prod1 = productDetails('gel', 'giz')[0];
     const pro1De = prod1.details.productId;
-    const proId1 = pro1De.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
-   
+    const proId1 = pro1De.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3); 
     assert.strictEqual(proId0, '123');
     assert.strictEqual(proId1, '123');
   });
