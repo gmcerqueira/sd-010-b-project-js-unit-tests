@@ -13,19 +13,21 @@
 */
 
 const average = (array) => {
+  let soma = 0;
+  let media;
   if (array.length === 0) {
     return undefined;
-  }
-  let soma = 0;
-  for (let index = 0; index < array.length; index += 1) {
-    if (typeof (array[index]) === 'string' || array[index] === 'object') {
-      return undefined;
-    } else {
-      soma = soma + array[index];
+  } else {
+    for (let index = 0; index < array.length; index += 1) {
+      if (typeof (array[index]) === 'string') {
+        return undefined;
+      } else {
+        soma = soma + array[index];
+      }
     }
   }
-  Math.round(soma / array.length);
-  return soma;
+  media = Math.round(soma / array.length);
+  return media;
 };
 
 module.exports = average;
