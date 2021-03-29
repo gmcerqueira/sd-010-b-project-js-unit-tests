@@ -25,3 +25,4 @@ const createStudent = (string) => {
 };
 
 module.exports = createStudent;
+console.log(createStudent('Fernanda'));
