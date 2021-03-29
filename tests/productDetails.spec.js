@@ -48,15 +48,13 @@ describe('#productDetails', () => {
     assert.deepStrictEqual(produto0 !== produto1, true);
     // (Difícil) Teste que os dois productIds terminam com 123.
     const prod0 = productDetails('gel', 'giz')[0];
-    const prod0Det = prod0.details.productId;
-    const proId0 = prod0Det.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
+    const pro0De = prod0.details.productId;
+    const proId0 = pro0De.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
 
     const prod1 = productDetails('gel', 'giz')[0];
-    const prod1Det = prod1.details.productId;
-    const proId1 = prod1Det.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
-    const finalPn1 = productDetails('gel', 'giz')[1].details.productId.substr((productDetails('gel', 'giz')[1].details.productId.length - 3), 3);
-
-
+    const pro1De = prod1.details.productId;
+    const proId1 = pro1De.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
+   
     assert.strictEqual(proId0, '123');
     assert.strictEqual(proId1, '123');
   });
