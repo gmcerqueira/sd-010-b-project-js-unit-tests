@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
-const { constants } = require('buffer');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -41,14 +40,16 @@ describe('#productDetails', () => {
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual((Object.keys(productDetails('Alcool', 'luva')).length), 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    const produto0 = Object.entries(productDetails('Alcool', 'luva'))[0];
-    const produto1 = Object.entries(productDetails('Alcool', 'luva'))[1];
-    assert.strictEqual(typeof (produto0), 'object');
-    assert.strictEqual(typeof (produto1), 'object');
+    assert.strictEqual(typeof (Object.entries(productDetails('Alcool', 'luva'))[0]), 'object');
+    assert.strictEqual(typeof (Object.entries(productDetails('Alcool', 'luva'))[1]), 'object');
     // Teste que os dois objetos são diferentes entre si.
-    assert.strictEqual((Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0]) !== (Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[1]), true);
+    const produto0 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0];
+    const produto1 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[1];
+    assert.deepStrictEqual(produto0 !== produto1, true);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.strictEqual(productDetails('Alcool', 'luva')[0].details.productId.substr((productDetails('Alcool', 'luva')[0].details.productId.length - 3), 3), '123');
-    assert.strictEqual(productDetails('Alcool', 'luva')[1].details.productId.substr((productDetails('Alcool', 'luva')[1].details.productId.length - 3), 3), '123');
+    const finalPn0 = productDetails('gel', 'giz')[0].details.productId.substr((productDetails('gel', 'giz')[0].details.productId.length - 3), 3);
+    const finalPn1 = productDetails('gel', 'giz')[1].details.productId.substr((productDetails('gel', 'giz')[1].details.productId.length - 3), 3);
+    assert.strictEqual(finalPn0, '123');
+    assert.strictEqual(finalPn1, '123');
   });
 });

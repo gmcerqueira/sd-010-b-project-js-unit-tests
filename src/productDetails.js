@@ -37,5 +37,5 @@ const productDetails = (firstProduct, secondProduct) => [{
   },
 },
 ];
-
+console.log(typeof (Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0]));
 module.exports = productDetails;
