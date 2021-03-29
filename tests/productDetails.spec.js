@@ -48,9 +48,12 @@ describe('#productDetails', () => {
     assert.strictEqual(productDetails()[0] !== productDetails()[1], true);
 
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.strictEqual();
+    // Resolução do exercio com a dica de Eduarda Wiltiner. Referencia do que foi usado nonfinal do codigo.
+    assert.strictEqual(productDetails()[0].details.productId.substr(-3), '123');
+    assert.strictEqual(productDetails()[1].details.productId.substr(-3), '123');
   });
 });
 
 /* https://www.arquivodecodigos.com.br/dicas/3732-javascript-usando-o-metodo-array-isarray-do-javascript-es5-para-verificar-se-um-objeto-e-um-vetor-ou-matriz.html
-https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray */
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr */
