@@ -29,7 +29,5 @@ const circle = (radius) => {
     circumference: 2 * PI * radius,
   };
 };
-const pi = 3.14
-console.log(circle(3));
 
 module.exports = circle;
