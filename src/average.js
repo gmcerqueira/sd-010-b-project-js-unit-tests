@@ -16,7 +16,7 @@
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 const average = (arr = []) => {
-  if (arr !== 'number' || arr === '') {
+  if (typeof (arr !== 'number' || arr === '')) {
     return undefined;
   }
   const result = arr.reduce((acc, number) => acc + number, 0);
