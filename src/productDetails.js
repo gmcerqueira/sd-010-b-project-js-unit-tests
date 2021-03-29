@@ -25,21 +25,17 @@
 */
 
 const productDetails = (firstProduct, secondProduct) => [{
-    name: firstProduct,
-    details: {
-      productId: `${firstProduct}123`,
-    },
+  name: firstProduct,
+  details: {
+    productId: `${firstProduct}123`,
   },
-  {
-    name: secondProduct,
-    details: {
-      productId: `${secondProduct}123`,
-    },
+},
+{
+  name: secondProduct,
+  details: {
+    productId: `${secondProduct}123`,
   },
+},
 ];
-const produto0 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[0];
-const produto1 = Object.getOwnPropertyNames(productDetails('Alcool', 'luva'))[1];
 
-console.log(produto0);
-console.log(produto1);
 module.exports = productDetails;
