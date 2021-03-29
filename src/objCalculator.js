@@ -20,5 +20,5 @@
 */
 
 const calculator = {};
-
+s
 module.exports = calculator;
