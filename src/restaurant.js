@@ -79,6 +79,47 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+let myMenu = {};
+
+const newOrder = (request) => {
+  myMenu.consumption.push(request);
+};
+
+const pay = (param) => {
+  const foodItems = param.food;
+  const drinkItems = param.drink;
+
+  const consumptionItems = myMenu.consumption;
+  let sum = 0;
+
+  for (let index = 0; index < consumptionItems.length; index += 1) {
+    if (Object.hasOwnProperty.call(foodItems, consumptionItems[index])) {
+      sum += foodItems[consumptionItems[index]];
+    }
+    if (Object.hasOwnProperty.call(drinkItems, consumptionItems[index])) {
+      sum += drinkItems[consumptionItems[index]];
+    }
+  }
+  return (1.1 * sum).toPrecision(4);
+}
+
+// REFERÊNCIA : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/HasOwnProperty
+
+const createMenu = (param) => {
+  myMenu = {
+    fetchMenu: () => param,
+    consumption: [],
+    order: (request) => newOrder(request),
+    pay: () => pay(param),
+  }
+  return myMenu;
+};
 
 module.exports = createMenu;
+
+const returnedObj = createMenu({
+  food: {},
+  drink: {}
+});
+returnedObj.order('coxinha')
+console.log(returnedObj.consumption)
