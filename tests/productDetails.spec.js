@@ -40,7 +40,7 @@ describe('#productDetails', () => {
     assert.strictEqual(productDetails().length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
-    assert.notStrictEqual(productDetails('first', 'second')[0], productDetails('first', 'second')[1]);
+    assert.notStrictEqual(productDetails('frst', 'scnd')[0], productDetails('frst', 'scnd')[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
