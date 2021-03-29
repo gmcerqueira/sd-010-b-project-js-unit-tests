@@ -16,11 +16,16 @@
       #VQV!'
 */
 const vqv = (nome, idade) => {
-  const age = idade.toString();
-  let result = `Oi, meu nome é ${nome}!
-  Tenho ${age} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`;
+  let result;
+
+  if (nome && idade) {
+    result = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  } else {
+    return undefined;
+  }
 
   return result;
 };
