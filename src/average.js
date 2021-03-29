@@ -18,7 +18,7 @@ const average = (array) => {
     return undefined;
   }
   let count = 0;
-  for (let key = 0; key < array.length; key =+ 1) {
+  for (let key = 0; key < array.length; key += 1) {
     if (typeof (array[key]) !== 'number') {
       return undefined;
     }
