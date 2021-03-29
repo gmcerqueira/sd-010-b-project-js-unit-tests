@@ -16,12 +16,25 @@
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 const average = (arr = []) => {
-  if (typeof (arr !== 'number' || arr === '')) {
+  // if (typeof (arr !== 'number' || arr === '')) {
+  //   return undefined;
+  // }
+  // const result = arr.reduce((acc, number) => acc + number, 0);
+  // const media = Math.round(result / arr.length);
+  // return media;
+
+  if (arr.length === 0) {
     return undefined;
   }
-  const result = arr.reduce((acc, number) => acc + number, 0);
-  const media = Math.round(result / arr.length);
-  return media;
+  let acc = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof (arr[i]) !== 'number') {
+      return undefined;
+    }
+    acc += arr[i];
+  }
+  const arrCount = arr.length;
+  const media = acc / arrCount;
 };
 
 module.exports = average;
