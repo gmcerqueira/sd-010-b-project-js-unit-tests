@@ -82,7 +82,6 @@
 const createMenu = (object) => ({
   fetchMenu: () => object,
   consumption: [],
-  pay:
 });
 
 const newFunction = (string) => createMenu().consumption.push(string);
