@@ -23,9 +23,11 @@ const vqv = (nome, idade) => {
   }
   // Retorno da string caso haja parametros.
   return `Oi, meu nome é ${nome}!
-  Tenho ${idade} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`;
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
 };
 
 module.exports = vqv;
+
+// https://pt.stackoverflow.com/questions/14008/o-que-significa-exclama%C3%A7%C3%A3o-antes-de-um-trecho-de-c%C3%B3digo
