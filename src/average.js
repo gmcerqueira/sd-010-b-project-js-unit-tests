@@ -16,10 +16,10 @@
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 const average = () => {
-  if (arr !== number || arr == '') {
+  const arr = [];
+  if (arr !== 'number' || arr === '') {
     return undefined;
   }
-  const arr = [];
   const result = arr.reduce((result, number) => result + number);
   let media = Math.round(result / arr.length);
   return media;
