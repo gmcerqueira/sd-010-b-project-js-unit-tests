@@ -15,9 +15,11 @@
 
 const average = (array) => {
   let sum = 0;
-
+  if (array.length === 0) {
+    return undefined;
+  } // length igual a 0 é uma forma de dizer que o array está vazio. Essa parte não pode estar dentro do FOR, senão dá problema.
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof (array[index]) !== 'number' || array.length === 0) { // length igual a 0 é uma forma de dizer que o array está vazio
+    if (typeof (array[index]) !== 'number') {
       return undefined;
     }
     sum += array[index];
@@ -26,5 +28,5 @@ const average = (array) => {
   let calculateAverage = sum / array.length;
   return Math.round(calculateAverage); // aqui é pra arredondar a média.
 };
-
+console.log(average([4, 6, 14]));
 module.exports = average;
