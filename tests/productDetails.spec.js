@@ -48,7 +48,7 @@ describe('#productDetails', () => {
     const test = productDetails('product1', 'product2');
     assert.strictEqual(typeof test[0] === 'object' && typeof test[1] === 'object', true);
     // Teste que os dois objetos são diferentes entre si
-    
+
     assert.strictEqual(test[0].details.productId.includes('123')
     && test[1].details.productId.includes('123'), true);
     // (Difícil) Teste que os dois productIds terminam com 123.
