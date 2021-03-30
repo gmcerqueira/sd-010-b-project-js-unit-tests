@@ -14,19 +14,19 @@
 
 const average = (array) => {
   let sum = 0;
-  let averageCalc;
-  for (let i = 0; i < array.length; i += 1) {
-    if (Number.isFinite(array[i])) {
-      sum += array[i];
+  if (array.length === 0) return undefined;
+
+  for (const key in array) {
+    if (Number.isFinite(array[key])) {
+      sum += array[key];
     } else {
       return undefined;
     }
   }
-  averageCalc = (sum / array.length);
 
-  return Math.round(averageCalc);
+  return Math.round(sum / array.length);
 };
 
-console.log(average([0, 0, 0, 0, 0, 0, 1]));
+console.log(average([' ']));
 
 module.exports = average;
