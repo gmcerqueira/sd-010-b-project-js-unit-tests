@@ -37,5 +37,5 @@ const productDetails = (firstProduct, secondProduct) => [{
   },
 },
 ];
-console.log(typeof productDetails('Alcool Gel', 'Máscara'));
+console.log(productDetails('Alcool gel', 'Máscara')[1].details['productId']);
 module.exports = productDetails;
