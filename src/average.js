@@ -12,8 +12,30 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // adicionar codigo
+const somar = (total, number) => {
+  return total + number;
+}
+
+const verifyNumber = (array) => {
+  let result = true;
+  for (let index = 0; index < array.length; index += 1) {
+    if(typeof(array[index]) !== 'number') {
+      result = false;
+    }
+  }
+  return result;
+}
+
+const average = (array) => {
+  let result;
+  if (array.length === 0 || !verifyNumber(array)) {
+    result = undefined;
+  } else {
+    result = Math.round(array.reduce(somar, 0)/array.length);
+  }
+  return result;
 };
+
+console.log(average([-11, 2, 5]))
 
 module.exports = average;
