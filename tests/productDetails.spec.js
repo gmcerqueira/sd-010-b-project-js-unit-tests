@@ -43,10 +43,12 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(productDetails([0]), productDetails([1]), true);
     // (Difícil) Teste que os dois productIds terminam com 123. // Com a ajuda do amigo Eder Paiva e Rafael Mathias.
-    const produto = productDetails('Alcool Gel', 'Máscara');
-    const produtoPos1 = produto[0].details.productId;
-    const produtoPos2 = produto[1].details.productId;
-    const armazem = [produtoPos1.slice(-3), produtoPos2.slice(-3)];
-    assert.deepStrictEqual(armazem, ['123', '123']);
+    // const produto = productDetails('string', 'string');
+    // const produtoPos1 = produto[0].details.productId;
+    // const produtoPos2 = produto[1].details.productId;
+    // const armazem = [produtoPos1.slice(-3), produtoPos2.slice(-3)];
+    // assert.deepStrictEqual(armazem, ['123', '123']);
+    const produto = productDetails('string', 'string');
+    assert.deepStrictEqual(produto[0].details.productId.endsWith('123'), produto[1].details.productId.endsWith('123'), true);
   });
 });
