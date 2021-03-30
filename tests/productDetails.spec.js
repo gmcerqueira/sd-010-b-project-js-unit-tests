@@ -35,13 +35,13 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     const testObjects = ([typeof Object.values(productDetails())[0],
       typeof Object.values(productDetails())[1]]);
-    const compareInsideObjects = productDetails()[0] !== productDetails()[1];
+    const isInsideObjectsEqual = productDetails()[0] === productDetails()[1];
     const productFinalNumbers = (productDetails());
 
     assert.strictEqual(typeof productDetails(), 'object');
     assert.strictEqual(Object.values(productDetails()).length, 2);
     assert.deepStrictEqual(testObjects, ['object', 'object']);
-    assert.strictEqual(compareInsideObjects, true);
+    assert.strictEqual(isInsideObjectsEqual, false);
     assert.ok(productFinalNumbers[0].details.productId.endsWith('123'), true);
     assert.ok(productFinalNumbers[1].details.productId.endsWith('123'), true);
     // ESCREVA SEUS TESTES ABAIXO:
