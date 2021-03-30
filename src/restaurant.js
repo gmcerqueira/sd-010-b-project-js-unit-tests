@@ -110,7 +110,10 @@ const createMenu = (restaurantOrderObject) => {
   restaurante.pay = () => getValueOrder(restaurante.consumption);
   return restaurante;
 };
-const restaurantOrderObject = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
+const restaurantOrderObject = {
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
+};
 const meuRestaurante = createMenu(restaurantOrderObject);
 /* console.log(meuRestaurante);
 console.log(meuRestaurante.fetchMenu());
