@@ -75,7 +75,7 @@ describe('#createMenu', () => {
     assert.ok(objetoRetornado.consumption, ['coxinha']);
     console.log(objetoRetornado);
     // // TESTE 6:
-    assert.ok(objetoRetornado.order('agua'), objetoRetornado.order('sopa'), objetoRetornado.order('sashimi'));
+    assert.ok(objetoRetornado.order('agua'), ('sopa'), ('sashimi'));
     console.log(objetoRetornado);
     // // TESTE 7:
     objetoRetornado = createMenu(objetoRetornado);
