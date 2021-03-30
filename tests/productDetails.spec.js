@@ -42,10 +42,10 @@ describe('#productDetails', () => {
     assert.strictEqual(productDetails().length, 2);
     // Teste que o array retornado pela função contém dois itens dentro.
 
-    assert.ok(productDetails().every(item => typeof item === 'object'));
+    assert.ok(productDetails().every((item) => typeof item === 'object'));
     // Teste que os dois itens dentro do array retornado pela função são objetos.
 
-    const test = productDetails('product1', 'product2')
+    const test = productDetails('product1', 'product2');
     assert.strictEqual(typeof test[0] === 'object' && typeof test[1] === 'object', true);
     // Teste que os dois objetos são diferentes entre si
     
