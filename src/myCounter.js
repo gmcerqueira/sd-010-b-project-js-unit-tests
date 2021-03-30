@@ -12,10 +12,10 @@
 
 const myCounter = () => {
   let myArray = [];
-  for (let counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (let counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+  for (let index1 = 0; index1 <= 3; index1 += 1) {
+    myArray.push(index1);
+    for (let index2 = 2; index2 <= 3; index2 += 1) {
+      myArray.push(index2);
     }
   }
   return myArray;
