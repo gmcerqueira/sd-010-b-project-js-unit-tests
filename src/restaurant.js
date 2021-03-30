@@ -60,7 +60,7 @@
 const restaurant = {};
 const orderFromMenu = (request) => restaurant.consumption.push(request);
 const sumValue = () => {
-  //
+  // Falta Fazer
 };
 const createMenu = (myMenu) => {
   restaurant.fetchMenu = myMenu;
