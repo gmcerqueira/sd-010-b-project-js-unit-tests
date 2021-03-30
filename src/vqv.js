@@ -16,6 +16,8 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => typeof nome;
+
+console.log(typeof vqv('Tunico', 30));
 
 module.exports = vqv;

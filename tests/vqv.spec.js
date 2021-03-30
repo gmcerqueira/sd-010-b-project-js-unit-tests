@@ -26,7 +26,7 @@ const workMessage = 'trabalho na Trybe e mando muito em programação!\n';
 describe('#vqv', () => {
   it('should return full trybe phrase with users name and age', () => {
     assert.strictEqual(typeof vqv, 'function');
-    // assert.strictEqual(typeof vqv('Tunico', 30), 'string');
+    assert.strictEqual(typeof vqv('Tunico', 30), 'string');
     // assert.strictEqual(
     //   vqv('Tunico', 29),
     //   `${'Oi, meu nome é Tunico!\n'
