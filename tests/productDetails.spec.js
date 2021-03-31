@@ -48,5 +48,6 @@ describe('#productDetails', () => {
     const productPos2 = product[1].details.productId;
     const storage = [productPos1.slice(-3), productPos2.slice(-3)]; /* Fonte de ".slide": https://www.devmedia.com.br/javascript-slice-selecionando-elementos-de-uma-string-ou-array/39810 */
     assert.deepStrictEqual(storage, ['123', '123']);
+    console.log(storage);
   });
 });
