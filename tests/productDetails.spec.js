@@ -41,11 +41,12 @@ describe('#productDetails', () => {
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof productDetails(), typeof productDetails(), ['Object', 'Object']);
     // Teste que os dois objetos são diferentes entre si.
+    assert.notStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1]);
+    // (Difícil) Teste que os dois productIds terminam com 123.
     const product = productDetails('Alcool Gel', 'Máscara');
     const productPos1 = product[0].details.productId;
     const productPos2 = product[1].details.productId;
     const storage = [productPos1.slice(-3), productPos2.slice(-3)]; /* Fonte de ".slide": https://www.devmedia.com.br/javascript-slice-selecionando-elementos-de-uma-string-ou-array/39810 */
     assert.deepStrictEqual(storage, ['123', '123']);
-    // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
