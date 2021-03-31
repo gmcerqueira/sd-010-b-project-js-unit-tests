@@ -23,8 +23,8 @@ const vqv = (nome, idade) => {
     #VQV!`;
   if (nome !== undefined && idade !== undefined) {
     return frase;
-  } else {
-    return undefined
+  }
+    return undefined;
   }
 };
 
