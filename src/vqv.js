@@ -25,7 +25,6 @@ const vqv = (nome, idade) => {
     return frase;
   }
     return undefined;
-  }
 };
 
 module.exports = vqv;
