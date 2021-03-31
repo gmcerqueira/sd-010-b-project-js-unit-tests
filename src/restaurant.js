@@ -65,6 +65,8 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+// LÓGICA PELA FERNANDA PORTO, QUE FEZ COM AJUDA DO PESSOAL DO PLANTÃO NO SÁBADO
+
 const restaurant = {};
 
 const orderFromMenu = (request) =>
