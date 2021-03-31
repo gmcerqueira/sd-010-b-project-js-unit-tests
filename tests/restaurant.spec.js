@@ -73,7 +73,7 @@ describe('#createMenu', () => {
     objetoRetornado1.order('agua');
     objetoRetornado1.order('sopa');
     objetoRetornado1.order('sashimi');
-    assert.deepStrictEqual(objetoRetornado1.consumption, 
+    assert.deepStrictEqual(objetoRetornado1.consumption,
       ['coxinha', 'agua', 'sopa', 'sashimi']);
     // ```
     // Agora faça o TESTE 7 deste arquivo.
@@ -87,7 +87,7 @@ describe('#createMenu', () => {
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
-    objetoRetornado1 = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, 
+    objetoRetornado1 = createMenu({ food: { coxinha: 3.9, sopa: 9.9 },
       drink: { agua: 3.9, cerveja: 6.9 } });
     objetoRetornado1.consumption = [];
     objetoRetornado1.order('coxinha');
