@@ -24,7 +24,7 @@ const vqv = (nome, idade) => {
   if (nome !== undefined && idade !== undefined) {
     return frase;
   }
-    return undefined;
+  return undefined;
 };
 
 module.exports = vqv;
