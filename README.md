@@ -20,7 +20,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
 - [Requisitos do projeto](#requisitos-do-projeto)
 - [Lista de requisitos](#lista-de-requisitos)
-  - [Implemente a função average](#implemente-a-função-average)
+  - [Implemente a função average](#1---implemente-a-função-average)
   - [Implemente os casos de teste para a função numbers](#implemente-os-casos-de-teste-para-a-função-numbers)
   - [Implemente a função vqv](#implemente-a-função-vqv)
   - [Implemente os casos de teste para a função circle](#implemente-os-casos-de-teste-para-a-função-circle)
