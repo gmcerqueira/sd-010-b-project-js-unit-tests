@@ -22,7 +22,7 @@ const average = (array) => {
     }
   }
   if (contador === array.length && contador !== 0) {
-    return math.Round(soma / contador;)
+    return math.Round(soma / contador);
   }
   return undefined;
 };
