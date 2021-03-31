@@ -29,7 +29,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Implemente a função objCalculator](#7---implemente-a-função-objCalculator)
   - [Implemente a função myCounter](#8---implemente-a-função-myCounter)
   - [Implemente os casos de teste e a função createMenu](#9---implemente-os-casos-de-teste-e-a-função-createMenu)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+- [Instruções para entregar seu projeto]
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
   - [Revisando um Pull Request](#revisando-um-pull-request)
