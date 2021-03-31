@@ -16,8 +16,8 @@ const average = (array) => {
   let soma = 0;
   let contador = 0;
   for (let i = 0; i < array.length; i += 1) {
+    soma += array[i];
     if (typeof array[i] === 'number') {
-      soma += array[i];
       contador += 1;
     }
   }
