@@ -17,12 +17,9 @@ const average = (array) => {
   let contador = 0;
   for (let i = 0; i < array.length; i += 1) {
     soma += array[i];
-    if (typeof array[i] === 'number') {
-      contador += 1;
-    }
   }
-  if (contador === array.length && contador !== 0) {
-    return Math.Round(soma / contador);
+  if (array.length !== 0) {
+    return Math.Round(soma / array.length);
   }
   return undefined;
 };
