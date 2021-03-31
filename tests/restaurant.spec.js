@@ -92,11 +92,8 @@ describe('#createMenu', () => {
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
-    //
-
-
-    // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
-    // ```
+    // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas,
+    // somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     objetoRetornado = createMenu('teste');
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
