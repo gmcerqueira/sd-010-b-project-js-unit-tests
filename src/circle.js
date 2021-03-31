@@ -1,4 +1,3 @@
-//----
 const circle = (radius) => {
   const PI = 3.14;
   if (!radius) { return undefined; }
