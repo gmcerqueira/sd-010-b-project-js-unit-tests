@@ -19,6 +19,9 @@
 const workMessage = 'trabalho na Trybe e mando muito em programação!';
 
 const vqv = (nome, idade) => {
+  if (!nome && !idade) {
+    return undefined;
+  }
   if (!idade) {
     return typeof nome;
   }
@@ -28,6 +31,6 @@ ${workMessage}
 #VQV!`;
 };
 // vqv('asfd', 'sa');
-console.log(vqv('Tunico', 29));
+console.log(vqv());
 
 module.exports = vqv;
