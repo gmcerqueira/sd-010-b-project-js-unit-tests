@@ -48,5 +48,5 @@ describe('#productDetails', () => {
     assert.notStrictEqual(produto[0], produto[1]);
     let fimProduto1 = produto[0].details.productId.endsWith('123');
     let fimProduto2 = produto[1].details.productId.endsWith('123');
-    assert.notDeepStrictEqual([fimProduto1, fimProduto2], [true, true])
+    assert.notDeepStrictEqual([fimProduto1, fimProduto2], [true, true]);
 });
