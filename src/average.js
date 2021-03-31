@@ -14,13 +14,21 @@
 
 const average = (array) => {
   let soma = 0;
-  for (let i = 0; i < array.length; i += 1) {
+  let contagem = 0;
+  for (let i = 0; i < array.length; i += 1){
     soma += array[i];
+    var media = soma / array.length;
+    if (typeof array[i] === 'number'){
+      contagem += 1;
+    }
   }
-  if (array.length !== 0 && typeof array.length === 'number') {
-    return Math.Round(soma / array.length);
+  if(contagem === array.length && contagem !== 0) {
+    return Math.round(media);
   }
   return undefined;
 };
+
+console.log(average())
+console.log(average([1, 2, 3, 4]));
 
 module.exports = average;
