@@ -13,18 +13,18 @@
 */
 
 const average = (array) => {
-  let soma = 0;
-  let contador = 0;
-  for (let i = 0; i < array.length; i += 1) {
+    let soma = 0;
+    let contador = 0;
+    for (let i = 0; i < array.length; i += 1) {
     if(typeof array[i] === 'number'){
     soma += array[i]
-    contador += 1
+    contador += 1;
     }
-  }
-  if (contador === array.length && contador !== 0) {
+  };
+    if (contador === array.length && contador !== 0) {
     return soma / contador
   }
-  return undefined
+    return undefined
 };
 
 module.exports = average;
