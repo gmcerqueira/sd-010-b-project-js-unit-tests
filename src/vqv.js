@@ -15,7 +15,6 @@
 */
 
 const vqv = (nome, idade) => {
-  let mensagem;
   if (!nome || !idade) {
     return undefined;
   }
