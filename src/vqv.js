@@ -17,7 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  const messagem = 'trabalho na Trybe e mando muito em programação!'
+  const messagem = 'trabalho na Trybe e mando muito em programação!';
   if (typeof (nome) !== 'string' && typeof (idade) !== 'number') {
     return 'undefined';
   }
