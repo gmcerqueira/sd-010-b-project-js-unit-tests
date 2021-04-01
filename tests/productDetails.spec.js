@@ -44,10 +44,10 @@ describe('#productDetails', () => {
     // Teste que os dois objetos são diferentes entre si.
     assert.notStrictEqual(productDetails('one', 'two'), productDetails('one', 'two'));
     // (Difícil) Teste que os dois productIds terminam com 123.
-    let firstId = productDetails('one', 'two')[0].details.productId.split('');
-    let secondId = productDetails('one', 'two')[1].details.productId.split('');
-    let firstKey = `${firstId[firstId.length - 3]}${firstId[firstId.length - 2]}${firstId[firstId.length - 1]}`;
-    let secondKey = `${secondId[secondId.length - 3]}${secondId[secondId.length - 2]}${secondId[secondId.length - 1]}`;
-    assert.strictEqual(firstKey === '123' && secondKey === '123', true);
+    let IdOne = productDetails('one', 'two')[0].details.productId.split('');
+    let IdTwo = productDetails('one', 'two')[1].details.productId.split('');
+    let KeyOne = `${IdOne[IdOne.length - 3]}${IdOne[IdOne.length - 2]}${IdOne[IdOne.length - 1]}`;
+    let KeyTwo = `${IdTwo[IdTwo.length - 3]}${IdTwo[IdTwo.length - 2]}${IdTwo[IdTwo.length - 1]}`;
+    assert.strictEqual(KeyOne === '123' && KeyTwo === '123', true);
   });
 });
