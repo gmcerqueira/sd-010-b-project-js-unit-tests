@@ -79,30 +79,56 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (mainOrder) => {
-  let listaConsumption = []; // lista com os pedidos
+// Objeto restaurant vazio, que vai ser retornado no createMenu
+let restaurant = {};
 
-  const mainObj = {
+// adiciona o request (order) ao consumption
+const orderFromMenu = (request) => restaurant.consumption.push(request);
+
+// Funções que compara o nome no pedido com o do menu e retorna a soma do valor
+const compareFood = (mainOrder, produto, order) => {
+  let sumFood = 0;
+  if (produto === order) {
+    sumFood += mainOrder.food[produto];
+  }
+  return sumFood;
+};
+
+const compareDrink = (mainOrder, produto, order) => {
+  let sumDrink = 0;
+  if (produto === order) {
+    sumDrink += mainOrder.drink[produto];
+  }
+  return sumDrink;
+};
+
+const sum = (mainOrder) => {
+  let sumFood = 0;
+  let sumDrink = 0;
+  let nameFood = Object.keys(mainOrder.food);
+  let nameDrink = Object.keys(mainOrder.drink);
+  // vai varrer o array que tem os pedidos
+  for (let i = 0; i < restaurant.consumption.length; i += 1) {
+    // vai varrer o array food
+    for (let f = 0; f < nameFood.length; f += 1) {
+      sumFood += compareFood(mainOrder, restaurant.consumption[i], nameFood[f]);
+    }
+    // vai varrer o array drinks
+    for (let d = 0; d < nameDrink.length; d += 1) {
+      sumDrink += compareDrink(mainOrder, restaurant.consumption[i], nameDrink[d]);
+    }
+  }
+  return 1.10 * (sumFood + sumDrink);
+};
+
+const createMenu = (mainOrder) => {
+  restaurant = {
     fetchMenu: () => mainOrder,
-    order: (pedido) => listaConsumption.push(pedido), // add o parâmetro na lista consumption
-    consumption: listaConsumption, // lista com os pedidos
-    pay: () => {
-      let foodValues = Object.values(mainOrder.food);
-      let drinkValues = Object.values(mainOrder.drink);
-      let sumFoods = 0;
-      let sumDrinks = 0;
-      for (let i = 0; i < foodValues.length; i += 1) {
-        sumFoods += foodValues[i]; // soma os valores foods
-      }
-      for (let d = 0; d < drinkValues.length; d += 1) {
-        sumDrinks += drinkValues[d]; // soma os valores drinks
-      }
-      return 1.10 * (sumFoods + sumDrinks); // soma total do pedido mais 10%
-      // return Object.values(mainOrder['food']).length
-      // sumOrder();
-    },
+    consumption: [],
+    order: (request) => orderFromMenu(request),
+    pay: () => sum(mainOrder),
   };
-  return mainObj;
+  return restaurant;
 };
 
 module.exports = createMenu;
