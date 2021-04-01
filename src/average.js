@@ -17,13 +17,9 @@
 
 const average = ((array) => {
   let retorno;
-  if ((array.length !== 0) || (array.every(num => (typeof num === 'number')))) {
+  if ((array.length !== 0) && (array.every((num) => typeof num === 'number'))) {
     retorno = array.reduce((total, value) => total + value, 0);
-    if (retorno === 1) retorno *= 0;
-    if ((retorno > 1) || (retorno < 0)) {
-      retorno /= array.length;
-      retorno = Math.round(retorno);
-    }    
+    retorno = (retorno === 1) ? 0 : Math.round(retorno /= array.length);
   }
   return retorno;
 });
