@@ -48,6 +48,8 @@ describe('#productDetails', () => {
     assert.notStrictEqual(arrayProductObjects[0], arrayProductObjects[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
     // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr
-    assert.strictEqual(arrayProductObjects[0].details.productId.substr(-3), arrayProductObjects[1].details.productId.substr(-3));
+    const firstProductID = arrayProductObjects[0].details.productId;
+    const secondProductID = arrayProductObjects[1].details.productId;
+    assert.strictEqual(firstProductID.substr(-3), secondProductID.substr(-3));
   });
 });
