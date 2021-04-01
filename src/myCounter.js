@@ -9,7 +9,6 @@
   Comportamento:
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
-
 const myCounter = () => {
   let myArray = [];
   for (let counter1 = 0; counter1 <= 3; counter1 += 1) {
