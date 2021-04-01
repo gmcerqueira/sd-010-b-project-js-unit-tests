@@ -40,4 +40,4 @@ describe('#createStudent', () => {
     assert.strictEqual(estudante3.name, 'Inácio');
     assert.strictEqual(estudante3.feedback(), message);
   });
-});  
+});
