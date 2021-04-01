@@ -53,8 +53,8 @@ const createMenu = require('../src/restaurant');
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     const objetoRetornado = createMenu({
-      food: {},
-      drink: {}
+      food: {'coxinha': 3.9, 'sopa': 9.9},
+      drink: {'agua': 3.9, 'cerveja': 6.9}
     });
     const teste1Entradas = [typeof objetoRetornado, Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu'), typeof objetoRetornado.fetchMenu];
 
@@ -65,8 +65,8 @@ describe('#createMenu', () => {
     assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
 
     assert.deepStrictEqual(objetoRetornado.fetchMenu(), {
-      food: {},
-      drink: {}
+      food: {'coxinha': 3.9, 'sopa': 9.9},
+      drink: {'agua': 3.9, 'cerveja': 6.9}
     });
 
     assert.deepStrictEqual(objetoRetornado.consumption, []);
@@ -88,6 +88,8 @@ describe('#createMenu', () => {
     objetoRetornado.order('coxinha');
     
     assert.deepStrictEqual(objetoRetornado.consumption, [ 'coxinha', 'agua', 'coxinha' ]);
+
+    assert.deepStrictEqual(objetoRetornado.pay(), (3.9 * 3) * 1.1);
 
 
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
