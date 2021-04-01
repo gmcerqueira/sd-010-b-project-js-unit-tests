@@ -58,13 +58,12 @@ describe('#createMenu', () => {
 
     assert.deepStrictEqual(teste1Entradas, teste1Saidas);
 
-    
-    
-    const createMenuS = createMenu({food: {'coxinha': 3.0}, drink: {'agua': 2.0}});
+    const objetoRetornado = createMenu({food: {}, drink: {}});
 
-    
-    assert.deepStrictEqual({food: {'coxinha': 3.0}, drink: {'agua': 2.0}}, createMenuS.fetchMenu());
-    
+    assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
+
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), {food: {}, drink: {}});
+
     // assert.deepStrictEqual(createMenu({food: {}, drink: {}}),)
 
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
