@@ -65,9 +65,7 @@ describe('#createMenu', () => {
         typeof createMenu(),
         Object.hasOwnProperty.call(objectReturned, 'fetchMenu'),
         typeof createMenu().fetchMenu,
-      ],
-      ['object', true, 'function']
-    );
+      ], ['object', true, 'function']);
 
     // teste 2
     assert.deepStrictEqual(createMenu({ food: {}, drink: {} }).fetchMenu(), {
