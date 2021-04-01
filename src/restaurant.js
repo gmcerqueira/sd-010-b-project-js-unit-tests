@@ -85,7 +85,18 @@ const restaurante = {};
 const stringadd = (string) => restaurante.consumption.push(string);
 
 const pagamento = (elemento) => {
-  let contaDoCliente = restaurante.consumption
+  let contaDoCliente = restaurante.consumption;
+  let menuFood = elemento.food;
+  let menuDrink = elemento.drink;
+  let total = 0;
+  for (let index = 0; index < contaDoCliente.length; index += 1) {
+    if (menuFood[contaDoCliente[index]]) {
+      total += menuFood[contaDoCliente[index]]
+    } if (menuDrink[contaDoCliente[index]]) {
+      total += menuDrink[contaDoCliente[index]]
+    }
+  }
+  return total * 1.1;
 };
 
 const createMenu = (elemento) => {
