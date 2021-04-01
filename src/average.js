@@ -14,21 +14,20 @@
 
 const average = (array) => {
   let result = 0;
+  if (array.length === 0) return undefined;
 
   for (let number of array) {
-    if (typeof number === 'number') {
-      result += number;
-    } else {
-      return undefined;
-    }
+    if (typeof number !== 'number') return undefined;
+    result += number;
   }
-
   return (Math.round(result / array.length));
 };
 
 /*
 console.log(average([1, 2, '3']));
 console.log(average([1, 2, 3]));
+console.log(average([]));
+console.log(average([' ']));
 */
 
 module.exports = average;
