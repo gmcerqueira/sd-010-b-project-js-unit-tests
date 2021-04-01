@@ -10,11 +10,11 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
-    
 */
 
 const average = (arr) => {
   let med = 0;
+  let media = 0;
   if (arr.length <= 0) {
     return undefined;
   }
@@ -22,7 +22,7 @@ const average = (arr) => {
     if (typeof (arr[index]) !== 'number') {
       return undefined;
     }
-     med += arr[index];
+    med += arr[index];
   }
   media = Math.round(med / arr.length);
   return media;
