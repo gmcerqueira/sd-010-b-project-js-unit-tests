@@ -15,19 +15,19 @@
 // https://medium.com/aprendajs/10-javascript-array-m%C3%A9todos-que-voc%C3%AA-deveria-saber-789ea95667d0
 // Referencia usada para realização
 
-const average = (array) => {
-  let result;
-  let number;
+const average = ((array) => {
+  let retorno;
   if (array.length !== 0) {
-    number = (array.every(num => typeof num === 'number'));
-    result = (number) ? array.reduce((total, value) => total + value, 0) : undefined;
-    if (result === 1) result *= 0;
-    if ((result > 1) || (result < 0)) {
-      result /= array.length;
-      result = Math.round(result);
+    if (array.every(num => typeof num === 'number')) {
+      retorno = array.reduce((total, value) => total + value, 0);
+      if (retorno === 1) retorno *= 0;
+      if ((retorno > 1) || (retorno < 0)) {
+        retorno /= array.length;
+        retorno = Math.round(retorno);
+      }  
     }
   }
-  return result;
-};
-console.log(average([-11, 2, 5]));
+  return retorno;
+})
+
 module.exports = average;
