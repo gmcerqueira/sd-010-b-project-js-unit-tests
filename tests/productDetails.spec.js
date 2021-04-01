@@ -42,12 +42,12 @@ describe('#productDetails', () => {
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof (productDetails('firstProduct', 'secondProduct')), 'object');
     // Teste que os dois objetos são diferentes entre si.
-    assert.notStrictEqual(productDetails('firstProduct', 'secondProduct'), productDetails('firstProduct', 'secondProduct'));
+    assert.notStrictEqual(productDetails('one', 'two'), productDetails('one', 'two'));
     // (Difícil) Teste que os dois productIds terminam com 123.
-    let firstProductId = productDetails('firstProduct', 'secondProduct')[0].details.productId.split('');
-    let secondProductId = productDetails('firstProduct', 'secondProduct')[1].details.productId.split('');
-    let firstKeyLastThreeCharacters = `${firstProductId[firstProductId.length - 3]}${firstProductId[firstProductId.length - 2]}${firstProductId[firstProductId.length - 1]}`;
-    let secondKeyLastThreeCharacters = `${secondProductId[secondProductId.length - 3]}${secondProductId[secondProductId.length - 2]}${secondProductId[secondProductId.length - 1]}`;
-    assert.strictEqual(firstKeyLastThreeCharacters === '123' && secondKeyLastThreeCharacters === '123', true);
+    let firstId = productDetails('one', 'two')[0].details.productId.split('');
+    let secondId = productDetails('one', 'two')[1].details.productId.split('');
+    let firstKey = `${firstId[firstId.length - 3]}${firstId[firstId.length - 2]}${firstId[firstId.length - 1]}`;
+    let secondKey = `${secondId[secondId.length - 3]}${secondId[secondId.length - 2]}${secondId[secondId.length - 1]}`;
+    assert.strictEqual(firstKey === '123' && secondKey === '123', true);
   });
 });
