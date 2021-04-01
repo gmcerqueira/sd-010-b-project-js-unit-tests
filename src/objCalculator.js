@@ -22,7 +22,7 @@
 const calculator = {
   add: (valor1, valor2) => valor1 + valor2,
   mult: (valor1, valor2) => valor1 * valor2,
-  div: (valor1, valor2) => Math.random(valor1 / valor2),
+  div: (valor1, valor2) => Math.floor(valor1 / valor2),
   sub: (valor1, valor2) => valor1 - valor2,
 };
 
