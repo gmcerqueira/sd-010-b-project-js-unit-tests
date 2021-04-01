@@ -53,8 +53,8 @@ const createMenu = require('../src/restaurant');
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     const menu = {
-      food: { coxinha: 3.9, sopa: 9.9 },
-      drink: { agua: 3.9, cerveja: 6.9 },
+      food: { coxinha: 3.90, sopa: 9.90 },
+      drink: { agua: 3.90, cerveja: 6.90 },
     };
     const meuRestaurante = createMenu(menu);
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
@@ -83,7 +83,7 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
-    assert.deepStrictEqual(meuRestaurante.comsumption, []);
+    assert.deepStrictEqual([], meuRestaurante.comsumption);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro,
