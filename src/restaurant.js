@@ -83,8 +83,4 @@ const createMenu = (pedido) => ({
   fetchMenu: () => pedido,
 });
 
-const meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
-const objetoRetornado = createMenu({ food: {}, drink: {} });
-
-console.log(objetoRetornado.fetchMenu());
 module.exports = createMenu;
