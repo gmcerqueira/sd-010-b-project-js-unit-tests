@@ -32,9 +32,9 @@ const productDetails = require('../src/productDetails');
 */
 
 describe('#productDetails', () => {
-  let produtos = productDetails('Alcool gel', 'Máscara');
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
+    let produtos = productDetails('Alcool gel', 'Máscara');
     // Teste que o retorno da função é um array.
     assert.strictEqual(Array.isArray(productDetails('alcool', 'luva')), true);
     // Teste que o array retornado pela função contém dois itens dentro.
