@@ -56,16 +56,14 @@ const meuRestaurante = createMenu({
   food: { coxinha: 3.9, sopa: 9.9 },
   drink: { agua: 3.9, cerveja: 6.9 },
 });
+const MenuType = typeof createMenu();
+const hasOwnProper = Object.hasOwnProperty.call(objectReturned, 'fetchMenu');
+const fetchType = typeof createMenu().fetchMenu;
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     // teste 1
-    assert.deepStrictEqual(
-      [
-        typeof createMenu(),
-        Object.hasOwnProperty.call(objectReturned, 'fetchMenu'),
-        typeof createMenu().fetchMenu,
-      ], ['object', true, 'function']);
+    assert.deepStrictEqual([MenuType, hasOwnProper, fetchType], ['object', true,'function']);
 
     // teste 2
     assert.deepStrictEqual(createMenu({ food: {}, drink: {} }).fetchMenu(), {
