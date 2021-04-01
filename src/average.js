@@ -13,6 +13,20 @@
     
 */
 
-const average = () => {};
+const average = (arr) => {
+  let med = 0;
+  if (arr.length <= 0) {
+    return undefined;
+  }
+  for (let index = 0; index < arr.length; index += 1) {
+    if (typeof (arr[index]) !== 'number') {
+      return undefined;
+    }
+     med += arr[index];
+  }
+  media = Math.round(med / arr.length);
+  return media;
+};
+console.log(average([1, 2, 3]));
 
 module.exports = average;
