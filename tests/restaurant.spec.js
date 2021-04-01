@@ -61,11 +61,14 @@ describe('#createMenu', () => {
     const objetoRetornado = createMenu({food: {}, drink: {}});
 
     assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
-
+    
     assert.deepStrictEqual(objetoRetornado.fetchMenu(), {food: {}, drink: {}});
-
+    
     assert.deepStrictEqual(objetoRetornado.consumption, []);
 
+    objetoRetornado.order('coxinha');
+    
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
     // assert.deepStrictEqual(createMenu({food: {}, drink: {}}),)
 
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
@@ -90,10 +93,7 @@ describe('#createMenu', () => {
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
-    // 
-      
-
-
+    //  
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro,
@@ -103,6 +103,9 @@ describe('#createMenu', () => {
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
+    
+
+
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
