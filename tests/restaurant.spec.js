@@ -52,32 +52,47 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    const objetoRetornado = createMenu({ food: {}, drink: {} });
-    const teste1Entradas = [ typeof objetoRetornado, Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu'), typeof objetoRetornado.fetchMenu ];
+    const objetoRetornado = createMenu({
+      food: {},
+      drink: {}
+    });
+    const teste1Entradas = [typeof objetoRetornado, Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu'), typeof objetoRetornado.fetchMenu];
 
-    const teste1Saidas = [ 'object', true, 'function' ];
+    const teste1Saidas = ['object', true, 'function'];
 
     assert.deepStrictEqual(teste1Entradas, teste1Saidas);
 
     assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
-    
-    assert.deepStrictEqual(objetoRetornado.fetchMenu(), {food: {}, drink: {}});
-    
+
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), {
+      food: {},
+      drink: {}
+    });
+
     assert.deepStrictEqual(objetoRetornado.consumption, []);
 
     objetoRetornado.order('coxinha');
-    
-    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
+
+    assert.deepStrictEqual(objetoRetornado.consumption, [ 'coxinha' ]);
 
     objetoRetornado.order('agua');
     objetoRetornado.order('sopa');
     objetoRetornado.order('sashimi');
 
-    assert.deepStrictEqual(objetoRetornado.consumption, [ 'coxinha','agua', 'sopa', 'sashimi' ]);
+    assert.deepStrictEqual(objetoRetornado.consumption, [ 'coxinha', 'agua', 'sopa', 'sashimi' ]);
+
+    objetoRetornado.consumption = [];
+
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    
+    assert.deepStrictEqual(objetoRetornado.consumption, [ 'coxinha', 'agua', 'coxinha' ]);
+
 
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
-    
+
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
