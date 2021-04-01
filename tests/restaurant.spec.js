@@ -64,7 +64,7 @@ describe('#createMenu', () => {
         createMenu().hasOwnProperty('fetchMenu'),
         typeof createMenu().fetchMenu,
       ],
-      ['object', true, 'function']
+      ['object', true, 'function'],
     );
 
     // teste 2
