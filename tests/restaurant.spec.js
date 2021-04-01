@@ -63,7 +63,7 @@ const fetchType = typeof createMenu().fetchMenu;
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     // teste 1
-    assert.deepStrictEqual([MenuType, hasOwnProper, fetchType], ['object', true,'function']);
+    assert.deepStrictEqual([MenuType, hasOwnProper, fetchType], ['object', true, 'function']);
 
     // teste 2
     assert.deepStrictEqual(createMenu({ food: {}, drink: {} }).fetchMenu(), {
