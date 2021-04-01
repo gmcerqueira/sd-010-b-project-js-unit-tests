@@ -92,20 +92,22 @@
 //   meuRestaurante.consumption // Retorno: ['coxinha']
 
 //   meuRestaurante.pay() // Retorno: 3.9
+
 const consumption = [];
+
 const createMenu = (object) => ({
   fetchMenu: () => object,
   consumption,
   order: (string) => consumption.push(string),
   pay: () => {
     let sum = 0;
+    const food = object.food;
+    const drink = object.drink;
     for (let index = 0; index < consumption.length; index += 1) {
-      if (meuRestaurante.fetchMenu().food.hasOwnProperty(consumption[index])) {
-        sum += meuRestaurante.fetchMenu().food[consumption[index]];
-      } else if (
-        meuRestaurante.fetchMenu().drink.hasOwnProperty(consumption[index])
-      ) {
-        sum += meuRestaurante.fetchMenu().drink[consumption[index]];
+      if (object.hasOwnProperty.call(food, consumption[index])) {
+        sum += object.food[consumption[index]];
+      } else if (object.hasOwnProperty.call(drink, consumption[index])) {
+        sum += object.drink[consumption[index]];
       }
     }
     let total = sum + sum * 0.1;
@@ -113,7 +115,7 @@ const createMenu = (object) => ({
   },
 });
 
-const meuRestaurante = createMenu({
+const object = createMenu({
   food: { coxinha: 3.9, sopa: 9.9 },
   drink: { agua: 3.9, cerveja: 6.9 },
 });
