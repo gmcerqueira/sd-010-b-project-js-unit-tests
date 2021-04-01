@@ -79,7 +79,6 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-
 // Parâmetros:
 //   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
 //   Comportamento:
@@ -93,23 +92,33 @@
 //   meuRestaurante.consumption // Retorno: ['coxinha']
 
 //   meuRestaurante.pay() // Retorno: 3.9
-
+const consumption = [];
+const pay = () => {
+  let sum = 0;
+  for (let index = 0; index < consumption.length; index += 1) {
+    if (meuRestaurante.fetchMenu().food.hasOwnProperty(consumption[index])) {
+      sum += meuRestaurante.fetchMenu().food[consumption[index]];
+    } else if (
+      meuRestaurante.fetchMenu().drink.hasOwnProperty(consumption[index])
+    ) {
+      sum += meuRestaurante.fetchMenu().drink[consumption[index]];
+    }
+  }
+  let total = sum + sum * 0.1;
+  return Number(total.toFixed(2));
+};
 const createMenu = (object) => ({
   fetchMenu: () => object,
-  consumption: null,
-  order: (array) => 'teste',
-  pay: 'soma',
+  consumption,
+  order: (string) => consumption.push(string),
+  pay,
 });
 
-const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
+const meuRestaurante = createMenu({
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
+});
 
 const assert = require('assert');
-const objetoRetornado = createMenu();
-assert.deepStrictEqual(objetoRetornado, {
-  fetchMenu: () => {},
-consumption: null,
-order: (array) => 'teste',
-pay: 'soma',
-});
 
 module.exports = createMenu;
