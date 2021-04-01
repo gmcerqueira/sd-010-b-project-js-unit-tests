@@ -52,10 +52,24 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    const teste1Entradas = [typeof createMenu(), Object.hasOwnProperty.call(createMenu(), 'fetchMenu'), typeof createMenu().fetchMenu]
+
+    const teste1Saidas = ['object', true, 'function']
+
+    assert.deepStrictEqual(teste1Entradas, teste1Saidas);
+
+    
+    
+    const createMenuS = createMenu({food: {'coxinha': 3.0}, drink: {'agua': 2.0}});
+
+    
+    assert.deepStrictEqual({food: {'coxinha': 3.0}, drink: {'agua': 2.0}}, createMenuS.fetchMenu());
+    
+    // assert.deepStrictEqual(createMenu({food: {}, drink: {}}),)
+
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
-    // ```
+    
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
