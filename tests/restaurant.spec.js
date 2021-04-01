@@ -50,7 +50,7 @@ const createMenu = require('../src/restaurant');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-const objectReturned = createMenu({food: {}, drink: {}})
+const objectReturned = createMenu({ food: {}, drink: {} });
 const anyObject = createMenu({ object: 'any' });
 const meuRestaurante = createMenu({
   food: { coxinha: 3.9, sopa: 9.9 },
@@ -66,7 +66,7 @@ describe('#createMenu', () => {
         Object.hasOwnProperty.call(objectReturned, 'fetchMenu'),
         typeof createMenu().fetchMenu,
       ],
-      ['object', true, 'function'],
+      ['object', true, 'function']
     );
 
     // teste 2

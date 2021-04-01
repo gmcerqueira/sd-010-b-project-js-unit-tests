@@ -101,8 +101,7 @@ const createMenu = (object) => ({
   order: (string) => consumption.push(string),
   pay: () => {
     let sum = 0;
-    const food = object.food;
-    const drink = object.drink;
+    const { food, drink } = object;
     for (let index = 0; index < consumption.length; index += 1) {
       if (object.hasOwnProperty.call(food, consumption[index])) {
         sum += object.food[consumption[index]];
