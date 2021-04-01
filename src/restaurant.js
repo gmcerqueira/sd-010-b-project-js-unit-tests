@@ -85,11 +85,12 @@ const pedidos = (string) => {
   restaurante.consumption.push(string)
 }
 
-const createMenu = (objeto) => (
+const createMenu = (objeto) => {
   restaurante.fetchMenu = () => objeto;
   restaurante.consumption = [];
   restaurante.order = pedidos;
-);
+  return restaurante;
+};
 
 
 

@@ -52,13 +52,12 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    const teste1Entradas = [typeof createMenu(), Object.hasOwnProperty.call(createMenu(), 'fetchMenu'), typeof createMenu().fetchMenu]
+    const objetoRetornado = createMenu({ food: {}, drink: {} });
+    const teste1Entradas = [ typeof objetoRetornado, Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu'), typeof objetoRetornado.fetchMenu ];
 
-    const teste1Saidas = ['object', true, 'function']
+    const teste1Saidas = [ 'object', true, 'function' ];
 
     assert.deepStrictEqual(teste1Entradas, teste1Saidas);
-
-    const objetoRetornado = createMenu({food: {}, drink: {}});
 
     assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
     
@@ -69,7 +68,12 @@ describe('#createMenu', () => {
     objetoRetornado.order('coxinha');
     
     assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
-    // assert.deepStrictEqual(createMenu({food: {}, drink: {}}),)
+
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sopa');
+    objetoRetornado.order('sashimi');
+
+    assert.deepStrictEqual(objetoRetornado.consumption, [ 'coxinha','agua', 'sopa', 'sashimi' ]);
 
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui,
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
@@ -101,11 +105,8 @@ describe('#createMenu', () => {
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
-    // objetoRetornado.consumption // Retorno: ["coxinha"]
+    // objetoRetornado.consumption // Retorno: ["coxinha"] 
     // ```
-    
-
-
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
