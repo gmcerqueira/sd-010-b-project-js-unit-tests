@@ -91,9 +91,9 @@ const pagamento = (elemento) => {
   let total = 0;
   for (let index = 0; index < contaDoCliente.length; index += 1) {
     if (menuFood[contaDoCliente[index]]) {
-      total += menuFood[contaDoCliente[index]]
+      total += menuFood[contaDoCliente[index]];
     } if (menuDrink[contaDoCliente[index]]) {
-      total += menuDrink[contaDoCliente[index]]
+      total += menuDrink[contaDoCliente[index]];
     }
   }
   return total * 1.1;
