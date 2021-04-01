@@ -85,25 +85,27 @@ const pedidos = (string) => {
   restaurante.consumption.push(string)
 }
 
+const restaurantePayment = (objeto) => {
+  let total = 0;
+  const food = objeto.food;
+  const drink = objeto.drink;
+  const consumption = restaurante.consumption;
+  for (let index = 0; index < consumption.length; index += 1) {
+    if (food[consumption[index]]) {
+      total += food[consumption[index]];
+    }
+    if (drink[consumption[index]]) {
+      total += drink[consumption[index]];
+    }
+  }
+  return total * 1.1;
+}
+
 const createMenu = (objeto) => {
   restaurante.fetchMenu = () => objeto;
   restaurante.consumption = [];
   restaurante.order = pedidos;
-  restaurante.pay = () => {
-    let total = 0;
-    const food = objeto.food;
-    const drink = objeto.drink;
-    const consumption = restaurante.consumption;
-    for (let index = 0; consumption.length; index += 1) {
-      if (food[consumption[index]]) {
-        total += food[consumption[index]];
-      }
-      if (drink[consumption[index]]) {
-        total += drink[consumption[index]];
-      }
-    }
-    return total;
-  }
+  restaurante.pay = () => restaurantePayment(objeto);
   return restaurante;
 };
 
