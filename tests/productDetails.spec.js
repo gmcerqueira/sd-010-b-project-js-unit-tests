@@ -44,6 +44,7 @@ describe('#productDetails', () => {
     a(b[0] !== b[1], true);
     // (fácin) Teste que os dois productIds terminam com 123.
     b.forEach((value, index) => {
+      // I know, I know... I should have used a forIn. Right?
       const c = b[index].details.productId.endsWith('123');
       a(c, true);
     });
