@@ -97,22 +97,21 @@ const createMenu = (object) => ({
   fetchMenu: () => object,
   consumption,
   order: (string) => consumption.push(string),
-  pay,
-});
-const pay = () => {
-  let sum = 0;
-  for (let index = 0; index < consumption.length; index += 1) {
-    if (meuRestaurante.fetchMenu().food.hasOwnProperty(consumption[index])) {
-      sum += meuRestaurante.fetchMenu().food[consumption[index]];
-    } else if (
-      meuRestaurante.fetchMenu().drink.hasOwnProperty(consumption[index])
-    ) {
-      sum += meuRestaurante.fetchMenu().drink[consumption[index]];
+  pay: () => {
+    let sum = 0;
+    for (let index = 0; index < consumption.length; index += 1) {
+      if (meuRestaurante.fetchMenu().food.hasOwnProperty(consumption[index])) {
+        sum += meuRestaurante.fetchMenu().food[consumption[index]];
+      } else if (
+        meuRestaurante.fetchMenu().drink.hasOwnProperty(consumption[index])
+      ) {
+        sum += meuRestaurante.fetchMenu().drink[consumption[index]];
+      }
     }
-  }
-  let total = sum + sum * 0.1;
-  return Number(total.toFixed(2));
-};
+    let total = sum + sum * 0.1;
+    return Number(total.toFixed(2));
+  },
+});
 
 const meuRestaurante = createMenu({
   food: { coxinha: 3.9, sopa: 9.9 },
