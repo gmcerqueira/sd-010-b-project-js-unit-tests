@@ -46,6 +46,7 @@ describe('#productDetails', () => {
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.strictEqual(
       produto[0].details.productId.substr(-3),
-      produto[0].details.productId.substr(-3));
+      produto[0].details.productId.substr(-3)
+    );
   });
 });
