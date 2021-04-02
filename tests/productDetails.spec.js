@@ -40,7 +40,7 @@ describe('#productDetails', () => {
     assert.strictEqual(typeof productDetails(), 'object');
     assert.strictEqual(Object.values(productDetails()).length, 2);
     assert.deepStrictEqual(testObjects, ['object', 'object']);
-    assert.notDeepStrictEqual(productDetails('mascara'), productDetails('mascara'));
+    assert.notDeepStrictEqual(productDetails('Alcool gel'), productDetails('Máscara123'));
     assert.deepStrictEqual(productDetails()[0], productDetails()[1]);
     assert.ok(productFinalNumbers[0].details.productId.endsWith('123'), true);
     assert.ok(productFinalNumbers[1].details.productId.endsWith('123'), true);
