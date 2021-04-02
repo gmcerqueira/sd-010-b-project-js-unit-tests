@@ -34,10 +34,10 @@ describe('#createStudent', () => {
     assert.strictEqual(typeof estudante2.feedback, 'function');
     assert.strictEqual(estudante2.name, 'Nobre');
     assert.strictEqual(estudante2.feedback(), message);
-    // const estudante3 = createStudent('Inácio');
-    // assert.strictEqual(typeof estudante3, 'object');
-    // assert.strictEqual(typeof estudante3.feedback, 'function');
-    // assert.strictEqual(estudante3.name, 'Inácio');
-    // assert.strictEqual(estudante3.feedback(), message);
+    const estudante3 = createStudent('Inácio');
+    assert.strictEqual(typeof estudante3, 'object');
+    assert.strictEqual(typeof estudante3.feedback, 'function');
+    assert.strictEqual(estudante3.name, 'Inácio');
+    assert.strictEqual(estudante3.feedback(), message);
   });
 });
