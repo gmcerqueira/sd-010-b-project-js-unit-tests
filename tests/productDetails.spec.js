@@ -39,9 +39,9 @@ describe('#productDetails', () => {
 
     assert.strictEqual(productDetails.length, 2);
 
-    const produtos = productDetails('Alcool em gel', 'Mascara');
-    assert.strictEqual(typeof produtos, 'object');
-
+    const product = productDetails('pão', 'arroz');
+    assert.strictEqual(typeof product, 'object');
+  
     assert.notStrictEqual(productDetails('Alcool em gel', 'Mascara')[0],
       productDetails('Alcool em gel', 'Mascara')[1]);
 
