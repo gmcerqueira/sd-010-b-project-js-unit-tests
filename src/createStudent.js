@@ -16,10 +16,11 @@
 */
 
 const createStudent = (nome) => {
-  return {
+  const variavel = {
     name: `${nome}`,
-    feedback: () => `Eita pessoa boa!`
+    feedback: () => 'Eita pessoa boa!',
   };
+  return variavel;
 };
 
 module.exports = createStudent;
