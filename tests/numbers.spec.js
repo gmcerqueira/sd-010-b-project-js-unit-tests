@@ -16,13 +16,12 @@ const numbers = require('../src/numbers');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-('#numbers', () => {
+  describe('#numbers', () => {
   it('should return an array and return if it has only numbers or not', () => {
-    //assert.fail();
+    // assert.fail();
     assert.deepStrictEqual(numbers([1, 2, 3, 4, 5], true));
     assert.deepStrictEqual(numbers(['1', 2, 3, 4, 5], false));
-    assert.deepStrictEqual(numbers([1, 'teste', 5], false))
-    assert.deepStrictEqual(numbers([''], false))
-    
+    assert.deepStrictEqual(numbers([1, 'teste', 5], false));
+    assert.deepStrictEqual(numbers([''], false));
   });
 });
