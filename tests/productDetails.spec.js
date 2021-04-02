@@ -35,15 +35,17 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.strictEqual(typeof(productDetails([''])), 'object');
+    assert.strictEqual(typeof (productDetails([''])), 'object');
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(Object.keys(productDetails([''])).length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    assert.strictEqual(typeof(Object.keys(productDetails(['']))), 'object');
+    assert.strictEqual(typeof (Object.keys(productDetails(['']))), 'object');
     // Teste que os dois objetos são diferentes entre si.
     let produto = productDetails('firstProduct', 'secondProduct');
     assert.notDeepStrictEqual(produto[0], produto[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.strictEqual(produto[0].details.productId.substr(-3), produto[0].details.productId.substr(-3));
+    assert.strictEqual(
+      produto[0].details.productId.substr(-3),
+      produto[0].details.productId.substr(-3));
   });
 });
