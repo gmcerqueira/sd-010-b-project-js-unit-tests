@@ -24,12 +24,12 @@ const average = (array) => {
       return;
     }
     sum += element;
-    }
   }
   if (sum === 0) {
     return 0;
   }
   resultado = Math.round(sum / array.length);
+
   return resultado;
 };
 
