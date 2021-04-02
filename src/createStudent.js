@@ -17,7 +17,7 @@
 
 const createStudent = (name) => ({
   name,
-  feedbak: () => 'Eita pessoa boa!',
+  feedback: () => 'Eita pessoa boa!',
 });
 
 module.exports = createStudent;
