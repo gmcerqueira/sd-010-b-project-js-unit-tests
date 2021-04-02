@@ -31,7 +31,7 @@ describe('#circle', () => {
     assert.strictEqual(circle(2).circumference, (3.14 * 2 * 2));
     assert.strictEqual(circle(3).area, (3.14 * 3 * 3));
     let circulo = circle(3);
-    assert.deepStrictEqual(circulo, {radius: 3, area: 3.14 * 3 * 3, circumference: 3.14 * 2 * 3});
+    assert.deepStrictEqual(circulo, { radius: 3, area: 3.14 * 3 * 3, circumference: 3.14 * 2 * 3 });
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado tem 3 entradas.
