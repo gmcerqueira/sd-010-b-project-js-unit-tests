@@ -52,7 +52,7 @@ const createMenu = require('../src/restaurant');
 const objetoRetornado = createMenu({ food: {}, drink: {} });
 const objMenu = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
 
-let restaurant = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+let restaurant = createMenu(objMenu);
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
@@ -123,8 +123,9 @@ describe('#createMenu', () => {
     objetoRetornado5.order('coxinha');
     objetoRetornado5.order('agua');
     objetoRetornado5.order('coxinha');
+    const expected = ['coxinha', 'agua', 'sopa', 'cerveja', 'coxinha', 'agua', 'coxinha'];
 
-    assert.deepStrictEqual(objetoRetornado5.consumption, ['coxinha', 'agua', 'sopa', 'cerveja', 'coxinha', 'agua', 'coxinha']);
+    assert.deepStrictEqual(objetoRetornado5.consumption, expected);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
