@@ -19,12 +19,12 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const addition = (number1, number2) => number1 + number2;
-
 const calculator = {
-  add: (num1, num2) => addition(num1, num2),
+  add: (num1, num2) => num1 + num2,
+  mult: (num1, num2) => num1 * num2,
 };
 
 console.log(calculator.add(1, 1));
+console.log(calculator.mult(1, 14));
 
 module.exports = calculator;
