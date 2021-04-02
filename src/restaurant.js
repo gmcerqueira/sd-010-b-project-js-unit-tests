@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable max-len */
 
 /*
@@ -78,9 +79,52 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
+const consumido = [];
+const verificaFood = (pedido) => {
+  const valores = [];
+  let foodKey = Object.keys(pedido.food);
+  let foodValue = Object.values(pedido.food);
+  for (let i = 0; i < consumido.length; i += 1) {
+    for (let x = 0; x < foodKey.length; x += 1) {
+      if (consumido[i] === foodKey[x]) {
+        valores.push(foodValue[x]);
+      }
+    }
+  }
+  return valores;
+};
+const verificaDrink = (pedido) => {
+  const valores = [];
+  let drinkKey = Object.keys(pedido.drink);
+  let drinkValue = Object.values(pedido.drink);
+  for (let j = 0; j < consumido.length; j += 1) {
+    for (let k = 0; k < drinkKey.length; k += 1) {
+      if (consumido[j] === drinkKey[k]) {
+        valores.push(drinkValue[k]);
+      }
+    }
+  }
+  return valores;
+};
+const soma = (pedido) => {
+  const valores = [verificaFood(pedido), verificaDrink(pedido)];
+  let total = 0;
+  for (let m = 0; m < valores.length; m += 1) {
+    total += valores[m] * 1.1;
+  }
+  return total;
+};
 const createMenu = (pedido) => ({
   fetchMenu: () => pedido,
+  consumption: consumido,
+  order: (string) => consumido.push(string),
+  pay: () => soma(pedido),
 });
 
+const meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+meuRestaurante.order('coxinha');
+meuRestaurante.order('agua');
+// meuRestaurante.order('coxinha');
+// console.log(meuRestaurante.pay());
+console.log(meuRestaurante.pay());
 module.exports = createMenu;
