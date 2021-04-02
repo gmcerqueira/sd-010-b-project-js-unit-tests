@@ -26,8 +26,8 @@ const vqv = (nome, idade) => {
   // #VQV!`;   Questionável não passar no lint desta forma pois esse foi o jeito ensinado seguindo as diretrizes do ES6, que são as recomendadas.
   return `Oi, meu nome é ${nome}!\n`
   + `Tenho ${idade} anos,\n`
-  + `trabalho na Trybe e manda muito em programação!\n`
-  + `#VQV!`;
+  + 'trabalho na Trybe e manda muito em programação!\n'
+  + '#VQV!';
 };
 // console.log(vqv('Lara', 21));
 module.exports = vqv;
