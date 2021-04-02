@@ -20,11 +20,13 @@
 */
 
 const calculator = {
-  add: (num1, num2) => num1 + num2,
-  mult: (num1, num2) => num1 * num2,
+  add: (num1, num2) => Math.floor(num1 + num2),
+  mult: (num1, num2) => Math.floor(num1 * num2),
+  div: (num1, num2) => Math.floor(num1 / num2),
 };
 
 console.log(calculator.add(1, 1));
 console.log(calculator.mult(1, 14));
+console.log(calculator.div(3, 2));
 
 module.exports = calculator;
