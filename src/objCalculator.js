@@ -22,8 +22,8 @@
 const calculator = {
   add: (x, y) => x + y,
   mult: (x, y) => x * y,
-  div: (x, y) => parseInt((x / y).toFixed(1)),
+  div: (x, y) => Math.trunc(x / y),
   sub: (x, y) => x - y,
 };
-console.log(calculator.div(5 , 2));
+
 module.exports = calculator;
