@@ -37,8 +37,7 @@ describe('#productDetails', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     assert.strictEqual(Array.isArray(productDetails('feijão', 'arroz')), true);
 
-    const itens = productDetails('Alcool em gel', 'Mascara').length;
-    assert.strictEqual(itens, 2);
+    assert.strictEqual(productDetails.length, 2);
 
     assert.strictEqual(typeof (productDetails('Alcool em gel', 'Mascara')[0]
     && productDetails('Alcool em gel', 'Mascara')[1]), 'object');
