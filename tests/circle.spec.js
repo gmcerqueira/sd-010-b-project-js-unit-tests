@@ -50,5 +50,3 @@ describe('#circle', () => {
     assert.deepStrictEqual(valuesTest6, { radius: 3, area: 28.26, circumference: 18.84 });
   });
 });
-
-// assert.deepStrictEqual(valores, { radius: 3, area: 28.26, circumference: 18.84 })
