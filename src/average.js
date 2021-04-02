@@ -12,12 +12,13 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-//VQV 
+//VQV
+
 const checkArray = (array) => {
   let item = true;
   let size = true;
-  for (let i = 0; i < array.length; i++) {
-    if (typeof(array[i]) !== 'number') {
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
       item = false;
       break;
     }
@@ -25,16 +26,17 @@ const checkArray = (array) => {
   if (array.length === 0) size = false;
 
   return item && size;
-}
+};
 
 const average = (array) => {
   if (checkArray(array)) {
     let sum = 0;
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i += 1) {
       sum += array[i];
     }
-    return Math.round(sum/average.length);
-  } else return undefined;
+    return Math.round(sum / average.length);
+  }
+  return undefined;
 };
 
 module.exports = average;
