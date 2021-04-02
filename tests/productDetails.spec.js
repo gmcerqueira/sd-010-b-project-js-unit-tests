@@ -36,13 +36,15 @@ describe('#productDetails', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     assert.strictEqual(Array.isArray(productDetails('feijão', 'arroz')), true);
-    assert.strictEqual(productDetails('Alcool em gel', 'Mascara').length, 2);
+
+    const itens = productDetails('Alcool em gel', 'Mascara').length;
+    assert.strictEqual(itens, 2);
 
     assert.strictEqual(typeof (productDetails('Alcool em gel', 'Mascara')[0]
     && productDetails('Alcool em gel', 'Mascara')[1]), 'object');
 
     assert.notStrictEqual(productDetails('Alcool em gel', 'Mascara')[0],
-    productDetails('Alcool em gel', 'Mascara')[1]);
+      productDetails('Alcool em gel', 'Mascara')[1]);
 
     const productIdA = productDetails('Alcool em gel', 'Mascara')[0].details.productId.slice(-3);
     const productIdB = productDetails('Alcool em gel', 'Mascara')[1].details.productId.slice(-3);
