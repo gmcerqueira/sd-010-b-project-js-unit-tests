@@ -43,7 +43,7 @@ describe('#productDetails', () => {
     assert.deepStrictEqual(typeof (productDetails()[0]), 'object');
     assert.deepStrictEqual(typeof (productDetails()[1]), 'object');
     // Teste que os dois objetos são diferentes entre si.
-    assert.deepStrictEqual(productDetails()[0] !== productDetails()[1], true)
+    assert.deepStrictEqual(productDetails()[0] !== productDetails()[1], true);
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
