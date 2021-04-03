@@ -12,7 +12,6 @@
     - average([1, '2']) // Retorno: undefined;
 */
 // teste
-
 const average = (array) => {
   if (array.length === 0) {
     return undefined;
