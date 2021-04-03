@@ -66,7 +66,7 @@ describe('#createMenu', () => {
     // ```
     const objetoRetornado = createMenu({
       food: {},
-      drink: {}
+      drink: {},
     });
     const stringFoodDrink = Object.keys(objetoRetornado.fetchMenu());
     assert.deepStrictEqual(stringFoodDrink, ['food', 'drink']);
