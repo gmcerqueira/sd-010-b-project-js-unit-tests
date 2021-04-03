@@ -13,7 +13,9 @@
 */
 
 const average = (arrayNumbers) => {
+  // Caso a função receba um array vazio, o valor undefined deve ser retornado.
   if (arrayNumbers.length === 0) return undefined;
+  // Caso a função receba algum valor não númerico, o valor undefined deve ser retornado.
   let checkedNumbers = 0;
   for (let index = 0; index < arrayNumbers.length; index += 1) {
     if (typeof arrayNumbers[index] !== 'number') {
@@ -21,7 +23,8 @@ const average = (arrayNumbers) => {
     }
     checkedNumbers += arrayNumbers[index];
   }
-  return Math.round(arrayNumbers / arrayNumbers.length);
+  // Retorna a média dos valores recebidos e todos os resultados devem ser arredondados para valores inteiros.
+  return Math.round(checkedNumbers / arrayNumbers.length);
 };
 
 module.exports = average;
