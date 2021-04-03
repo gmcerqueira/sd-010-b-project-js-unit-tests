@@ -22,4 +22,4 @@ const myCounter = () => {
 };
 
 module.exports = myCounter;
-// Créditos para Rafael Mathias e Renan Braga, que estiveram comigo desse requisito.
+// Créditos para Rafael Mathias e Renan Braga, que estiveram comigo desse requisito..
