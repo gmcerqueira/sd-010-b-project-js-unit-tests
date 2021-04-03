@@ -103,3 +103,5 @@ const createMenu = (element) => {
 };
 
 module.exports = createMenu;
+
+// Créditos para Henriqui Zózimo, que meu deu um norte a seguir nesse requisito, e que mostrou o método Object.hasOwnProperty.call que me ajudou bastante pra a resolução desse requisito.

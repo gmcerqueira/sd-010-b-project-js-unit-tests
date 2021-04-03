@@ -51,3 +51,4 @@ describe('#productDetails', () => {
     assert.strictEqual(alcool, mascara);
   });
 });
+// Créditos para Rafael Mathias, que me ajudou na resolução desse requisito.

@@ -140,3 +140,4 @@ describe('#createMenu', () => {
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
+// Créditos para Henriqui Zózimo, que meu deu um norte a seguir nesse requisito, e que mostrou o método Object.hasOwnProperty.call que me ajudou bastante pra a resolução desse requisito.
