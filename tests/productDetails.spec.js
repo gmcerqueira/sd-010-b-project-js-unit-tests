@@ -32,6 +32,7 @@ const productDetails = require('../src/productDetails');
 */
 
 const teste = productDetails('Caneta', 'Caderno');
+
 const func1 = () => {
   let bool = true;
   teste.forEach((elem) => {
@@ -39,6 +40,7 @@ const func1 = () => {
   });
   return bool;
 };
+
 const func2 = () => {
   let bool = true;
   teste.forEach((elem) => {
