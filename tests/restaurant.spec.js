@@ -71,8 +71,8 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
-    const menu0 = createMenu( {drink: 'Coca-Cola'} );
-    assert.deepStrictEqual(menu0.fetchMenu(), {drink: 'Coca-Cola'} );
+    const menu0 = createMenu({ drink: 'Coca-Cola' });
+    assert.deepStrictEqual(menu0.fetchMenu(), { drink: 'Coca-Cola' });
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
@@ -133,7 +133,7 @@ describe('#createMenu', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    const menu4 = createMenu( {drink: ['agua'], food: ['coxinha'], pay: [2.90, 3.50]} );
+    const menu4 = createMenu({ drink: ['agua'], food: ['coxinha'], pay: [2.90, 3.50] });
     menu4.order('coxinha');
     menu4.order('agua');
     menu4.order('coxinha');
