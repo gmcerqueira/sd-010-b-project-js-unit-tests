@@ -83,7 +83,9 @@ const createMenu = (objeto) => {
   const menu = {
     fetchMenu: () => objeto,
     consumption: [],
-    order: function (string) { this.consumption.push(string); },
+    order: function (string) {
+      this.consumption.push(string);
+    },
     pay: function () {
       let account = 0;
       const array = this.consumption;
