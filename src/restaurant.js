@@ -80,16 +80,27 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (objeto) => {
-  // return {
-  //   fetchMenu: () => objeto,
-  //   consumption: [],
-  //   order: (string) => createMenu().consumption.push(string),
-  // };
+  return {
+    fetchMenu: () => objeto,
+    consumption: [],
+    order: function (string) {this.consumption.push(string)},
+    pay: function () {
+      let account = 0;
+      const array = this.consumption;
+      array.forEach(item => {
+       if (item === objeto.drink[0]) account += objeto.pay[0]; 
+      }) 
+      array.forEach(item => {
+        if (item === objeto.food[0]) account += objeto.pay[1]; 
+       }) 
+      account += (account * 0.1);
+      return account;
+    }
+  };
 };
-
-// createMenu({drink: 'cola', comida: 'pastel'}).order('ola');
-// createMenu().order('coxinha');
-
-// console.log(createMenu().fetchMenu());
-
+const menu4 = createMenu({drink: ['agua'], food: ['coxinha'], pay: [2.90, 3.50]});
+    menu4.order('coxinha');
+    menu4.order('agua');
+    menu4.order('coxinha');
+   console.log(menu4.pay());
 module.exports = createMenu;
