@@ -83,19 +83,19 @@ const createMenu = (objeto) => {
   return {
     fetchMenu: () => objeto,
     consumption: [],
-    order: function (string) {this.consumption.push(string)},
+    order: function (string) { this.consumption.push(string); },
     pay: function () {
       let account = 0;
       const array = this.consumption;
-      array.forEach(item => {
+      array.forEach((item) => {
        if (item === objeto.drink[0]) account += objeto.pay[0]; 
-      }) 
+      });
       array.forEach(item => {
-        if (item === objeto.food[0]) account += objeto.pay[1]; 
-       }) 
+        if (item === objeto.food[0]) account += objeto.pay[1];
+      });
       account += (account * 0.1);
       return account;
-    }
+    },
   };
 };
 
