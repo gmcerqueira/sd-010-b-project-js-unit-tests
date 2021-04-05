@@ -80,7 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (objeto) => {
-  return {
+  const menu = {
     fetchMenu: () => objeto,
     consumption: [],
     order: function (string) { this.consumption.push(string); },
@@ -88,15 +88,16 @@ const createMenu = (objeto) => {
       let account = 0;
       const array = this.consumption;
       array.forEach((item) => {
-       if (item === objeto.drink[0]) account += objeto.pay[0]; 
+        if (item === objeto.drink[0]) account += objeto.pay[0];
       });
-      array.forEach(item => {
+      array.forEach((item) => {
         if (item === objeto.food[0]) account += objeto.pay[1];
       });
       account += (account * 0.1);
       return account;
     },
   };
+  return menu;
 };
 
 module.exports = createMenu;
