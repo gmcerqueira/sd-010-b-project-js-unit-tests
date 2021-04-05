@@ -98,9 +98,5 @@ const createMenu = (objeto) => {
     }
   };
 };
-const menu4 = createMenu({drink: ['agua'], food: ['coxinha'], pay: [2.90, 3.50]});
-    menu4.order('coxinha');
-    menu4.order('agua');
-    menu4.order('coxinha');
-   console.log(menu4.pay());
+
 module.exports = createMenu;
