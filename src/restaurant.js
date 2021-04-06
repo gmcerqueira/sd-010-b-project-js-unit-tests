@@ -88,12 +88,15 @@ function calculatePayment() {
   const drinkNames = Object.keys(menu.drink);
   const foodsPrices = Object.values(menu.food);
   const drinkPrices = Object.values(menu.drink);
-  const foodNamesAndPrices = foodsNames.map((food, index) => ({ name: food, value: foodsPrices[index] }));
-  const drinkNamesAndPrices = drinkNames.map((drink, index) => ({ name: drink, value: drinkPrices[index] }));
+  const foodNamesAndPrices = foodsNames.map((food, index) =>
+    ({ name: food, value: foodsPrices[index] }));
+  const drinkNamesAndPrices = drinkNames.map((drink, index) =>
+    ({ name: drink, value: drinkPrices[index] }));
   let total = 0;
   orders.forEach((order) => {
     let rightItem = foodNamesAndPrices.find((food) => food.name === order);
-    rightItem = rightItem === undefined ? drinkNamesAndPrices.find((drink) => drink.name === order) : rightItem;
+    rightItem = rightItem === undefined ? drinkNamesAndPrices.find((drink) =>
+      drink.name === order) : rightItem;
     total += rightItem.value;
   });
   total *= 1.1;

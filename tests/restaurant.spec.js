@@ -49,14 +49,17 @@ const createMenu = require('../src/restaurant');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-const objetoRetornado = createMenu({ food: { coxinha: 5, sopa: 5, sashimi: 7 }, drink: { agua: 2 } });
+const objetoRetornado = createMenu(
+  { food: { coxinha: 5, sopa: 5, sashimi: 7 }, drink: { agua: 2 } },
+);
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
     assert.deepStrictEqual(typeof objetoRetornado, 'object');
     assert.deepStrictEqual(typeof objetoRetornado.fetchMenu, 'function');
     assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
-    assert.deepStrictEqual({ food: { coxinha: 5, sopa: 5, sashimi: 7 }, drink: { agua: 2 } }, objetoRetornado.fetchMenu());
+    assert.deepStrictEqual({ food: { coxinha: 5, sopa: 5, sashimi: 7 }, drink: { agua: 2 } },
+      objetoRetornado.fetchMenu());
     assert.deepStrictEqual(objetoRetornado.consuption, []);
     objetoRetornado.order('coxinha');
     assert.deepStrictEqual(objetoRetornado.consuption, ['coxinha']);
@@ -65,7 +68,8 @@ describe('#createMenu', () => {
     objetoRetornado.order('sashimi');
     assert.deepStrictEqual(objetoRetornado.consuption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.consuption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha']);
+    assert.deepStrictEqual(objetoRetornado.consuption,
+      ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha']);
     assert.deepStrictEqual(objetoRetornado.pay(), 26);
   });
 });
