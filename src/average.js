@@ -18,7 +18,7 @@ const average = (array) => {
     if (!isNaN(result)) {
       return undefined;
     }
-    let result = +array[index];
+    result = +array[index];
     return result;
   }
 };
