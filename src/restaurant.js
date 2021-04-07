@@ -82,30 +82,26 @@
 const consumido = [];
 const verificaFood = (pedido) => {
   const valores = [];
-  let foodKey = Object.keys(pedido.food);
-  let foodValue = Object.values(pedido.food);
   for (let i = 0; i < consumido.length; i += 1) {
-    for (let x = 0; x < foodKey.length; x += 1) {
-      if (consumido[i] === foodKey[x]) {
-        valores.push(foodValue[x]);
-      }
+    const pedidoFood = pedido.food[consumido[i]];
+    if (!pedidoFood) {
+      valores.push(pedidoFood);
     }
   }
   return valores;
 };
-const verificaDrink = (pedido) => {
+
+function verificaDrink(pedido) {
   const valores = [];
-  let drinkKey = Object.keys(pedido.drink);
-  let drinkValue = Object.values(pedido.drink);
-  for (let j = 0; j < consumido.length; j += 1) {
-    for (let k = 0; k < drinkKey.length; k += 1) {
-      if (consumido[j] === drinkKey[k]) {
-        valores.push(drinkValue[k]);
-      }
+  for (let i = 0; i < consumido.length; i += 1) {
+    const pedidoDrink = pedido.drink[consumido[i]];
+    if (!pedidoDrink) {
+      valores.push(pedidoDrink);
     }
   }
   return valores;
-};
+}
+
 const soma = (pedido) => {
   const valores = [verificaFood(pedido), verificaDrink(pedido)];
   let total = 0;
@@ -121,10 +117,4 @@ const createMenu = (pedido) => ({
   pay: () => soma(pedido),
 });
 
-const meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
-meuRestaurante.order('coxinha');
-meuRestaurante.order('agua');
-// meuRestaurante.order('coxinha');
-// console.log(meuRestaurante.pay());
-console.log(meuRestaurante.pay());
 module.exports = createMenu;
