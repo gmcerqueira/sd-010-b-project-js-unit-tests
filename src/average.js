@@ -12,17 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-
 const average = (x) => {
   let armazem = 0;
   if (x.length === 0) {
     return undefined;
-  };
-  for (let i = 0; i < x.length; i++) {
-    if (typeof(x[i]) !== 'number') {
+  }
+  for (let i = 0; i < x.length; i+= 1) {
+    if (typeof (x[i]) !== 'number') {
       return undefined;
-    };
-    armazem = armazem + x[i];
+    }
+    armazem+= x[i];
   }
   return Math.round(armazem / x.length);
 };
