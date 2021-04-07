@@ -17,11 +17,11 @@ const average = (x) => {
   if (x.length === 0) {
     return undefined;
   }
-  for (let i = 0; i < x.length; i+= 1) {
+  for (let i = 0; i < x.length; i += 1) {
     if (typeof (x[i]) !== 'number') {
       return undefined;
     }
-    armazem+= x[i];
+    armazem += x[i];
   }
   return Math.round(armazem / x.length);
 };
