@@ -17,9 +17,10 @@ const average = (array) => {
     let result;
     if (result.isNaN(Number)) {
       return undefined;
+    } else {
+      result = +array[index];
+      return result;
     }
-    result = +array[index];
-    return result;
   }
 };
 module.exports = average;
