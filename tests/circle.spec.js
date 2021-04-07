@@ -46,3 +46,4 @@ describe('#circle', () => {
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   });
 });
+
