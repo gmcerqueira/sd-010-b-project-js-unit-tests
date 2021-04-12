@@ -89,6 +89,8 @@ const createMenu = (menu) => {
   return restaurant;
 };
 
+const menu = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+const meuRestaurante = createMenu(menu);
 const payment = (orderItems) => {
   let totalPayment = 0;
   const menu = meuRestaurante.fetchMenu();
@@ -106,6 +108,3 @@ const payment = (orderItems) => {
 restaurant.pay = () => payment(restaurant.consumption)
 
 module.exports = createMenu;
-
-const menu = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
-const meuRestaurante = createMenu(menu);
