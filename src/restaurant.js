@@ -80,7 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 let restaurant;
 const createMenu = (menu) => {
-  let restaurant = { consumption: [] };
+  restaurant = { consumption: [] };
 
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
