@@ -89,17 +89,17 @@ const createMenu = (menu) => {
   return restaurant;
 };
 
-const menu = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+const menu = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
 const meuRestaurante = createMenu(menu);
 const payment = (orderItems) => {
   let totalPayment = 0;
-  const menu = meuRestaurante.fetchMenu();
+  menu = meuRestaurante.fetchMenu();
   for (let index = 0; index < orderItems.length; index += 1) {
     if (menu.food[orderItems[index]]) {
       totalPayment = totalPayment + menu.food[orderItems[index]]
     }
     if (menu.drink[orderItems[index]]) {
-      totalPayment = totalPayment + menu.drink[orderItems[index]]
+      totalPayment += menu.drink[orderItems[index]]
     }
   }
   return totalPayment.toFixed(2);
