@@ -81,7 +81,7 @@ describe('#createMenu', () => {
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
-    assert.strictEqual(object.hasOwnProperty('consumption'), true);
+    assert.strictEqual(object.consumption, true);
     assert.deepStrictEqual(object.consumption, []);
 
     // ```
