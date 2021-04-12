@@ -60,7 +60,7 @@ describe('#createMenu', () => {
     const menu = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
     const object = createMenu(menu);
 
-    assert.strictEqual(object.hasOwnProperty('fetchMenu'), true);
+    assert.strictEqual(object.fetchMenu, true);
     assert.strictEqual(typeof object.fetchMenu, 'function');
 
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
