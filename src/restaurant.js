@@ -80,7 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (menu) => {
-  const restaurant = { };
+  let restaurant = { consumption: };
 
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
@@ -105,6 +105,6 @@ const payment = (orderItems) => {
   return totalPayment.toFixed(2);
 };
 
-restaurant.pay = () => payment(restaurant.consumption)
+restaurant.pay = () => payment(restaurant.consumption);
 
 module.exports = createMenu;
