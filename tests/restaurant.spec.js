@@ -57,32 +57,32 @@ describe('#createMenu', () => {
     // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
-    const menu = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
-    const object = createMenu(menu)
+    const menu = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
+    const object = createMenu(menu);
 
-    assert.strictEqual(object.hasOwnProperty('fetchMenu'), true)
-    assert.strictEqual(typeof object.fetchMenu, 'function')
+    assert.strictEqual(object.hasOwnProperty('fetchMenu'), true);
+    assert.strictEqual(typeof object.fetchMenu, 'function');
 
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
 
-    const fetchedMenu = object.fetchMenu()
-    assert.strictEqual(menu, fetchedMenu)
+    const fetchedMenu = object.fetchMenu();
+    assert.strictEqual(menu, fetchedMenu);
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
-    assert.strictEqual(menu, fetchedMenu)
+    assert.strictEqual(menu, fetchedMenu);
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
-     assert.strictEqual(object.hasOwnProperty('consumption'), true)
-     assert.deepStrictEqual(object.consumption, [])
+    assert.strictEqual(object.hasOwnProperty('consumption'), true);
+    assert.deepStrictEqual(object.consumption, []);
 
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
@@ -94,8 +94,8 @@ describe('#createMenu', () => {
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
 
-      object.order("coxinha");
-      assert.deepStrictEqual(object.consumption, ["coxinha"])
+    object.order('coxinha');
+    assert.deepStrictEqual(object.consumption, ['coxinha'])
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
@@ -103,10 +103,10 @@ describe('#createMenu', () => {
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
 
-    object.order("agua");
-    object.order("sopa");
-    object.order("sashimi");
-    assert.deepStrictEqual(object.consumption,  ["coxinha", "agua", "sopa", "sashimi"])
+    object.order('agua');
+    object.order('sopa');
+    object.order('sashimi');
+    assert.deepStrictEqual(object.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ describe('#createMenu', () => {
     // ```
 
     object.order('coxinha');
-    assert.deepStrictEqual(object.consumption,  ["coxinha", "agua", "sopa", "sashimi", "coxinha"])
+    assert.deepStrictEqual(object.consumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha']);
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -124,6 +124,6 @@ describe('#createMenu', () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
 
-    assert.deepStrictEqual(object.pay(),  "21.60")
+    assert.deepStrictEqual(object.pay(), '21.60');
   });
 });
