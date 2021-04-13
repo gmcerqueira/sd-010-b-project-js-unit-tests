@@ -12,20 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const verify = (array) => {
-  let test;
+  let test = 0;
   array.reduce((acc, cv) => {
     test = acc + cv;
     return test;
   });
   test /= array.length;
   test = Math.round(test);
-  console.log(test);
+  return test;
 };
 
 const average = (array) => {
   if (array.length <= 0 || array.some((key) => !Number.isFinite(key))) {
-    return console.log('undefined');
+    return undefined;
   }
-  verify(array);
+  return verify(array);
 };
+
 module.exports = average;
