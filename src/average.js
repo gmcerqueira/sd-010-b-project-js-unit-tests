@@ -11,21 +11,19 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-//Requisito realizado com ajuda através de consulta no material de outros alunos  
-const average = (array) => {
-  let sum = 0;
-  if (array.length === 0) {
-    return undefined;
-  }
-  for (let index = 0; index < array.length; index += 1) {
-    if (typeof (array[index]) !== 'number') {
-      return undefined;
-    }
-    sum += array[index];
-  }
+ 
+const average = (numbers) => {
+  let soma = 0;
+  const media = numbers.length;
 
-  let calculateAverage = sum / array.length;
-  return Math.round(calculateAverage); 
+  if (typeof (numbers) === 'object' && numbers.length === 0) return undefined;
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (typeof (numbers[i]) !== 'number') return undefined;
+
+    soma += numbers[i];
+  }
+  return Math.round(soma / media);
 };
-console.log(average([4, 6, 14]));
+
 module.exports = average;
