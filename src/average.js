@@ -11,15 +11,21 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-const average = (array) => {
-  if (array.length === 0 || array !== [Number]) {
-    return undefined;
-  }
-  let soma = array.reduce((acc, cv) => acc + cv);
-  soma /= array.length;
-  soma = Math.round(soma);
-  return soma;
+const verify = (array) => {
+  let test;
+  array.reduce((acc, cv) => {
+    test = acc + cv;
+    return test;
+  });
+  test /= array.length;
+  test = Math.round(test);
+  console.log(test);
 };
 
+const average = (array) => {
+  if (array.length <= 0 || array.some((key) => !Number.isFinite(key))) {
+    return console.log('undefined');
+  }
+  verify(array);
+};
 module.exports = average;
