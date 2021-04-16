@@ -61,7 +61,7 @@ describe('#createMenu', () => {
     const object = createMenu(menu);
 
     // eslint-disable-next-line no-prototype-builtins
-    assert.strictEqual(object.hasOwnProperty('fetchMenu'), true);
+    assert.equal(object.hasOwnProperty('fetchMenu'), true);
     assert.strictEqual(typeof object.fetchMenu, 'function');
 
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`,
@@ -83,7 +83,7 @@ describe('#createMenu', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // eslint-disable-next-line no-prototype-builtins
-    assert.strictEqual(object.hasOwnProperty('consumption'), true);
+    assert.equal(object.hasOwnProperty('consumption'), true);
     assert.deepStrictEqual(object.consumption, []);
 
     // ```
