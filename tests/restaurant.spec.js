@@ -57,7 +57,8 @@ describe('#createMenu', () => {
     // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     let objetoRetornado = createMenu({ qualquerCoisa: {}, teste: {} });
-    assert.deepStrictEqual([typeof objetoRetornado, Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu'),
+    assert.deepStrictEqual([typeof objetoRetornado,
+      Object.hasOwnProperty.call(objetoRetornado, 'fetchMenu'),
       typeof objetoRetornado.fetchMenu], ['object', true, 'function']);
 
     // confesso que nao tinha ideia até pelo motivo de o enunciado ter ficado totalmente confuso, então dei uma olhada em alguns projetos para tentar pegar uma luz de como criar esse teste, e ao ler me pareceu muito simples e facil a comparação de 1 ou mais informações usando o [] para separar oque você quer testar do [] esperado como retorno, desta maneira da pra fazer um teste unitario mais completo. porém esta classe hasOwnProperty.call nao foi mencionada e é uma mão na roda pra verificar se determinado objeto tem x propriedade/chave.
@@ -114,7 +115,8 @@ describe('#createMenu', () => {
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
+    assert.deepStrictEqual(objetoRetornado.consumption,
+      ['coxinha', 'agua', 'sopa', 'sashimi', 'coxinha', 'agua', 'coxinha']);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
