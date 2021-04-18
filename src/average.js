@@ -11,7 +11,7 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
- 
+
 const average = (numbers) => {
   let soma = 0;
   const media = numbers.length;
