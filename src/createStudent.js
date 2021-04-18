@@ -16,7 +16,7 @@
 */
 
 const createStudent = (name) => ({
-  name,
+  name: () => 'Leandrão, o Lobo Solitário',
   feedbback: () => 'Eita pessoa boa!',
 });
 
