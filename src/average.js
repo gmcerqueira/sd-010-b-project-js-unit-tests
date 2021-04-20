@@ -13,13 +13,13 @@
 */
 
 const average = (array) => {
-  for (let index = 0; index <= array.length; index = +1) {
-    let result;
-    if (result.isNaN(Number)) {
+  if (array.length === 0) return undefined;
+  for (index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
       return undefined;
     } else {
-      result = +array[index];
-      return result;
+      let average = +array[index];
+      return average
     }
   }
 };
