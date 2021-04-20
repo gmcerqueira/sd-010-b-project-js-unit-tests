@@ -18,8 +18,8 @@ const average = (array) => {
     if (typeof array[index] !== 'number') {
       return undefined;
     } else {
-      let average = +array[index];
-      return average
+      let final = +array[index];
+      return final
     }
   }
 };
